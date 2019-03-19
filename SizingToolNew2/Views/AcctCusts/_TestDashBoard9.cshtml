@@ -1,0 +1,144 @@
+﻿@model IEnumerable<SizingToolNew2.Models.Sizing>
+
+
+<p><a class="btn btn-twitter" href="@Url.Action("Create", "SizingUserDashBoard")">Create New</a></p>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary list-panel" id="list-panel">
+            <div class="panel-heading list-panel-heading">
+            </div>
+            <div class="panel-body">
+                <table id="DashBoard9-data-table"
+                       class="table table-striped table-bordered"
+                       style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DisplayForSizingID)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.StatusState.StatusStateName)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Created)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.AcctCust.AcctName)
+                            </th>@*
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SizingType.SizingTypeName)
+                                </th>
+                            *@
+                            <th>
+                                @Html.DisplayNameFor(model => model.AvProduct.ProductType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AvProduct.ProductName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LaborDelivery.Regions)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.PrepardedBy)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.RFSNum)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.NumIpAddress)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.NumServer)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.NumWorkstation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Total)
+                            </th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DisplayForSizingID)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusState.StatusStateName)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Created)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AcctCust.AcctName)
+                                </td>
+                                @*
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SizingType.SizingTypeName)
+                                    </td>
+                                *@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AvProduct.ProductType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AvProduct.ProductName)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LaborDelivery.Regions)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PrepardedBy)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RFSNum)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumIpAddress)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumServer)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NumWorkstation)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Total)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.SizingId }, htmlAttributes: new { target = "_blank", @class = "btn btn-default btn-sm" })
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

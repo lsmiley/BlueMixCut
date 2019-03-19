@@ -1,0 +1,162 @@
+﻿@model SizingToolNew2.Models.AcctCust
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AcctCust</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AcctName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcctName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusinessSec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusinessSec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Regulatory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Regulatory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact1Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact1Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact1Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact1Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact1Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact1Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact2Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact2Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact2Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact2Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact2Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact2Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifyDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AcctCustId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

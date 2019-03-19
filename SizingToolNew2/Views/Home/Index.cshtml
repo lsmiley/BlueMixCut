@@ -2,30 +2,232 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/Images/ibm security shield wordmark stack blue20_by_30pct.png" />
+
+    </div>
+    <div class="col-md-6">
+
+        <h1 class="panel-title list-panel-title">IES - Sizing Tool  : Main Page</h1>
+
+    </div>
+    <div class="col-md-2">
+        
+    </div>
+</div>
+<div class="row"><hr /> </div>
+@*<p>      <img src="~/Images/ibm_security_logo_75pct.png" /> </p>*@
+<div class="row">
+    <div class="col-xs-12 col-md-5">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">IES Sizing Tool</h3>
+            </div>
+            <div class="box-body">
+                <div class="form-group">
+                    <h2>Sizing Tool</h2>
+                    <p>
+                        IES Sizing Tool...., Will allow you to perform the following task
+                        Request a Sizing - Where Sales Persons can upload Customer Information to create a Sizing
+                        Create a Sizing - Transition and Architech teams work with Customers and Sales persons to create Sizing
+                    </p>
+
+                    <p>Sales and Customer</p>
+                    <p><a class="btn btn-default" href="@Url.Action("Create", "NbieSizers")">Request a Sizing &raquo;</a></p>
+
+                    <p>Access for Architechs and SMEs Only</p>
+                    <p><a class="btn btn-twitter" href="@Url.Action("Index", "SizingUserDashboard")">Create / Work on a Sizing &raquo;</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-7">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <h3 class="box-title">Security Products &amp; Vendors:</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Supported Vendors</label>
+                            @Html.Partial("AvProductList1")
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Suported Products</label>
+                            @Html.Partial("AvProductsList")
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="col-xs-12 col-md-5">
+        <div class="box box-default">
+            <div class="box-header">
+                <h2 class="box-title">IES Services </h2>
+            </div>
+            <div class="box-body">
+                <div class="form-group">
+                    @Html.Partial("_IesServicesProvided")
+                </div>
+                <div class="form-group">
+                    <div>
+                        <input type="radio" class="form-control" checked="checked"> Radio Button
+                    </div>
+                    <div>
+                        <input type="radio" class="form-control"> Radio Button
+                    </div>
+                    <div>
+                        <input type="radio" class="form-control" disabled="disabled"> Disabled Radio Button
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-xs-12 col-md-7">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <h3 class="box-title">Security Products: - Review by Technology</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        @Html.Partial("_AvProductByTechnology")
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label>Disabled Result</label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
+<div class="row">
+    <div class="col-xs-12 col-md-5">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">IES Services </h3>
+            </div>
+            <div class="box-body">
+                <div class="form-group">
+                    <div>
+                        <h2>Reporting Tool</h2>
+                        <p>MSS Monthly Account Reporting .</p>
+                        <p>Console Status Reporting .</p>
+                        <p>Custom Reporting .</p>
+                        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Request Report &raquo;</a></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>place holder</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-7">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <h3 class="box-title">Security Products: - Review by Technology</h3>
+                <div>
+
+                    @*@Html.Partial("~/Views/AvProducts/ProductDetails3Index.cshtml")*@
+                    @Html.Partial("_AvProductByTechnology")
+
+                    <a href="~/Views/AvProducts/ProductDetails3Index.cshtml">~/Views/AvProducts/ProductDetails3Index.cshtml</a>
+                </div>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Place Holder5</label>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Disabled</label>
+                            <p>place holder</p>
+
+                            <div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Multiple</label>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Disabled Result</label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="button" id="btnpopup" value="Open List of AV Products" onclick="ShowModelPopUp();" />
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+  @*  <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <link href="~/Content/DataTables/css/dataTables.jqueryui.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTables/dataTables.jqueryui.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.jqueryui.min.js"></script>
+    <script src="~/Scripts/AdminLTE/pages/dashboard2.js"></script>
+    <script src="~/Scripts/AdminLTE/demo.js"></script>
+
+    <script type="text/javascript">
+
+        ShowModelPopUp = function () {
+
+            window.showModalDialog('/AcctCusts/Create', "WindowPopup", 'width=200px,height=200px');
+
+        }
+
+    </script>
+
+}

@@ -1,12 +1,11 @@
 ﻿using System;
+using EntityFramework.CodeFirst;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
 using SizingToolNew2.Models;
-
 namespace SizingToolNew2
 {
     public partial class Startup
@@ -15,7 +14,7 @@ namespace SizingToolNew2
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
+            app.CreatePerOwinContext(SizingDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 
@@ -46,9 +45,9 @@ namespace SizingToolNew2
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "IesSizingTool",
+                clientSecret: "ZjcwNDE1MmEtMzYwYS00");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",

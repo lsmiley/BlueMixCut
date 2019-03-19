@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SizingToolNew2.Models.ProdCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/Images/ibm security shield wordmark stack blue20_by_30pct.png" />
+
+    </div>
+    <div class="col-md-6">
+
+        <h1 class="panel-title list-panel-title">Manage: Product Categories</h1>
+
+    </div>
+    <div class="col-md-2">
+        <p><a class="btn btn-twitter" href="@Url.Action("Create", "ProdCategories")">Create New</a></p>
+    </div>
+</div>
+
+<div class="row">.</div>
+<div class="row">.</div>
+<div class="row"><hr /> </div>
+
+
+<div id="ProdCategoryView">@Html.Partial("_ProdCategoriesList01")</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+  
+
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <link href="~/Content/DataTables/css/dataTables.jqueryui.css" rel="stylesheet" />
+
+    <script src="~/Scripts/DataTables/dataTables.jqueryui.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.jqueryui.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.css">
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#ProdCategoryList01-data-table').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "scrollY": "400px",
+                "order": [[0, "desc"]]
+            });
+        });
+    </script>
+
+}

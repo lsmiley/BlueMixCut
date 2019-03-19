@@ -64,6 +64,8 @@ namespace SizingToolNew2.Models
 
     public class RegisterViewModel
     {
+      //  internal string Name;
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

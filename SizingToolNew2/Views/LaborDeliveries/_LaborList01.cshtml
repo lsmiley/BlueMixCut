@@ -1,0 +1,156 @@
+﻿@model IEnumerable<SizingToolNew2.Models.LaborDelivery>
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/Images/ibm security shield wordmark stack blue20_by_30pct.png" />
+
+    </div>
+    <div class="col-md-6">
+
+        <h1 class="panel-title list-panel-title">Manage: Labor and Delivery</h1>
+
+    </div>
+    <div class="col-md-2">
+        <p><a class="btn btn-twitter" href="@Url.Action("Create", "LaborDeliveries")">Create New</a></p>
+    </div>
+</div>
+
+<div class="row">.</div>
+<div class="row">.</div>
+<div class="row"><hr /> </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary list-panel" id="list-panel">
+            <div class="panel-heading list-panel-heading">
+            </div>
+            <div class="panel-body">
+                <table id="Labor01-data-table"
+                       class="table table-striped table-bordered"
+                       style="width:100%">
+                    <thead>
+
+                        <tr style="font-size:12px">
+                            <th>
+                                Region
+                            </th>
+                            @*<th>
+                                    @Html.DisplayNameFor(model => model.Regions)
+                                </th>*@
+                            <th>
+                               Delivery
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CurrencyType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DefaultFTE_Year)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.WorkWeek)
+                            </th>
+                            @*  <th>
+                                    @Html.DisplayNameFor(model => model.DeliveryCtrCostFactor)
+                                </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.Band2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Band3)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Band4)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Band5)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Band6)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Band7)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Band8)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Band9)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Band10)
+                            </th>
+                            <th></th>
+                        </tr>
+
+
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr style="font-size:12px">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RegionNumber)
+                                </td>
+                                @*<td>
+                                        @Html.DisplayFor(modelItem => item.Regions)
+                                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DeliveryOption)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CurrencyType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DefaultFTE_Year)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.WorkWeek)
+                                </td>
+                                @*  <td>
+                                        @Html.DisplayFor(modelItem => item.DeliveryCtrCostFactor)
+                                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Band2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Band3)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Band4)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Band5)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Band6)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Band7)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Band8)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Band9)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Band10)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.LaborDeliveryId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.LaborDeliveryId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.LaborDeliveryId })
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

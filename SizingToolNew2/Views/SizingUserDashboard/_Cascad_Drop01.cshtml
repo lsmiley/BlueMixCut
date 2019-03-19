@@ -1,0 +1,21 @@
+﻿
+
+<div class="editor-label">
+    @Html.Label("Category")<br />
+</div>
+
+<div>
+    @* @Html.DropDownList("ProdCategoryList1", ViewBag.ProdCategoryList1 as SelectList, "-- Please Select a Category  --", new { style = "width:250px" }) *@
+    @Html.DropDownList("ProdCategoryId", null, htmlAttributes: new { @class = "form-control", @style = "Background-color: #f2fcfc; font-size:10px; height:30px" })
+
+</div>
+<div class="editor-label">
+    <br />
+    @Html.Label("Security Product")<br />
+</div>
+<div>
+    @Html.DropDownList("AvSecProduct", new SelectList(string.Empty, "Value", "Text"), "-- Please select a Product --",
+                new { style = "width:250px", @class = "dropdown1" })
+</div>
+
+

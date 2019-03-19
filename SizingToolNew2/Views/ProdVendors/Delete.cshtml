@@ -1,0 +1,128 @@
+﻿@model SizingToolNew2.Models.ProdVendor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProdVendor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorCodeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorCodeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumVendorProducts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumVendorProducts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorWebURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorWebURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact1Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact1Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact1Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact1Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact1Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact1Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact2Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact2Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact2Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact2Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact2Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact2Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractNum)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

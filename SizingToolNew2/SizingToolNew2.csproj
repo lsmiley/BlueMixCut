@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -17,14 +18,15 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress>false</Use64BitIISExpress>
+    <IISExpressSSLPort>50603</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,16 +47,109 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdminLte, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdminLteMvc.1.0.0\lib\AdminLte.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.9.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.9.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
+    <Reference Include="Rotativa.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.Core.2.0.2.1\lib\net45\Rotativa.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Rotativa.MVC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.MVC.2.0.3\lib\net45\Rotativa.MVC.dll</HintPath>
+    </Reference>
+    <Reference Include="Select.HtmlToPdf, Version=18.4.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.HtmlToPdf.18.4.0\lib\net40\Select.HtmlToPdf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -72,35 +167,8 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -130,62 +198,11 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security">
-      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies">
-      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin.Security.Cookies">
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Google">
-      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Twitter">
-      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
-      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.DiagnosticSource">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
-      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -195,42 +212,1262 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AcctCustsController.cs" />
+    <Compile Include="Controllers\AdminLteController.cs" />
+    <Compile Include="Controllers\AvProdComponentsController.cs" />
+    <Compile Include="Controllers\AvProductsController.cs" />
+    <Compile Include="Controllers\ConfigMastersController.cs" />
+    <Compile Include="Controllers\ConfigTablesController.cs" />
+    <Compile Include="Controllers\ConvertUrlToPdfController.cs" />
+    <Compile Include="Controllers\CustAcctsController.cs" />
+    <Compile Include="Controllers\DocumentationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LaborDeliveriesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProdCategoriesController.cs" />
+    <Compile Include="Controllers\ProdVendorsController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SecurityServicesController.cs" />
+    <Compile Include="Controllers\SizingComponent5VMController.cs" />
+    <Compile Include="Controllers\SizingsController.cs" />
+    <Compile Include="Controllers\SizingTypesController.cs" />
+    <Compile Include="Controllers\SizingUserDashboard2Controller.cs" />
+    <Compile Include="Controllers\SizingUserDashboardController.cs" />
+    <Compile Include="Controllers\StatusStatesController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
+    <Compile Include="Controllers\TestAvProducts1Controller.cs" />
+    <Compile Include="Controllers\TestDashboard4Controller.cs" />
+    <Compile Include="Controllers\TestThrowAway13Controller.cs" />
+    <Compile Include="Controllers\TestThrowAway14Controller.cs" />
+    <Compile Include="Controllers\TestThrowAway15Controller.cs" />
+    <Compile Include="Controllers\TestThrowAway16Controller.cs" />
+    <Compile Include="Controllers\TestUserDashboardController.cs" />
+    <Compile Include="Controllers\TnTWorksheetsController.cs" />
+    <Compile Include="Controllers\UserDashboard1Controller.cs" />
+    <Compile Include="Controllers\UserDashboardController.cs" />
+    <Compile Include="CustomFilters\CustomFilters.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AcctCust.cs" />
+    <Compile Include="Models\AvProdComponent.cs" />
+    <Compile Include="Models\AvProduct.cs" />
+    <Compile Include="Models\ConfigMaster.cs" />
+    <Compile Include="Models\ConfigTable.cs" />
+    <Compile Include="Models\convert_current_page_to_pdf.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\CustAcct.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LaborDelivery.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProdCategory.cs" />
+    <Compile Include="Models\ProdVendor.cs" />
+    <Compile Include="Models\SecurityService.cs" />
+    <Compile Include="Models\Sizing.cs" />
+    <Compile Include="Models\SizingType.cs" />
+    <Compile Include="Models\StatusState.cs" />
+    <Compile Include="Models\SzingDetail.cs" />
+    <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\TnTWorksheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\SizingComponent5VM.cs" />
+    <Compile Include="ViewModels\TestVM10.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\AdminLTE\AdminLTE.css" />
+    <Content Include="Content\AdminLTE\AdminLTE.min.css" />
+    <Content Include="Content\AdminLTE\img\avatar.png" />
+    <Content Include="Content\AdminLTE\img\avatar04.png" />
+    <Content Include="Content\AdminLTE\img\avatar2.png" />
+    <Content Include="Content\AdminLTE\img\avatar3.png" />
+    <Content Include="Content\AdminLTE\img\avatar5.png" />
+    <Content Include="Content\AdminLTE\img\boxed-bg.jpg" />
+    <Content Include="Content\AdminLTE\img\boxed-bg.png" />
+    <Content Include="Content\AdminLTE\img\credit\american-express.png" />
+    <Content Include="Content\AdminLTE\img\credit\cirrus.png" />
+    <Content Include="Content\AdminLTE\img\credit\mastercard.png" />
+    <Content Include="Content\AdminLTE\img\credit\mestro.png" />
+    <Content Include="Content\AdminLTE\img\credit\paypal.png" />
+    <Content Include="Content\AdminLTE\img\credit\paypal2.png" />
+    <Content Include="Content\AdminLTE\img\credit\visa.png" />
+    <Content Include="Content\AdminLTE\img\default-50x50.gif" />
+    <Content Include="Content\AdminLTE\img\icons.png" />
+    <Content Include="Content\AdminLTE\img\photo1.png" />
+    <Content Include="Content\AdminLTE\img\photo2.png" />
+    <Content Include="Content\AdminLTE\img\user1-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user2-160x160.jpg" />
+    <Content Include="Content\AdminLTE\img\user3-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user4-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user5-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user6-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user7-128x128.jpg" />
+    <Content Include="Content\AdminLTE\img\user8-128x128.jpg" />
+    <Content Include="Content\AdminLTE\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="Content\AdminLTE\plugins\bootstrap-slider\slider.css" />
+    <Content Include="Content\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.js" />
+    <Content Include="Content\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Content\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <Content Include="Content\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\all.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\aero%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\aero.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\aero.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\blue%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\blue.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\blue.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\flat%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\flat.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\flat.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\green%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\green.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\green.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\grey%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\grey.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\grey.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\orange%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\orange.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\orange.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\pink%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\pink.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\pink.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\purple%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\purple.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\purple.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\red%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\red.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\red.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\yellow%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\yellow.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\yellow.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\flat\_all.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\futurico\futurico.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\futurico\futurico.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\icheck.js" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\icheck.min.js" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\aero.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\blue.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\green.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\grey.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\line%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\line.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\line.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\orange.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\pink.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\purple.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\red.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\yellow.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\line\_all.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\aero%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\aero.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\aero.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\blue%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\blue.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\blue.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\green%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\green.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\green.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\grey%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\grey.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\grey.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\minimal.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\minimal.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\orange%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\orange.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\orange.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\pink%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\pink.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\pink.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\purple%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\purple.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\purple.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\red%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\red.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\red.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\yellow.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\yellow.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\minimal\_all.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\polaris\polaris.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\polaris\polaris.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\aero%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\aero.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\aero.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\blue%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\blue.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\blue.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\green%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\green.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\green.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\grey%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\grey.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\grey.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\orange%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\orange.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\orange.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\pink%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\pink.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\pink.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\purple%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\purple.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\purple.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\red%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\red.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\red.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\square%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\square.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\square.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\yellow%402x.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\yellow.css" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\yellow.png" />
+    <Content Include="Content\AdminLTE\plugins\iCheck\square\_all.css" />
+    <Content Include="Content\AdminLTE\plugins\input-mask\jquery.inputmask.date.extensions.js" />
+    <Content Include="Content\AdminLTE\plugins\input-mask\jquery.inputmask.extensions.js" />
+    <Content Include="Content\AdminLTE\plugins\input-mask\jquery.inputmask.js" />
+    <Content Include="Content\AdminLTE\plugins\input-mask\jquery.inputmask.numeric.extensions.js" />
+    <Content Include="Content\AdminLTE\plugins\input-mask\jquery.inputmask.phone.extensions.js" />
+    <Content Include="Content\AdminLTE\plugins\input-mask\jquery.inputmask.regex.extensions.js" />
+    <Content Include="Content\AdminLTE\plugins\input-mask\phone-codes\readme.txt" />
+    <Content Include="Content\AdminLTE\plugins\jQueryUI\jquery-ui.js" />
+    <Content Include="Content\AdminLTE\plugins\jQueryUI\jquery-ui.min.js" />
+    <Content Include="Content\AdminLTE\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Content\AdminLTE\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Content\AdminLTE\plugins\jvectormap\jquery-jvectormap-usa-en.js" />
+    <Content Include="Content\AdminLTE\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\AdminLTE\plugins\pace\pace.css" />
+    <Content Include="Content\AdminLTE\plugins\pace\pace.js" />
+    <Content Include="Content\AdminLTE\plugins\pace\pace.min.css" />
+    <Content Include="Content\AdminLTE\plugins\pace\pace.min.js" />
+    <Content Include="Content\AdminLTE\plugins\timepicker\bootstrap-timepicker.css" />
+    <Content Include="Content\AdminLTE\plugins\timepicker\bootstrap-timepicker.js" />
+    <Content Include="Content\AdminLTE\plugins\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Content\AdminLTE\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Content\AdminLTE\skins\skin-black.css" />
+    <Content Include="Content\AdminLTE\skins\skin-black.min.css" />
+    <Content Include="Content\AdminLTE\skins\skin-blue.css" />
+    <Content Include="Content\AdminLTE\skins\skin-blue.min.css" />
+    <Content Include="Content\AdminLTE\skins\skin-green.css" />
+    <Content Include="Content\AdminLTE\skins\skin-green.min.css" />
+    <Content Include="Content\AdminLTE\skins\skin-purple.css" />
+    <Content Include="Content\AdminLTE\skins\skin-purple.min.css" />
+    <Content Include="Content\AdminLTE\skins\skin-red.css" />
+    <Content Include="Content\AdminLTE\skins\skin-red.min.css" />
+    <Content Include="Content\AdminLTE\skins\skin-yellow.css" />
+    <Content Include="Content\AdminLTE\skins\skin-yellow.min.css" />
+    <Content Include="Content\AdminLTE\skins\_all-skins.css" />
+    <Content Include="Content\AdminLTE\skins\_all-skins.min.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui.theme.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Images\AcmeLogo.png" />
+    <Content Include="Images\AcmeLogoclean1.png" />
+    <Content Include="Images\box_narrow.png" />
+    <Content Include="Images\box_regular.png" />
+    <Content Include="Images\box_small_narrow.png" />
+    <Content Include="Images\ibm security shield 15pct trans Blk.png" />
+    <Content Include="Images\ibm security shield 15pct.png" />
+    <Content Include="Images\IBM Security Shield 33pct.png" />
+    <Content Include="Images\ibm security shield black 15pct.gif" />
+    <Content Include="Images\ibm security shield black 15pct.png" />
+    <Content Include="Images\ibm security shield black 25pct.png" />
+    <Content Include="Images\ibm security shield black trans15pct.png" />
+    <Content Include="Images\IBM Security Shield Wordmark BLUE20.png" />
+    <Content Include="Images\IBM Security Shield Wordmark BLUE40.png" />
+    <Content Include="Images\IBM Security Shield Wordmark BLUE80.png" />
+    <Content Include="Images\IBM Security Shield Wordmark Stack BLUE20.png" />
+    <Content Include="Images\ibm security shield wordmark stack blue20_by_30pct.png" />
+    <Content Include="Images\IBM_Secuirty-Small-2018-10-16_18-57-34.gif" />
+    <Content Include="Images\IBM_Secuirty-Small-2018-10-16_18-57-34.png" />
+    <Content Include="Images\IBM_SecurityMini_Logo1.png" />
+    <Content Include="Images\IBM_SecurityMini_Logo2.png" />
+    <Content Include="Images\ibm_security_logo_75pct.png" />
+    <Content Include="Images\IBM_Security_Logo_Med2.png" />
+    <Content Include="Images\IBM_Security_Logo_Min3.png" />
+    <Content Include="Images\IBM_Security_Logo_Stretched.png" />
+    <Content Include="Images\nbieSizerlogo.png" />
+    <Content Include="Images\nbieSizerlogo2.png" />
+    <Content Include="pages\calendar.html" />
+    <Content Include="pages\charts\chartjs.html" />
+    <Content Include="pages\charts\flot.html" />
+    <Content Include="pages\charts\inline.html" />
+    <Content Include="pages\charts\morris.html" />
+    <Content Include="pages\examples\404.html" />
+    <Content Include="pages\examples\500.html" />
+    <Content Include="pages\examples\blank.html" />
+    <Content Include="pages\examples\invoice-print.html" />
+    <Content Include="pages\examples\invoice.html" />
+    <Content Include="pages\examples\lockscreen.html" />
+    <Content Include="pages\examples\login.html" />
+    <Content Include="pages\examples\pace.html" />
+    <Content Include="pages\examples\profile.html" />
+    <Content Include="pages\examples\register.html" />
+    <Content Include="pages\forms\advanced.html" />
+    <Content Include="pages\forms\editors.html" />
+    <Content Include="pages\forms\general.html" />
+    <Content Include="pages\layout\boxed.html" />
+    <Content Include="pages\layout\collapsed-sidebar.html" />
+    <Content Include="pages\layout\fixed.html" />
+    <Content Include="pages\layout\top-nav.html" />
+    <Content Include="pages\mailbox\compose.html" />
+    <Content Include="pages\mailbox\mailbox.html" />
+    <Content Include="pages\mailbox\read-mail.html" />
+    <Content Include="pages\tables\data.html" />
+    <Content Include="pages\tables\simple.html" />
+    <Content Include="pages\UI\buttons.html" />
+    <Content Include="pages\UI\general.html" />
+    <Content Include="pages\UI\icons.html" />
+    <Content Include="pages\UI\modals.html" />
+    <Content Include="pages\UI\sliders.html" />
+    <Content Include="pages\UI\timeline.html" />
+    <Content Include="pages\widgets.html" />
+    <Content Include="Properties\PublishProfiles\CustomProfile-Dev.pubxml.user" />
+    <Content Include="Properties\PublishProfiles\CustomProfile-Production.pubxml.user" />
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Browsers\qt.browser" />
+    <Content Include="Scripts\AdminLTE\app.js" />
+    <Content Include="Scripts\AdminLTE\app.min.js" />
+    <Content Include="Scripts\AdminLTE\demo.js" />
+    <Content Include="Scripts\AdminLTE\pages\dashboard.js" />
+    <Content Include="Scripts\AdminLTE\pages\dashboard2.js" />
+    <Content Include="Scripts\AdminLTE\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="Scripts\AdminLTE\plugins\bootstrap-slider\slider.css" />
+    <Content Include="Scripts\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <Content Include="Scripts\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.js" />
+    <Content Include="Scripts\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Scripts\AdminLTE\plugins\chartjs\Chart.js" />
+    <Content Include="Scripts\AdminLTE\plugins\chartjs\Chart.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\adapters\jquery.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\build-config.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\config.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\contents.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\af.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ar.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\az.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\bg.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\bn.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\bs.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ca.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\cs.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\cy.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\da.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\de-ch.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\de.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\el.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\en-au.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\en-ca.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\en-gb.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\en.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\eo.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\es-mx.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\es.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\et.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\eu.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\fa.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\fi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\fo.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\fr-ca.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\fr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\gl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\gu.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\he.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\hi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\hr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\hu.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\id.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\is.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\it.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ja.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ka.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\km.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ko.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ku.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\lt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\lv.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\mk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\mn.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ms.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\nb.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\nl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\no.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\oc.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\pl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\pt-br.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\pt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ro.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ru.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\si.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\sk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\sl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\sq.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\sr-latn.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\sr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\sv.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\th.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\tr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\tt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\ug.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\uk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\vi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\zh-cn.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\lang\zh.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\az.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en-au.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\oc.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\icons.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\scayt\dialogs\dialog.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\az.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\en-au.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\en-ca.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\es-mx.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\oc.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ro.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\tableselection\styles\tableselection.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\widget\images\handle.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\tmp.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\wsc\skins\moono-lisa\wsc.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\css\samples.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\img\github-top.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\img\header-bg.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\img\header-separator.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\img\logo.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\img\logo.svg" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\index.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\js\sample.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\js\sf.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\ajax.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\api.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\appendto.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\datafiltering.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\divreplace.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\htmlwriter\outputforflash.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\htmlwriter\outputhtml.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\index.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\inlineall.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\jquery.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\magicline\magicline.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\readonly.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\replacebycode.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\sample.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\sample.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\tabindex.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\uicolor.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\uilanguages.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\dialog.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\editor.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\icons.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\close.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\editor.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\icons.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\styles.js" />
+    <Content Include="Scripts\AdminLTE\plugins\colorpicker\bootstrap-colorpicker.css" />
+    <Content Include="Scripts\AdminLTE\plugins\colorpicker\bootstrap-colorpicker.js" />
+    <Content Include="Scripts\AdminLTE\plugins\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Scripts\AdminLTE\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\colorpicker\img\alpha-horizontal.png" />
+    <Content Include="Scripts\AdminLTE\plugins\colorpicker\img\alpha.png" />
+    <Content Include="Scripts\AdminLTE\plugins\colorpicker\img\hue-horizontal.png" />
+    <Content Include="Scripts\AdminLTE\plugins\colorpicker\img\hue.png" />
+    <Content Include="Scripts\AdminLTE\plugins\colorpicker\img\saturation.png" />
+    <Content Include="Scripts\AdminLTE\plugins\datatables\dataTables.bootstrap.css" />
+    <Content Include="Scripts\AdminLTE\plugins\datatables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datatables\images\sort_asc.png" />
+    <Content Include="Scripts\AdminLTE\plugins\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\AdminLTE\plugins\datatables\images\sort_both.png" />
+    <Content Include="Scripts\AdminLTE\plugins\datatables\images\sort_desc.png" />
+    <Content Include="Scripts\AdminLTE\plugins\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\AdminLTE\plugins\datatables\jquery.dataTables.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\datepicker3.css" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Scripts\AdminLTE\plugins\datepicker\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Scripts\AdminLTE\plugins\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Scripts\AdminLTE\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="Scripts\AdminLTE\plugins\fastclick\fastclick.js" />
+    <Content Include="Scripts\AdminLTE\plugins\fastclick\fastclick.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\excanvas.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\excanvas.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.image.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.time.js" />
+    <Content Include="Scripts\AdminLTE\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Scripts\AdminLTE\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="Scripts\AdminLTE\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Scripts\AdminLTE\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\all.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\aero%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\aero.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\aero.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\blue%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\blue.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\blue.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\flat%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\flat.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\flat.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\green%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\green.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\green.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\grey%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\grey.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\grey.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\orange%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\orange.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\orange.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\pink%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\pink.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\pink.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\purple%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\purple.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\purple.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\red%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\red.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\red.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\yellow%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\yellow.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\yellow.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\flat\_all.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\futurico\futurico.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\futurico\futurico.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\icheck.js" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\icheck.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\aero.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\blue.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\green.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\grey.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\line%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\line.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\line.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\orange.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\pink.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\purple.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\red.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\yellow.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\line\_all.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\aero%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\aero.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\aero.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\blue%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\blue.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\blue.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\green%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\green.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\green.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\grey%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\grey.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\grey.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\minimal.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\minimal.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\orange%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\orange.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\orange.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\pink%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\pink.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\pink.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\purple%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\purple.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\purple.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\red%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\red.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\red.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\yellow.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\yellow.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\minimal\_all.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\polaris\polaris.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\polaris\polaris.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\aero%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\aero.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\aero.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\blue%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\blue.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\blue.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\green%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\green.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\green.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\grey%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\grey.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\grey.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\orange%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\orange.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\orange.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\pink%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\pink.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\pink.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\purple%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\purple.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\purple.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\red%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\red.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\red.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\square%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\square.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\square.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\yellow%402x.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\yellow.css" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\yellow.png" />
+    <Content Include="Scripts\AdminLTE\plugins\iCheck\square\_all.css" />
+    <Content Include="Scripts\AdminLTE\plugins\input-mask\jquery.inputmask.date.extensions.js" />
+    <Content Include="Scripts\AdminLTE\plugins\input-mask\jquery.inputmask.extensions.js" />
+    <Content Include="Scripts\AdminLTE\plugins\input-mask\jquery.inputmask.js" />
+    <Content Include="Scripts\AdminLTE\plugins\input-mask\jquery.inputmask.numeric.extensions.js" />
+    <Content Include="Scripts\AdminLTE\plugins\input-mask\jquery.inputmask.phone.extensions.js" />
+    <Content Include="Scripts\AdminLTE\plugins\input-mask\jquery.inputmask.regex.extensions.js" />
+    <Content Include="Scripts\AdminLTE\plugins\input-mask\phone-codes\readme.txt" />
+    <Content Include="Scripts\AdminLTE\plugins\ionslider\img\sprite-skin-flat.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ionslider\img\sprite-skin-nice.png" />
+    <Content Include="Scripts\AdminLTE\plugins\ionslider\ion.rangeSlider.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ionslider\ion.rangeSlider.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\ionslider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Scripts\AdminLTE\plugins\ionslider\ion.rangeSlider.skinNice.css" />
+    <Content Include="Scripts\AdminLTE\plugins\jQueryUI\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\AdminLTE\plugins\jQueryUI\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\jQuery\jQuery-2.1.3.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Scripts\AdminLTE\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Scripts\AdminLTE\plugins\knob\jquery.knob.js" />
+    <Content Include="Scripts\AdminLTE\plugins\morris\morris.css" />
+    <Content Include="Scripts\AdminLTE\plugins\morris\morris.js" />
+    <Content Include="Scripts\AdminLTE\plugins\morris\morris.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\pace\pace.js" />
+    <Content Include="Scripts\AdminLTE\plugins\slimScroll\jquery.slimscroll.js" />
+    <Content Include="Scripts\AdminLTE\plugins\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\sparkline\jquery.sparkline.js" />
+    <Content Include="Scripts\AdminLTE\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Scripts\AdminLTE\plugins\timepicker\bootstrap-timepicker.css" />
+    <Content Include="Scripts\AdminLTE\plugins\timepicker\bootstrap-timepicker.js" />
+    <Content Include="Scripts\AdminLTE\plugins\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Scripts\AdminLTE\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="Content\AdminLTE\plugins\input-mask\phone-codes\phone-be.json" />
+    <Content Include="Content\AdminLTE\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile-Dev.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile-Production.pubxml" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\CHANGES.md" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\LICENSE.md" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\README.md" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono\readme.md" />
+    <Content Include="Scripts\AdminLTE\plugins\input-mask\phone-codes\phone-be.json" />
+    <Content Include="Scripts\AdminLTE\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="Scripts\AdminLTE\plugins\ckeditor\skins\moono-lisa\readme.md" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -265,28 +1502,327 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\LogOff.cshtml" />
+    <Content Include="Views\AcctCusts\Create.cshtml" />
+    <Content Include="Views\AcctCusts\Delete.cshtml" />
+    <Content Include="Views\AcctCusts\Details.cshtml" />
+    <Content Include="Views\AcctCusts\Edit.cshtml" />
+    <Content Include="Views\AcctCusts\Index.cshtml" />
+    <Content Include="Views\AcctCusts\_AcctCustList01.cshtml" />
+    <Content Include="Views\AcctCusts\_TestDashBoard9.cshtml" />
+    <Content Include="Views\AdminLte\Colors.cshtml" />
+    <Content Include="Views\AdminLte\Index.cshtml" />
+    <Content Include="Views\AvProdComponents\Create.cshtml" />
+    <Content Include="Views\AvProdComponents\Delete.cshtml" />
+    <Content Include="Views\AvProdComponents\Details.cshtml" />
+    <Content Include="Views\AvProdComponents\Edit.cshtml" />
+    <Content Include="Views\AvProdComponents\Index.cshtml" />
+    <Content Include="Views\AvProducts\Create.cshtml" />
+    <Content Include="Views\AvProducts\Delete.cshtml" />
+    <Content Include="Views\AvProducts\Details.cshtml" />
+    <Content Include="Views\AvProducts\Edit.cshtml" />
+    <Content Include="Views\AvProducts\Index.cshtml" />
+    <Content Include="Views\AvProducts\_AvProductList01.cshtml" />
+    <Content Include="Views\ConfigMasters\Create.cshtml" />
+    <Content Include="Views\ConfigMasters\Delete.cshtml" />
+    <Content Include="Views\ConfigMasters\Details.cshtml" />
+    <Content Include="Views\ConfigMasters\Edit.cshtml" />
+    <Content Include="Views\ConfigMasters\Index.cshtml" />
+    <Content Include="Views\ConfigTables\Create.cshtml" />
+    <Content Include="Views\ConfigTables\Delete.cshtml" />
+    <Content Include="Views\ConfigTables\Details.cshtml" />
+    <Content Include="Views\ConfigTables\Edit.cshtml" />
+    <Content Include="Views\ConfigTables\Index.cshtml" />
+    <Content Include="Views\ConvertUrlToPdf\Create.cshtml" />
+    <Content Include="Views\ConvertUrlToPdf\Delete.cshtml" />
+    <Content Include="Views\ConvertUrlToPdf\Details.cshtml" />
+    <Content Include="Views\ConvertUrlToPdf\Edit.cshtml" />
+    <Content Include="Views\ConvertUrlToPdf\Index.cshtml" />
+    <Content Include="Views\CustAccts\Create.cshtml" />
+    <Content Include="Views\CustAccts\Delete.cshtml" />
+    <Content Include="Views\CustAccts\Details.cshtml" />
+    <Content Include="Views\CustAccts\Edit.cshtml" />
+    <Content Include="Views\CustAccts\Index.cshtml" />
+    <Content Include="Views\Documentation\Index.cshtml" />
+    <Content Include="Views\LaborDeliveries\Create.cshtml" />
+    <Content Include="Views\LaborDeliveries\Delete.cshtml" />
+    <Content Include="Views\LaborDeliveries\Details.cshtml" />
+    <Content Include="Views\LaborDeliveries\Edit.cshtml" />
+    <Content Include="Views\LaborDeliveries\Index.cshtml" />
+    <Content Include="Views\LaborDeliveries\_LaborList01.cshtml" />
+    <Content Include="Views\ProdCategories\Create.cshtml" />
+    <Content Include="Views\ProdCategories\Delete.cshtml" />
+    <Content Include="Views\ProdCategories\Details.cshtml" />
+    <Content Include="Views\ProdCategories\Edit.cshtml" />
+    <Content Include="Views\ProdCategories\Index.cshtml" />
+    <Content Include="Views\ProdCategories\_ProdCategoriesList01.cshtml" />
+    <Content Include="Views\ProdTypes\Create.cshtml" />
+    <Content Include="Views\ProdTypes\Delete.cshtml" />
+    <Content Include="Views\ProdTypes\Details.cshtml" />
+    <Content Include="Views\ProdTypes\Edit.cshtml" />
+    <Content Include="Views\ProdTypes\Index.cshtml" />
+    <Content Include="Views\ProdVendors\Create.cshtml" />
+    <Content Include="Views\ProdVendors\Delete.cshtml" />
+    <Content Include="Views\ProdVendors\Details.cshtml" />
+    <Content Include="Views\ProdVendors\Edit.cshtml" />
+    <Content Include="Views\ProdVendors\Index.cshtml" />
+    <Content Include="Views\ProdVendors\_ProdVendorsList01.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\SecurityServices\Create.cshtml" />
+    <Content Include="Views\SecurityServices\Delete.cshtml" />
+    <Content Include="Views\SecurityServices\Details.cshtml" />
+    <Content Include="Views\SecurityServices\Edit.cshtml" />
+    <Content Include="Views\SecurityServices\Index.cshtml" />
+    <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
+    <Content Include="Views\Shared\AvproductList1.cshtml" />
+    <Content Include="Views\Shared\AvProductsList.cshtml" />
+    <Content Include="Views\Shared\Test2SeePartialView3.cshtml" />
+    <Content Include="Views\Shared\_AdminLteBreadcrumb.cshtml" />
+    <Content Include="Views\Shared\_AdminLteLayout.cshtml" />
+    <Content Include="Views\Shared\_AdminLteLeftMenu.cshtml" />
+    <Content Include="Views\Shared\_AdminLteTopMenu.cshtml" />
+    <Content Include="Views\Shared\_AvProdTest7.cshtml" />
+    <Content Include="Views\Shared\_AvProdTest8.cshtml" />
+    <Content Include="Views\Shared\_AvProductByTechnology.cshtml" />
+    <Content Include="Views\Shared\_AvProducts.cshtml" />
+    <Content Include="Views\Shared\_IesServicesProvided.cshtml" />
+    <Content Include="Views\Shared\_Test2SeePartialView.cshtml" />
+    <Content Include="Views\Shared\_TestPartialView.cshtml" />
+    <Content Include="Views\Sizings\Create.cshtml" />
+    <Content Include="Views\Sizings\Delete.cshtml" />
+    <Content Include="Views\Sizings\Details.cshtml" />
+    <Content Include="Views\Sizings\Edit.cshtml" />
+    <Content Include="Views\Sizings\Index.cshtml" />
+    <Content Include="Views\Sizings\_AvProdSelect1.cshtml" />
+    <Content Include="Views\Sizings\_Avproduct0.cshtml" />
+    <Content Include="Views\Sizings\_DdlProduct1.cshtml" />
+    <Content Include="Views\Sizings\_LaborDeliveryPV.cshtml" />
+    <Content Include="Views\Sizings\_Legend02.cshtml" />
+    <Content Include="Views\Sizings\_Legend1.cshtml" />
+    <Content Include="Views\Sizings\_Legend1Sizing.cshtml" />
+    <Content Include="Views\Sizings\_Legend2.cshtml" />
+    <Content Include="Views\Sizings\_Product0.cshtml" />
+    <Content Include="Views\Sizings\_Product1.cshtml" />
+    <Content Include="Views\Sizings\_Product2.cshtml" />
+    <Content Include="Views\Sizings\_Product3.cshtml" />
+    <Content Include="Views\Sizings\_ProductComponent2.cshtml" />
+    <Content Include="Views\Sizings\_ProductsByTabs.cshtml" />
+    <Content Include="Views\Sizings\_ProductsTabbedView.cshtml" />
+    <Content Include="Views\Sizings\_PullProductsDash1.cshtml" />
+    <Content Include="Views\Sizings\_TestDashBoard2.cshtml" />
+    <Content Include="Views\Sizings\_TestDashBoard9.cshtml" />
+    <Content Include="Views\Sizings\_TestProduct1.cshtml" />
+    <Content Include="Views\Sizings\_TestSizingTableDataTables.cshtml" />
+    <Content Include="Views\Sizings\_Test_Prod_DropDown.cshtml" />
+    <Content Include="Views\SizingTypes\Create.cshtml" />
+    <Content Include="Views\SizingTypes\Delete.cshtml" />
+    <Content Include="Views\SizingTypes\Details.cshtml" />
+    <Content Include="Views\SizingTypes\Edit.cshtml" />
+    <Content Include="Views\SizingTypes\Index.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Create.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Delete.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Details.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Details1.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Edit_FromWebServer_0314-2019.cshtml" />
+    <Content Include="Views\SizingUserDashboard\GetSizings.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Index.cshtml" />
+    <Content Include="Views\SizingUserDashboard\PrintSizngPDF.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_AvPodSelect1.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Avproduct0.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_DdlProduct1.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_LaborDeliveryPV.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Legend02.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Legend1.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Legend1Sizing.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Legend2.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product0.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_ProductComponent2.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_ProductsByTabs.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_PullProductsDash1.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_TestDashBoard2.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_TestDashBoard9.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_TestProduct1.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_TestProductDrop01.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_TestSizingTableDataTables.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Test_Prod_DropDown.cshtml" />
+    <Content Include="Views\StatusStates\Create.cshtml" />
+    <Content Include="Views\StatusStates\Delete.cshtml" />
+    <Content Include="Views\StatusStates\Details.cshtml" />
+    <Content Include="Views\StatusStates\Edit.cshtml" />
+    <Content Include="Views\StatusStates\Index.cshtml" />
+    <Content Include="Views\Teams\Create.cshtml" />
+    <Content Include="Views\Teams\Delete.cshtml" />
+    <Content Include="Views\Teams\Details.cshtml" />
+    <Content Include="Views\Teams\Edit.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\TestAvProducts1\Create.cshtml" />
+    <Content Include="Views\TestAvProducts1\Delete.cshtml" />
+    <Content Include="Views\TestAvProducts1\Details.cshtml" />
+    <Content Include="Views\TestAvProducts1\Edit.cshtml" />
+    <Content Include="Views\TestAvProducts1\Index.cshtml" />
+    <Content Include="Views\TestDashboard4\Create.cshtml" />
+    <Content Include="Views\TestDashboard4\Delete.cshtml" />
+    <Content Include="Views\TestDashboard4\Details.cshtml" />
+    <Content Include="Views\TestDashboard4\Edit.cshtml" />
+    <Content Include="Views\TestDashboard4\Index.cshtml" />
+    <Content Include="Views\TestUserDashboard\Create.cshtml" />
+    <Content Include="Views\TestUserDashboard\Delete.cshtml" />
+    <Content Include="Views\TestUserDashboard\Details.cshtml" />
+    <Content Include="Views\TestUserDashboard\Edit.cshtml" />
+    <Content Include="Views\TestUserDashboard\Index.cshtml" />
+    <Content Include="Views\TnTWorksheets\Create.cshtml" />
+    <Content Include="Views\TnTWorksheets\Delete.cshtml" />
+    <Content Include="Views\TnTWorksheets\Details.cshtml" />
+    <Content Include="Views\TnTWorksheets\Edit.cshtml" />
+    <Content Include="Views\TnTWorksheets\Index.cshtml" />
+    <Content Include="Views\UserDashboard1\Create.cshtml" />
+    <Content Include="Views\UserDashboard1\Delete.cshtml" />
+    <Content Include="Views\UserDashboard1\Details.cshtml" />
+    <Content Include="Views\UserDashboard1\Edit.cshtml" />
+    <Content Include="Views\UserDashboard1\Index.cshtml" />
+    <Content Include="Views\UserDashboard\Create.cshtml" />
+    <Content Include="Views\UserDashboard\Delete.cshtml" />
+    <Content Include="Views\UserDashboard\Details.cshtml" />
+    <Content Include="Views\UserDashboard\Edit.cshtml" />
+    <Content Include="Views\UserDashboard\Index.cshtml" />
+    <Content Include="Views\UserDashboard\_TestDashBoard9.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\_AdminLteLeftMenu - Old.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Backup\_Product1.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Backup\_Product2.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Backup\_Product3.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product1.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product2.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product3.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Backup\_ProductsTabbedView.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_ProductsTabbedView.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product4.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product5.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product6.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product7.cshtml" />
+    <Content Include="Views\SizingUserDashboard\GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Legend1_4_GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Avproduct0_GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product1_GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product2_GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product3_GBO.cshtml" />
+    <Content Include="Views\SizingComponent5VM\Create.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Create.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Delete.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Details.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Edit.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Index.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Backup\_Product1.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Backup\_Product2.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Backup\_Product3.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Backup\_ProductsTabbedView.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_AvPodSelect1.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Avproduct0.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Avproduct0_GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_DdlProduct1.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_LaborDeliveryPV.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Legend02.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Legend1.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Legend1_4_GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Legend1Sizing.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Legend2.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product0.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product1.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product1_GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product2.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product2_GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product3.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product3_GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product4.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product5.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product6.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Product7.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_ProductComponent2.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_ProductsByTabs.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_ProductsTabbedView.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_PullProductsDash1.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_Test_Prod_DropDown.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_TestDashBoard2.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_TestDashBoard9.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_TestProduct1.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_TestProductDrop01.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\_TestSizingTableDataTables.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Details1.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\GetSizings.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\PrintSizngPDF.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\GBOPDF.cshtml" />
+    <Content Include="Views\ConvertUrlToPdf\GBOView.cshtml" />
+    <Content Include="Views\SizingUserDashboard2\Backup\GBO.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Cascad_Drop01.cshtml" />
+    <Content Include="Views\SizingUserDashboard\CreateCascadeView01.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Delivery.cshtml" />
+    <Content Include="Views\SizingUserDashboard\DeliveryView01.cshtml" />
+    <Content Include="Views\SizingUserDashboard\DeliveryView02.cshtml" />
+    <Content Include="Views\AvProducts\_ComponentView2.cshtml" />
+    <Content Include="Views\SizingUserDashboard\OverRides.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_ProductsTabbedView01.cshtml" />
+    <Content Include="Views\SizingUserDashboard\_Product1View01.cshtml" />
+    <Content Include="Views\SizingUserDashboard\EditTest.cshtml" />
+    <Content Include="Views\TestThrowAway13\Create.cshtml" />
+    <Content Include="Views\TestThrowAway13\Delete.cshtml" />
+    <Content Include="Views\TestThrowAway13\Details.cshtml" />
+    <Content Include="Views\TestThrowAway13\Edit.cshtml" />
+    <Content Include="Views\TestThrowAway13\Index.cshtml" />
+    <Content Include="Views\TestThrowAway14\Create.cshtml" />
+    <Content Include="Views\TestThrowAway14\Delete.cshtml" />
+    <Content Include="Views\TestThrowAway14\Details.cshtml" />
+    <Content Include="Views\TestThrowAway14\Edit.cshtml" />
+    <Content Include="Views\TestThrowAway14\Index.cshtml" />
+    <Content Include="Views\SizingUserDashboard\EditTest01.cshtml" />
+    <Content Include="Views\TestThrowAway15\Create.cshtml" />
+    <Content Include="Views\TestThrowAway15\Delete.cshtml" />
+    <Content Include="Views\TestThrowAway15\Details.cshtml" />
+    <Content Include="Views\TestThrowAway15\Edit.cshtml" />
+    <Content Include="Views\TestThrowAway15\Index.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Edit - Copy_0311-2019.cshtml" />
+    <Content Include="Views\SizingUserDashboard\EditTest03.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Edit - Copy_0314-2019.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Edit.cshtml" />
+    <Content Include="Views\TestThrowAway16\Create.cshtml" />
+    <Content Include="Views\TestThrowAway16\Delete.cshtml" />
+    <Content Include="Views\TestThrowAway16\Details.cshtml" />
+    <Content Include="Views\TestThrowAway16\Edit.cshtml" />
+    <Content Include="Views\TestThrowAway16\Index.cshtml" />
+    <Content Include="Views\SizingUserDashboard\Edit - Copy_0318-2019.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Bacckup\" />
+    <Folder Include="NewFolder1\" />
+    <Folder Include="Views\SizingUserDashboard\SolutionManager\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
@@ -300,7 +1836,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50603</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50603/</IISUrl>
+          <IISUrl>http://localhost:50616/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -314,8 +1850,18 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.1\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.1\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.1\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.1\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.1\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.1\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.1\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.1\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.9.1\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.9.1\build\Microsoft.ApplicationInsights.Web.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.1\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.1\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.1\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.1\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.1\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.1\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.1\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.1\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.9.1\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.9.1\build\Microsoft.ApplicationInsights.Web.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

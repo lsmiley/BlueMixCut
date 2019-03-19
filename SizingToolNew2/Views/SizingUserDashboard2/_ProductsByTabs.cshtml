@@ -1,0 +1,50 @@
+﻿@model SizingToolNew2.Models.Sizing
+
+
+
+<div class="col-md-12">
+    <div class="box box-default" style="width: 1250px; padding: 10px; margin: 10px">
+
+        <div class="box-body">
+
+            <div id="ProductTabs">
+                <ul>
+                    <li><a href="#tabs-1">Product #1:</a></li>
+                    <li><a href="#tabs-2">Product #2:</a></li>
+                    <li><a href="#tabs-3">Product #3:</a></li>
+                    <li><a href="#tabs-4">Product #4:</a></li>
+
+                </ul>
+
+
+                <div id="tabs-1">
+
+
+
+                </div>
+
+                <div id="tabs-2">
+
+                    <div id="ProductView1">@Html.Partial("_Product1")</div>
+
+                </div>
+
+                <div id="tabs-3">
+
+                    <div id="ProductView2">@Html.Partial("_Product2")</div>
+
+                </div>
+
+                <div id="tabs-4">
+
+                    <div id="ProductView3">@Html.Partial("_Product3")</div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

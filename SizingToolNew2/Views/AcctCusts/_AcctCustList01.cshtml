@@ -1,0 +1,102 @@
+﻿@model IEnumerable<SizingToolNew2.Models.AcctCust>
+
+
+<p><a class="btn btn-twitter" href="@Url.Action("Create", "AcctCusts")">Create New</a></p>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary list-panel" id="list-panel">
+            <div class="panel-heading list-panel-heading">
+                <h1 class="panel-title list-panel-title">List:</h1>
+            </div>
+            <div class="panel-body">
+                <table id="AcctCustList01-data-table"
+                       class="table table-striped table-bordered"
+                       style="width:100%">
+                    <thead>
+
+                        <tr style="font-size:12px">
+                            <th>
+                                @Html.DisplayNameFor(model => model.AcctName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.BusinessSec)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Regulatory)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Created)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Address1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.City)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.State)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Country)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contact1Name)
+                            </th>
+
+                            <th></th>
+                        </tr>
+
+
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr style="font-size:12px">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AcctName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BusinessSec)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Regulatory)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Created)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address1)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.City)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.State)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Country)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Contact1Name)
+                                </td>
+
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.AcctCustId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.AcctCustId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.AcctCustId })
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

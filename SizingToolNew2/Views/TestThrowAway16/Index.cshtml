@@ -1,0 +1,5775 @@
+﻿@model IEnumerable<SizingToolNew2.Models.Sizing>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctCust.AcctName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvProduct.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigTable.ConfigName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LaborDelivery.Regions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingDetail.SizingData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingType.SizingTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusState.StatusStateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TnTWorksheet.TnTDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingDetailDataId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayForSizingID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValidToDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesConnectNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RFSNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrepardedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeSizing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransitionChrg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransformationChrg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemoNote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StedyStateBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumServer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumServer1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumServer2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumServer3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumWorkstation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumWorkstation1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumWorkstation2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumWorkstation3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkstationFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkstationFTE1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkstationFTE2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkstationFTE3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WkstnsHoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WkstnsHoursCalc1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WkstnsHoursCalc2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WkstnsHoursCalc3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServerFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServerFTE1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServerFTE2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServerFTE3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SrvsHoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SrvsHoursCalc1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SrvsHoursCalc2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SrvsHoursCalc3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPEndpointFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPEndpointFTE1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPEndpointFTE2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPEndpointFTE3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPsHoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPsHoursCalc1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPsHoursCalc2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPsHoursCalc3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumIpAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumIpAddress1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumIpAddress2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumIpAddress3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppChangeFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppChangeFTE1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppChangeFTE2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppChangeFTE3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppChangeHoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppChangeHoursCalc1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppChangeHoursCalc2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppChangeHoursCalc3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumAppChange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumAppChange1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumAppChange2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumAppChange3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConFTE1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConFTE2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConFTE3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConHoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumAddlCon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumAddlCon1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConHoursCalc1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumAddlCon2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConHoursCalc2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumAddlCon3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConHoursCalc3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoftLifeWkstnFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoftLifeSvrFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoftLifeSrvHoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoftLifeSvrYesNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecComplRptFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecCompHoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecCompRptYesNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportingFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RportingHoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportingYesNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlaRprtFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlaRptHoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SLAReportingYesNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoursCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateTotalHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateTotalBand3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateTotalBand4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateTotalBand5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateTotalBand6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateTotalBand7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateTotalBand8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateTotalBand9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateBandsTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstLineMangerBand8Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstLineMangerBand8Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstLineMangerBand8TotalFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondLineMangerBand9Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondLineMangerBand9Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondLineMangerBand9TotalFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateSubTotalHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateSubTotalBand3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateSubTotalBand4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateSubTotalBand5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateSubTotalBand6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateSubTotalBand7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateSubTotalBand8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateSubTotalBand9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateSubTotalTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TravelCostCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TravelCostDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TravelCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TravelCostAmt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemoteConsoleCostCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemoteConsoleDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemoteConsoleCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemoteConsoleCostAmt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EducationCostCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EducationCostDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EducationCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EducationCostAmt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCostCount1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCostDesc1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCost1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCost1Amt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCostCount2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCostDesc2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCost2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCost2Amt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCostCount3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCostDesc3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCost3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCost3Amt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCostsDollarSubTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateBand3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateBand4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateBand5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateBand6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateBand7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateBand8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateBand9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateTotal1stLineMgr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSteadyStateTotal2ndLineMgr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateTotalFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortBand3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortBand4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortBand5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortBand6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortBand7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortBand8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortBand9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffort1stLineMgr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffort2ndLineMgr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotalTotalEffortTotalFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskRatingTotalFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateGrandTotalFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrandTotalFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransitionWeeks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransformationWeeks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransitionYesNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransformationYesNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent1Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent1Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent1Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent1Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component1_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component1_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component1_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component1_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component1_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component1_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component1_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component1_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component1_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component1_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component1_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component1_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component1_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component1_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component1_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component1_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component1_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component1_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component1_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component1_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component1_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component1_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component1_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component1_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent2Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent2Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent2Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent2Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component2_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component2_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component2_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component2_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component2_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component2_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component2_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component2_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component2_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component2_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component2_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component2_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component2_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component2_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component2_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component2_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component2_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component2_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component2_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component2_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component2_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component2_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component2_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component2_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac1_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac2_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac3_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac4_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac5_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac6_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac7_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac8_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac9_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac10_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac11_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac12_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac13_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac14_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentComplexityFac15_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComplexityBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComplexityFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac1_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac2_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac3_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac4_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac5_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac6_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac7_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac8_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac9_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac10_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac11_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac12_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac13_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac14_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentComplexityFac15_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComplexityBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComplexityFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac1_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac2_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac3_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac4_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac5_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac6_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac7_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac8_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac9_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac10_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac11_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac12_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac13_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac14_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentComplexityFac15_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComplexityBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComplexityFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac1_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac2_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac3_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac4_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac5_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac6_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac7_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac8_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac9_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac10_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac11_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac12_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac13_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac14_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentComplexityFac15_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComplexityBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComplexityFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent3Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent3Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent3Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent3Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component3_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component3_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component3_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component3_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component3_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component3_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component3_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component3_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component3_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component3_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component3_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component3_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component3_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component3_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component3_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component3_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component3_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component3_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component3_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component3_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component3_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component3_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component3_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component3_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent4Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent4Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent4Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent4Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component4_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component4_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component4_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component4_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component4_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component4_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component4_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component4_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component4_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component4_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component4_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component4_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component4_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component4_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component4_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component4_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component4_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component4_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component4_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component4_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component4_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component4_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component4_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component4_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent5Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent5Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent5Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent5Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component5_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component5_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component5_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component5_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component5_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component5_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component5_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component5_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component5_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component5_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component5_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component5_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component5_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component5_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component5_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component5_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component5_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component5_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component5_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component5_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component5_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component5_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component5_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component5_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent6Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent6Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent6Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent6Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component6_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component6_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component6_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component6_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component6_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component6_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component6_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component6_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component6_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component6_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component6_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component6_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component6_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component6_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component6_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component6_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component6_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component6_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component6_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component6_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component6_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component6_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component6_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component6_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent7Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent7Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent7Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent7Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component7_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component7_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component7_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component7_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component7_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component7_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component7_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component7_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component7_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component7_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component7_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component7_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component7_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component7_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component7_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component7_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component7_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component7_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component7_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component7_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component7_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component7_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component7_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component7_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent8Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent8Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent8Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent8Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component8_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component8_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component8_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component8_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component8_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component8_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component8_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component8_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component8_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component8_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component8_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component8_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component8_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component8_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component8_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component8_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component8_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component8_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component8_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component8_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component8_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component8_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component8_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component8_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent9Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent9Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent9Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent9Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component9_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component9_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component9_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component9_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component9_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component9_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component9_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component9_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component9_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component9_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component9_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component9_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component9_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component9_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component9_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component9_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component9_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component9_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component9_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component9_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component9_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component9_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component9_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component9_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent10Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent10Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent10Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent10Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component10_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component10_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component10_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component10_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component10_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component10_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component10_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component10_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component10_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component10_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component10_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component10_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component10_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component10_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component10_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component10_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component10_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component10_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component10_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component10_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component10_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component10_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component10_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component10_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent11Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent11Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent11Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent11Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component11_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component11_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component11_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component11_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component11_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component11_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component11_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component11_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component11_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component11_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component11_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component11_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component11_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component11_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component11_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component11_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component11_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component11_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component11_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component11_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component11_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component11_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component11_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component11_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent12Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent12Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent12Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent12Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component12_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component12_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component12_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component12_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component12_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component12_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component12_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component12_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component12_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component12_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component12_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component12_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component12_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component12_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component12_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component12_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component12_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component12_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component12_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component12_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component12_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component12_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component12_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component12_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent13Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent13Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent13Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent13Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component13_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component13_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component13_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component13_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component13_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component13_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component13_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component13_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component13_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component13_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component13_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component13_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component13_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component13_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component13_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component13_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component13_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component13_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component13_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component13_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component13_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component13_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component13_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component13_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent14Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent14Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent14Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent14Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component14_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component14_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component14_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component14_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component14_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component14_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component14_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component14_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component14_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component14_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component14_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component14_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component14_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component14_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component14_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component14_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component14_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component14_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component14_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component14_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component14_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component14_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component14_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component14_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Compnent15Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Compnent15Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Compnent15Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Compnent15Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1ComponentHours15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2ComponentHours15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3ComponentHours15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4ComponentHours15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component15_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component15_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component15_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component15_Wkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component15_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component15_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component15_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component15_Svr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component15_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component15_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component15_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component15_IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component_Qty15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component_Qty15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component_Qty15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component_Qty15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component15_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component15_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component15_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component15_WkstnHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component15_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component15_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component15_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component15_SvrHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Component15_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Component15_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Component15_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Component15_IPHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent_Qty1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent_Qty2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent_Qty3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent_Qty4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent_Qty5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent1Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent1_Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent1_TotalHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent2Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent2_Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent2_TotalHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent3Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent3_Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent3_TotalHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent4Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent4_Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent4_TotalHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent5Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent5_Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomComponent5_TotalHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalCustomHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalCustomFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalComponents_Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalComponentsFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumMonths_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumMonths_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumMonths_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumMonths_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditionalServices)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditionalFTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateHoursTtl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteadyStateFTETtl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewSteadyStateSubTtl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1WorkWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2WorkWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3WorkWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4WorkWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdLegendTtl_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdLegendTtl_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdLegendTtl_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdLegendTtl_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalOfProdLegendTtl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeamId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescProduct_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescProduct_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescProduct_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescProduct_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescLaborDelivery_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Default_Yr_LaborDelivery_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescLaborDelivery_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Default_Yr_LaborDelivery_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescLaborDelivery_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Default_Yr_LaborDelivery_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescLaborDelivery_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Default_Yr_LaborDelivery_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1_Band3_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1_Band4_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1_Band5_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1_Band6_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1_Band7_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1_Band8_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1_Band9_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2_Band3_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2_Band4_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2_Band5_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2_Band6_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2_Band7_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2_Band8_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2_Band9_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3_Band3_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3_Band4_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3_Band5_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3_Band6_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3_Band7_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3_Band8_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3_Band9_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod1Hours_OverRide)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod2Hours_OverRide)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod3Hours_OverRide)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prod4Hours_OverRide)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkstationModifier_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServrrModifier_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPScanModifier_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConsoleModifier_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkstationModifier_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServrrModifier_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPScanModifier_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConsoleModifier_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkstationModifier_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServrrModifier_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPScanModifier_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConsoleModifier_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkstationModifier_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServrrModifier_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPScanModifier_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddlConsoleModifier_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemoNote2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemoNote3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemoNote4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemoNote5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemoNote6)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcctCust.AcctName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvProduct.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigTable.ConfigName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LaborDelivery.Regions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingDetail.SizingData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingType.SizingTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusState.StatusStateName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TnTWorksheet.TnTDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingDetailDataId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayForSizingID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValidToDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesConnectNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RFSNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrepardedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RiskRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeSizing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransitionChrg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransformationChrg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemoNote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StedyStateBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumServer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumServer1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumServer2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumServer3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumWorkstation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumWorkstation1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumWorkstation2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumWorkstation3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkstationFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkstationFTE1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkstationFTE2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkstationFTE3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WkstnsHoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WkstnsHoursCalc1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WkstnsHoursCalc2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WkstnsHoursCalc3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServerFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServerFTE1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServerFTE2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServerFTE3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SrvsHoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SrvsHoursCalc1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SrvsHoursCalc2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SrvsHoursCalc3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPEndpointFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPEndpointFTE1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPEndpointFTE2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPEndpointFTE3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPsHoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPsHoursCalc1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPsHoursCalc2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPsHoursCalc3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumIpAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumIpAddress1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumIpAddress2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumIpAddress3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppChangeFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppChangeFTE1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppChangeFTE2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppChangeFTE3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppChangeHoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppChangeHoursCalc1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppChangeHoursCalc2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppChangeHoursCalc3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAppChange)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAppChange1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAppChange2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAppChange3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConFTE1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConFTE2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConFTE3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConHoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAddlCon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAddlCon1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConHoursCalc1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAddlCon2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConHoursCalc2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAddlCon3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConHoursCalc3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoftLifeWkstnFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoftLifeSvrFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoftLifeSrvHoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoftLifeSvrYesNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecComplRptFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecCompHoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecCompRptYesNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportingFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RportingHoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportingYesNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SlaRprtFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SlaRptHoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLAReportingYesNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoursCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateTotalHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateTotalBand3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateTotalBand4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateTotalBand5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateTotalBand6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateTotalBand7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateTotalBand8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateTotalBand9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateBandsTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstLineMangerBand8Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstLineMangerBand8Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstLineMangerBand8TotalFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecondLineMangerBand9Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecondLineMangerBand9Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecondLineMangerBand9TotalFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateSubTotalHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateSubTotalBand3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateSubTotalBand4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateSubTotalBand5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateSubTotalBand6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateSubTotalBand7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateSubTotalBand8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateSubTotalBand9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateSubTotalTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TravelCostCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TravelCostDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TravelCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TravelCostAmt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemoteConsoleCostCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemoteConsoleDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemoteConsoleCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemoteConsoleCostAmt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EducationCostCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EducationCostDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EducationCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EducationCostAmt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCostCount1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCostDesc1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCost1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCost1Amt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCostCount2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCostDesc2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCost2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCost2Amt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCostCount3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCostDesc3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCost3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCost3Amt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCostsDollarSubTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateBand3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateBand4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateBand5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateBand6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateBand7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateBand8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateBand9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateTotal1stLineMgr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSteadyStateTotal2ndLineMgr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateTotalFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortBand3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortBand4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortBand5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortBand6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortBand7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortBand8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortBand9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffort1stLineMgr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffort2ndLineMgr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotalTotalEffortTotalFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RiskRatingTotalFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateGrandTotalFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrandTotalFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransitionWeeks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransformationWeeks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransitionYesNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransformationYesNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent1Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent1Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent1Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent1Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component1_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component1_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component1_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component1_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component1_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component1_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component1_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component1_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component1_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component1_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component1_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component1_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component1_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component1_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component1_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component1_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component1_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component1_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component1_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component1_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component1_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component1_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component1_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component1_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent2Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent2Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent2Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent2Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component2_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component2_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component2_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component2_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component2_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component2_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component2_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component2_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component2_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component2_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component2_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component2_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component2_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component2_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component2_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component2_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component2_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component2_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component2_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component2_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component2_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component2_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component2_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component2_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac1_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac2_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac3_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac4_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac5_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac6_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac7_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac8_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac9_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac10_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac11_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac12_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac13_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac14_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentComplexityFac15_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComplexityBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComplexityFac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac1_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac2_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac3_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac4_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac5_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac6_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac7_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac8_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac9_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac10_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac11_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac12_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac13_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac14_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentComplexityFac15_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComplexityBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComplexityFac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac1_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac2_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac3_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac4_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac5_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac6_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac7_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac8_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac9_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac10_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac11_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac12_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac13_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac14_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentComplexityFac15_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComplexityBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComplexityFac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac1_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac2_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac3_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac4_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac5_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac6_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac7_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac8_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac9_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac10_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac11_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac12_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac13_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac14_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentComplexityFac15_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComplexityBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComplexityFac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent3Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent3Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent3Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent3Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component3_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component3_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component3_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component3_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component3_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component3_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component3_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component3_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component3_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component3_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component3_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component3_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component3_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component3_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component3_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component3_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component3_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component3_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component3_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component3_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component3_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component3_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component3_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component3_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent4Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent4Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent4Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent4Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component4_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component4_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component4_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component4_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component4_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component4_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component4_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component4_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component4_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component4_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component4_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component4_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component4_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component4_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component4_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component4_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component4_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component4_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component4_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component4_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component4_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component4_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component4_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component4_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent5Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent5Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent5Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent5Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component5_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component5_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component5_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component5_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component5_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component5_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component5_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component5_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component5_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component5_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component5_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component5_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component5_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component5_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component5_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component5_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component5_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component5_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component5_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component5_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component5_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component5_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component5_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component5_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent6Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent6Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent6Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent6Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component6_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component6_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component6_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component6_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component6_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component6_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component6_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component6_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component6_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component6_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component6_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component6_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component6_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component6_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component6_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component6_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component6_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component6_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component6_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component6_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component6_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component6_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component6_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component6_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent7Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent7Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent7Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent7Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component7_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component7_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component7_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component7_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component7_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component7_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component7_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component7_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component7_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component7_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component7_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component7_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component7_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component7_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component7_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component7_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component7_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component7_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component7_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component7_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component7_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component7_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component7_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component7_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent8Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent8Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent8Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent8Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component8_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component8_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component8_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component8_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component8_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component8_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component8_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component8_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component8_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component8_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component8_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component8_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component8_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component8_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component8_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component8_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component8_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component8_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component8_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component8_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component8_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component8_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component8_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component8_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent9Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent9Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent9Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent9Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component9_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component9_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component9_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component9_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component9_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component9_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component9_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component9_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component9_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component9_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component9_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component9_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component9_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component9_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component9_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component9_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component9_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component9_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component9_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component9_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component9_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component9_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component9_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component9_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent10Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent10Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent10Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent10Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component10_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component10_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component10_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component10_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component10_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component10_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component10_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component10_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component10_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component10_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component10_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component10_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component10_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component10_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component10_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component10_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component10_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component10_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component10_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component10_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component10_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component10_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component10_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component10_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent11Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent11Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent11Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent11Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component11_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component11_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component11_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component11_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component11_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component11_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component11_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component11_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component11_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component11_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component11_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component11_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component11_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component11_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component11_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component11_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component11_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component11_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component11_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component11_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component11_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component11_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component11_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component11_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent12Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent12Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent12Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent12Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component12_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component12_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component12_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component12_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component12_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component12_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component12_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component12_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component12_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component12_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component12_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component12_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component12_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component12_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component12_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component12_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component12_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component12_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component12_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component12_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component12_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component12_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component12_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component12_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent13Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent13Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent13Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent13Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component13_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component13_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component13_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component13_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component13_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component13_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component13_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component13_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component13_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component13_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component13_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component13_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component13_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component13_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component13_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component13_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component13_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component13_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component13_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component13_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component13_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component13_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component13_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component13_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent14Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent14Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent14Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent14Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component14_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component14_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component14_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component14_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component14_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component14_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component14_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component14_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component14_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component14_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component14_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component14_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component14_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component14_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component14_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component14_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component14_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component14_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component14_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component14_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component14_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component14_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component14_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component14_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Compnent15Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Compnent15Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Compnent15Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Compnent15Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1ComponentHours15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2ComponentHours15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3ComponentHours15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4ComponentHours15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component15_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component15_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component15_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component15_Wkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component15_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component15_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component15_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component15_Svr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component15_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component15_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component15_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component15_IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component_Qty15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component_Qty15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component_Qty15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component_Qty15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component15_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component15_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component15_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component15_WkstnHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component15_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component15_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component15_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component15_SvrHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Component15_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Component15_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Component15_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Component15_IPHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent_Qty1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent_Qty2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent_Qty3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent_Qty4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent_Qty5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent1Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent1_Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent1_TotalHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent2Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent2_Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent2_TotalHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent3Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent3_Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent3_TotalHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent4Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent4_Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent4_TotalHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent5Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent5_Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomComponent5_TotalHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalCustomHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalCustomFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalComponents_Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalComponentsFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumMonths_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumMonths_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumMonths_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumMonths_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdditionalServices)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdditionalFTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateHoursTtl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteadyStateFTETtl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewSteadyStateSubTtl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1WorkWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2WorkWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3WorkWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4WorkWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdLegendTtl_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdLegendTtl_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdLegendTtl_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdLegendTtl_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalOfProdLegendTtl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeamId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescProduct_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescProduct_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescProduct_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescProduct_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescLaborDelivery_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Default_Yr_LaborDelivery_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescLaborDelivery_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Default_Yr_LaborDelivery_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescLaborDelivery_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Default_Yr_LaborDelivery_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescLaborDelivery_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Default_Yr_LaborDelivery_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1_Band3_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1_Band4_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1_Band5_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1_Band6_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1_Band7_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1_Band8_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1_Band9_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2_Band3_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2_Band4_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2_Band5_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2_Band6_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2_Band7_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2_Band8_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2_Band9_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3_Band3_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3_Band4_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3_Band5_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3_Band6_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3_Band7_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3_Band8_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3_Band9_Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod1Hours_OverRide)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod2Hours_OverRide)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod3Hours_OverRide)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prod4Hours_OverRide)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkstationModifier_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServrrModifier_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPScanModifier_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConsoleModifier_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkstationModifier_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServrrModifier_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPScanModifier_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConsoleModifier_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkstationModifier_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServrrModifier_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPScanModifier_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConsoleModifier_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkstationModifier_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServrrModifier_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPScanModifier_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddlConsoleModifier_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemoNote2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemoNote3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemoNote4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemoNote5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemoNote6)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SizingId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SizingId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SizingId })
+        </td>
+    </tr>
+}
+
+</table>

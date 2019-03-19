@@ -1,0 +1,99 @@
+﻿@model IEnumerable<IesSizingWeb26.Models.AvProduct>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdVendor.VendorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductTypeFamily)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductNote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductComplexityBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductComplexityFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numcomponent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryCompDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryComplexity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalComplexity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdVendor.VendorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductTypeFamily)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductNote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductComplexityBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductComplexityFac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numcomponent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryCompDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryComplexity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalComplexity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AvProductId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AvProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AvProductId })
+        </td>
+    </tr>
+}
+
+</table>

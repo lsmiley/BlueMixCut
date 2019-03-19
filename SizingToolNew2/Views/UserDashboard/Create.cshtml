@@ -1,0 +1,265 @@
+﻿@model SizingToolNew2.Models.Sizing
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/Images/ibm security shield wordmark stack blue20_by_30pct.png" />
+
+    </div>
+    <div class="col-md-6">
+
+        <h1 class="panel-title list-panel-title">Create a New Sizing</h1>
+
+    </div>
+
+    <div class="row"><hr /> </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <p style="font-weight:bold"> Step #2 - Enter Number of EndPoints:</p>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form role="form">
+                        <div class="box-body">
+
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-5" style="font-weight:bold">Account / Customer:</div>
+                                <div class="col-5">
+                                    @Html.DropDownList("AcctCustId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AcctCustId, "", new { @class = "text-danger" })
+                                    <div class="col-1"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-5" style="font-weight:bold">Sizing Type:</div>
+                                <div class="col-5">
+                                    @Html.DropDownList("SizingTypeId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.SizingTypeId, "", new { @class = "text-danger" })
+                                    <div class="col-1"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-5" style="font-weight:bold">Security Product:</div>
+                                <div class="col-5">
+                                    @Html.DropDownList("AvProductId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AvProductId, "", new { @class = "text-danger" })
+                                    <div class="col-1"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-5" style="font-weight:bold">Labor Delivery:</div>
+                                <div class="col-5">
+                                    @Html.DropDownList("LaborDeliveryId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.LaborDeliveryId, "", new { @class = "text-danger" })
+                                    <div class="col-1"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    @*<p><a class="btn btn-default" href="@Url.Action("Create", "AcctCusts") " target="_blank">Add Customer &raquo;</a></p>*@
+                                    <input type="button" id="btnpopup" value="Create Customer" onclick="ShowModelPopUp();" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+
+                        <div class="box-footer">
+
+                            <div class="row">
+                                <div class="col-1">Note:</div>
+                                <div class="col-11" style="font-size:16px; font-style:italic">  - If your Account/Customer is not listed - Click "Create Customer". Then "Refresh" your Browser..!</div>
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="col-4">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <p style="font-weight:bold"> Step #2 - Enter Number of EndPoints:</p>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form role="form">
+                        <div class="box-body">
+
+                            <div class="row">
+                                <div class="col-6" style="font-weight:bold">Node Type:</div>
+                                <div class="col-6">Count/Select</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Workstations:</div>
+                                <div class="col-4">
+                                    @Html.EditorFor(model => model.NumWorkstation, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                    @Html.ValidationMessageFor(model => model.NumWorkstation, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Servers:</div>
+                                <div class="col-4">
+                                    @Html.EditorFor(model => model.NumServer, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                    @Html.ValidationMessageFor(model => model.NumServer, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">IP / EndPoints:</div>
+                                <div class="col-4">
+                                    @Html.EditorFor(model => model.NumIpAddress, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                    @Html.ValidationMessageFor(model => model.NumIpAddress, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                        <!-- /.box-body -->
+
+                        <div class="box-footer">
+                            <div class="form-group">
+                                <div class="row" style="height:25px">
+                                    <div class="col-6"><input type="submit" value="Create" class="btn btn-twitter" /></div>
+                                    <div class="col-6"> @Html.ActionLink("Cancel", "Index")</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-1">Note:</div>
+                                <div class="col-11" style="font-size:16px; font-style:italic">  - By clicking "Create" you will be taken back to your Dashboard where you can access this Sizing to Add/Edit Components along with the Ability to add Additional Products and Labor Delivery Centers.</div>
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+                <!-- /.box -->
+            </div>
+
+            <div class="col-4">
+                <div class="box box-default">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <p style="font-weight:bold"> Step #3 - Reference Info::</p>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form role="form">
+                            <div class="box-body">
+
+                                <div class="row">
+                                    <div class="col-1"></div>
+                                    <div class="col-5">Sales Connect #:</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.SalesConnectNum, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.SalesConnectNum, "", new { @class = "text-danger" })
+                                        <div class="col-1"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"></div>
+                                    <div class="col-5">RFS #:</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.RFSNum, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.RFSNum, "", new { @class = "text-danger" })
+                                        <div class="col-1"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"></div>
+                                    <div class="col-5">Prepared By:</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.PrepardedBy, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PrepardedBy, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-1"></div>
+                                </div>
+
+
+                                <div class="row" hidden>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Created, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-5">
+                                            @Html.EditorFor(model => model.Created, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Created, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" hidden>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ValidToDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.ValidToDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ValidToDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" hidden>
+                                    @Html.DropDownList("ConfigId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ConfigId, "", new { @class = "text-danger" })
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="form-group" hidden>
+                                        @Html.DropDownList("StatusStateId", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.StatusStateId, "", new { @class = "text-danger" })
+
+                                        @Html.DropDownList("TnTId", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.TnTId, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    
+
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

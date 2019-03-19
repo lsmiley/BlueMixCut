@@ -1,0 +1,244 @@
+﻿@model SizingToolNew2.Models.Sizing
+
+<div class="row" font-family:Arial">
+   
+
+</div>
+<div class="row" font-family:Arial">
+    <div class="col-md-2" style="background-color:#ffffff; font-weight:bold">Product #4 - </div>
+
+    <div class="col-md-1" style="background-color:#ffffff;">.</div>
+</div>
+
+
+<div class="row" style="font-weight:bold; font-family:Arial; font-size:smaller">
+    <div class="col-md-1" style="background-color:#C6E2EE;">Product:</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">Delivery:</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">Count</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">Hours</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">FTE Band3</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">FTE Band4</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">FTE Band5</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">FTE Band6</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">FTE Band7</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">FTE Band8</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">FTE Band9</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">Total FTE</div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-1">. </div>
+    <div class="col-md-1">. </div>
+    <div class="col-md-3" style="background-color:#ffcc99;font-weight:bold">.</div>
+    <div class="col-md-1" style="background-color:#ffcc99;">. </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">. </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">. </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">. </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">. </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">. </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">. </div>
+</div>
+
+<div class="row" style="font-weight:normal; font-family:Arial; font-size:medium">
+    <div class="col-md-2">Workstations:</div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.NumWorkstation3, new { htmlAttributes = new { @class = "form-control", Style = "height: 33px" } })
+        @Html.ValidationMessageFor(model => model.NumWorkstation3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.WkstnsHoursCalc3, new { htmlAttributes = new { @class = "form-control", Style = "height:33px", disabled = "disabled", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.WkstnsHoursCalc3, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvWkstnBand3_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvWkstnBand3_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvWkstnBand4_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvWkstnBand4_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvWkstnBand5_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvWkstnBand5_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvWkstnBand6_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvWkstnBand6_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvWkstnBand7_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvWkstnBand7_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvWkstnBand8_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvWkstnBand8_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvWkstnBand9_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvWkstnBand9_3, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-1" style="background-color:#ffcc99; font-weight:bold; font-family:Arial;">
+        @Html.EditorFor(model => model.WorkstationFTE, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.WorkstationFTE2, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">Servers:</div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.NumServer3, new { htmlAttributes = new { @class = "form-control", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.NumServer3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.SrvsHoursCalc3, new { htmlAttributes = new { @class = "form-control", Style = "height:33px", disabled = "disabled", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.SrvsHoursCalc3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvSvrBand3_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvSvrBand3_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvSvrBand4_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvSvrBand4_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvSvrBand5_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvSvrBand5_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvSvrBand6_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvSvrBand6_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvSvrBand7_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvSvrBand7_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvSvrBand8_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvSvrBand8_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AvSvrBand9_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AvSvrBand9_3, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-1" style="background-color:#ffcc99; font-weight:bold; font-family:Arial;">
+        @Html.EditorFor(model => model.ServerFTE3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.ServerFTE3, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">IP Address:</div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.NumIpAddress3, new { htmlAttributes = new { @class = "form-control", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.NumIpAddress3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.IPsHoursCalc3, new { htmlAttributes = new { @class = "form-control", Style = "height:33px", disabled = "disabled", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.IPsHoursCalc3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AScanBBand3_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AScanBBand3_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AScanBBand4_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AScanBBand4_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AScanBBand5_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AScanBBand5_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AScanBBand6_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AScanBBand6_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AScanBBand7_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AScanBBand7_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AScanBBand8_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AScanBBand8_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AScanBBand9_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AScanBBand9_3, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-1" style="background-color:#ffcc99; font-weight:bold; font-family:Arial;">
+        @Html.EditorFor(model => model.IPEndpointFTE3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.IPEndpointFTE3, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">Additional Consoles:</div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.NumAddlCon3, new { htmlAttributes = new { @class = "form-control", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.NumAddlCon3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AddlConHoursCalc3, new { htmlAttributes = new { @class = "form-control", Style = "height:33px", disabled = "disabled", @readonly = "readonly" } })
+        @Html.ValidationMessageFor(model => model.AddlConHoursCalc3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AddConBand3_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AddConBand3_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AddConBand4_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AddConBand4_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AddConBand5_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AddConBand5_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AddConBand6_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AddConBand6_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AddConBand7_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AddConBand7_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AddConBand8_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AddConBand8_3, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-1" style="background-color:#ffcc99;">
+        @Html.EditorFor(model => model.AddConBand9_3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AddConBand9_3, "", new { @class = "text-danger" })
+    </div>
+
+
+    <div class="col-md-1" style="background-color:#ffcc99; font-weight:bold; font-family:Arial;">
+        @Html.EditorFor(model => model.AddlConFTE3, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:33px" } })
+        @Html.ValidationMessageFor(model => model.AddlConFTE3, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row" style="font-weight:bold; font-family:Arial;">
+    <div class="col-md-2" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+    <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+</div>
+<hr />
+
+
+
+
+
+

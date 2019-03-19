@@ -1,0 +1,432 @@
+﻿@model IEnumerable<SizingToolNew2.Models.AvProduct>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#ProductList").click(function () {
+            $.ajax({
+                url: '@Url.Action("GetProductData", "Home")',
+                type: 'POST',
+                dataType: 'json',
+                data: { clientID: $("#ProductList").val() },
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if (data.success) {
+                        // fill the product code
+                        $("#ProductCode").val(data.ProductCode);
+                    }
+                    else {
+                        // show a message in a alert or div
+                        alert('This Product ID is not valid. Try again!');
+                    }
+                }
+            });
+        });
+    });
+
+
+</script>
+
+@{
+    ViewBag.Title = "Update Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateExistingProduct", "Home", FormMethod.Post))
+{
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js">
+
+    </script>
+    <table>
+        <caption style="text-align:left"><h3>@ViewBag.Message</h3></caption>
+        <tr>
+            <td>Please select Product</td>
+            <td>@Html.DropDownList("ProductList", null, new { id = "ProductList" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Code")</td>
+            <td>@Html.TextArea("ProductCode", null, new { @readOnly = "readonly" })</td>
+        </tr>
+    </table>
+}
+
+
+@*
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdVendor.VendorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductTypeFamily)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductNote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductComplexityBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductComplexityFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numcomponent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryCompDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryComplexity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalComplexity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component1Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component3Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component4Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component5Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component6Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component7Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component8Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component9Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component10Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component11Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component12Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component13Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac13)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component14Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac14)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Component15Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac15)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumComponents)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdVendor.VendorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductTypeFamily)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductNote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductComplexityBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductComplexityFac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numcomponent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryCompDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryComplexity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalComplexity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component1Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component3Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component4Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component5Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component6Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component7Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component8Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component9Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component10Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component11Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component12Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component13Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac13)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component14Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac14)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Component15Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac15)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumComponents)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AvProductId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AvProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AvProductId })
+        </td>
+    </tr>
+}
+
+</table>
+*@

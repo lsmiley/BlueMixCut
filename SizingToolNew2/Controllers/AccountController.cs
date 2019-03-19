@@ -10,11 +10,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SizingToolNew2.Models;
 
+
 namespace SizingToolNew2.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private SizingDbContext db = new SizingDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -139,6 +141,8 @@ namespace SizingToolNew2.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Name = new SelectList(db.Roles.ToList(), "Name", "Name");
+            
             return View();
         }
 

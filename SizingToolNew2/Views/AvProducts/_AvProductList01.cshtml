@@ -1,0 +1,83 @@
+﻿@model IEnumerable<SizingToolNew2.Models.AvProduct>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary list-panel" id="list-panel">
+            <div class="panel-heading list-panel-heading">
+
+
+                <div class="panel-body">
+                    <table id="AvProductList01-data-table"
+                           class="table table-striped table-bordered"
+                           style="width:100%">
+                        <thead>
+
+                            <tr style="font-size:12px">
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ProdCategory.CategoryName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ProdVendor.VendorName)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ProductName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ProductDesc)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ProductType)
+                                </th>
+                                <th>
+                                    Base
+                                </th>
+
+                                <th></th>
+                            </tr>
+
+
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr style="font-size:12px">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProdCategory.CategoryName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProdVendor.VendorName)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductDesc)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductType)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductComplexityBase)
+                                    </td>
+
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.AvProductId }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.AvProductId }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.AvProductId })
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

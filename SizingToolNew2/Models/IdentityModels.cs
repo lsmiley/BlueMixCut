@@ -18,16 +18,82 @@ namespace SizingToolNew2.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class SizingDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+
+        public SizingDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
+
+
         {
+
+        }
+        
+        public DbSet<AcctCust> AcctCusts { get; set; }
+        public DbSet <Sizing> Sizings { get; set; }
+        public DbSet <SizingDetail> SizingDetails { get; set; }
+        public DbSet<SizingType> SizingTypes { get; set; }
+      //  public DbSet<NbieSizer> NbieSizers { get; set; }
+      //   public DbSet<NbieRate> NbieRates { get; set; }
+        public DbSet<AvProduct> AvProducts { get; set; }
+        public DbSet<AvProdComponent> AvProdComponents { get; set; }
+        public DbSet<ProdVendor> ProdVendors { get; set; }
+        public DbSet<ProdCategory> ProdCategorys { get; set; }
+        public DbSet<LaborDelivery> LaborDeliverys { get; set; }
+        public DbSet<ConfigTable> ConfigTables { get; set; }
+        public DbSet<CustAcct> CustAccts { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<SecurityService> SecurityServices { get; set; }
+        public DbSet<StatusState> StatusStates { get; set; }
+        public DbSet<ConfigMaster> ConfigMasters { get; set; }
+        public DbSet<TnTWorksheet> TnTWorksheet { get; set; }
+      
+
+
+
+        public static SizingDbContext Create()
+        {
+            return new SizingDbContext();
+
         }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+        public System.Data.Entity.DbSet<SizingToolNew2.ViewModels.SizingComponent5VM> SizingComponent5VM { get; set; }
+
+        public System.Data.Entity.DbSet<SizingToolNew2.ViewModels.TestVM10> TestVM10 { get; set; }
+
+
+
+        //  protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //  {
+        //     modelBuilder.Entity<Sizing>()
+        //                 .HasRequired(s1 => s1.SizingDetail)
+        //                 .WithRequiredPrincipal(s2 => s2.Sizing);
     }
+    //  public System.Data.Entity.DbSet<SizingToolNew2.Models.SizingComponentViewModel> SizingComponentViewModels { get; set; }
+
+    // public System.Data.Entity.DbSet<SizingToolNew2.Models.SizingVM> SizingVMs { get; set; }
+
+    //     protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    //    {
+    //   modelBuilder.Entity<SizingDetail>().HasRequired(x => x.Sizing);
+    //   base.OnModelCreating(modelBuilder);
+    //    }
+
+    //     protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    //    {
+    //  modelBuilder.Entity<Sizing>()
+    //      .HasRequired(c1 => c1.SizingDetail)
+    //      .WithRequiredPrincipal(c2 => c2.Sizing);
+    //    }
+
+    //  public System.Data.Entity.DbSet<SizingToolNew2.Models.SizingVM> SizingVMs { get; set; }
+
+    //   protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    //   {
+    //      modelBuilder.Entity<Sizing>()
+    //               .HasRequired(s => s.Detail)
+    ///                .WithRequiredPrincipal(ad => ad.Sizing);
+    //   }
 }
+
+     

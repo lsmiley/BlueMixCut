@@ -1,0 +1,38 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary list-panel" id="list-panel">
+            <div class="panel-heading list-panel-heading">
+                <h1 class="panel-title list-panel-title">Sizings</h1>
+            </div>
+            <div class="panel-body">
+                <table id="Sizings-data-table"
+                       class="table table-striped table-bordered"
+                       style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>SizingID</th>
+                            <th>Customer</th>
+                            <th>Type</th>
+                            <th>Workstations</th>
+                            <th>Servers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var Sizing in Model)
+                        {
+                            <tr>
+                                <td>@Sizing.StatusState</td>
+                                <td>@Sizing.SizingId</td>
+                                <td>@Sizing.AcctCustId</td>
+                                <td>@Sizing.SizingType</td>
+                                <td>@Sizing.NumWorkstation</td>
+                                <td>@Sizing.NumServer</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

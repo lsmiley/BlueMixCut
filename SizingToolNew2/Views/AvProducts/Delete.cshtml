@@ -1,0 +1,504 @@
+﻿@model SizingToolNew2.Models.AvProduct
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AvProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdCategory.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdCategory.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdVendor.VendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdVendor.VendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductTypeFamily)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductTypeFamily)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductComplexityBase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductComplexityBase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductComplexityFac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductComplexityFac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numcomponent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numcomponent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryComp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryComp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryCompDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryCompDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryComplexity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryComplexity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalComplexity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalComplexity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component1Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component1Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component2Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component2Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component3Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component3Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component4Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component4Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component5Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component5Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component6Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component6Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component7Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component7Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component8Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component8Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component9Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component9Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component10Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component10Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component11Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component11Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component12Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component12Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component13Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component13Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component14)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component14)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component14Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component14Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac14)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac14)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component15Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component15Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumComponents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumComponents)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

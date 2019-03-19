@@ -1,0 +1,251 @@
+﻿@model SizingToolNew2.Models.Sizing
+
+
+<div>
+    <div class="row">
+        <div class="col-md-1"> </div>
+        <div class="col-md-3">
+            <!-- Widget: user widget style 1 -->
+            <div class="box box-widget widget-user">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header bg-blue">
+                    <h3 class="widget-user-username">OTC - One Time Cost: Hours</h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        Transitions:
+                    </div>
+                    <div class="col-md-4">
+                        Transformation:
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4">Hours</div>
+                    <div class="col-md-4">
+                        <span class="badge bg-gray-active">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TotalTransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TotalTransitionHoursItem, "", new { @class = "text-danger" })
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="badge bg-gray-active">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TotalTransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TotalTransformationHoursItem, "", new { @class = "text-danger" })
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">1st-Ln Mgr.</div>
+                    <div class="col-md-4">
+                        <span class="badge bg-gray-active">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TransitionFirstLineManagementBand8Hours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TransitionFirstLineManagementBand8Hours, "", new { @class = "text-danger" })
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="badge bg-gray-active">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TransformationFirstLineManagementBand8, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TransformationFirstLineManagementBand8, "", new { @class = "text-danger" })
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">2nd-Ln Mgr.</div>
+                    <div class="col-md-4">
+                        <span class="badge bg-gray-active">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TransitionSecondLineManagementBand8, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TransitionSecondLineManagementBand8, "", new { @class = "text-danger" })
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="badge bg-gray-active">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TransformationSecondLineManagementBand8, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TransformationSecondLineManagementBand8, "", new { @class = "text-danger" })
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4" style="font-weight:bold; font-family:Arial; text-align:left">Total Hrs ---- ></div>
+                    <div class="col-md-4" style="font-weight:bold; font-family:Arial">
+                        <span class="badge bg-navy">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TransitionSubTotalsHours, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TransitionSubTotalsHours, "", new { @class = "text-danger" })
+                        </span>
+                    </div>
+                    <div class="col-md-4" style="font-weight:bold; font-family:Arial">
+                        <span class="badge bg-navy">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TranformationSubTotalsHours, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TranformationSubTotalsHours, "", new { @class = "text-danger" })
+                        </span>
+                    </div>
+
+                </div>
+                <div class="row">.</div>
+
+            </div><!-- /.widget-user -->
+
+        </div><!-- /.col -->
+
+        <div class="col-md-3">
+            <!-- Widget: user widget style 1 -->
+            <div class="box box-widget widget-user-2">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header bg-blue-gradient">
+
+                    <h3 class="widget-user-username">Steady-State: Hours</h3>
+                </div>
+                <div class="box-footer no-padding">
+                    <ul class="nav nav-stacked">
+                        <li>
+                            <a href="#">
+                                Steady-State <span class="pull-right badge bg-gray-active">
+                                    @Html.DisplayFor(model => model.SteadyStateTotalHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                                    @Html.ValidationMessageFor(model => model.SteadyStateTotalHours, "", new { @class = "text-danger" })
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Additional Services <span class="pull-right badge bg-gray-active">
+                                    @Html.DisplayFor(model => model.AdditionalServices, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.AdditionalServices, "", new { @class = "text-danger" })
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                First Line Manager <span class="pull-right badge bg-gray-active">
+                                    @Html.DisplayFor(model => model.FirstLineMangerBand8Hours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.FirstLineMangerBand8Hours, "", new { @class = "text-danger" })
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Second Line Manager <span class="pull-right badge bg-gray-active">
+                                    @Html.DisplayFor(model => model.SecondLineMangerBand9Hours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.SecondLineMangerBand9Hours, "", new { @class = "text-danger" })
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Total Hours <span class="pull-right badge bg-gray">
+                                    @Html.DisplayFor(model => model.SteadyStateSubTotalHours, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
+                                    @Html.ValidationMessageFor(model => model.SteadyStateSubTotalHours, "", new { @class = "text-danger" })
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.widget-user -->
+        </div><!-- /.col -->
+
+        <div class="col-md-2">
+            <!-- Widget: user widget style 1 -->
+            <div class="box box-widget widget-user">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header bg-blue-gradient" style="background: url('@Url.Content("~/Content/adminlte/img/photo1.jpg")') center center;">
+                    <h3 class="widget-user-username">FTE Disttribution:</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            Transitions:
+                        </div>
+                        <div class="col-md-4">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TransitionHoursFTE, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TransitionHoursFTE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            Transformation:
+                        </div>
+                        <div class="col-md-4">
+                            @Html.DisplayFor(model => model.TnTWorksheet.TransfortionHoursFTE, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                            @Html.ValidationMessageFor(model => model.TnTWorksheet.TransfortionHoursFTE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            Steady-State:
+                        </div>
+                        <div class="col-md-4">
+                            @Html.DisplayFor(model => model.SteadyStateFTETtl, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                            @Html.ValidationMessageFor(model => model.SteadyStateFTETtl, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            Add'l Services
+                        </div>
+                        <div class="col-md-4">
+                            @Html.DisplayFor(model => model.AdditionalFTE, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                            @Html.ValidationMessageFor(model => model.AdditionalFTE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            1st-Line Mngr.:
+                        </div>
+                        <div class="col-md-4">
+                            @Html.DisplayFor(model => model.FirstLineMangerBand8TotalFTE, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                            @Html.ValidationMessageFor(model => model.FirstLineMangerBand8TotalFTE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            2nd-Line Mngr.:
+                        </div>
+                        <div class="col-md-4">
+                            @Html.DisplayFor(model => model.SecondLineMangerBand9Total, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                            @Html.ValidationMessageFor(model => model.SecondLineMangerBand9Total, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            Total FTE:
+                        </div>
+                        <div class="col-md-4" style="font-weight:bold; font-family:Arial">
+                            @Html.DisplayFor(model => model.GrandTotalFTE, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
+                            @Html.ValidationMessageFor(model => model.GrandTotalFTE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+                <div class="box-footer">
+                    <div class="row">
+                        <div class="col-sm-12 border-right">
+
+
+
+
+
+                        </div><!-- /.description-block -->
+                    </div><!-- /.col -->
+
+                </div><!-- /.row -->
+            </div>
+        </div><!-- /.widget-user -->
+    </div><!-- /.col -->
+    <div class="col-md-2"> </div>
+</div><!-- /.row -->
+
+
+

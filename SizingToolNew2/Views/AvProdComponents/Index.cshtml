@@ -1,0 +1,99 @@
+﻿@model IEnumerable<SizingToolNew2.Models.AvProdComponent>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AvProducts.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingtId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentTypeFamily)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentNote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreteDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifyDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvProducts.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingtId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentTypeFamily)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentNote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentComplexityFac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreteDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifyDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AvProdComponentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AvProdComponentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AvProdComponentId })
+        </td>
+    </tr>
+}
+
+</table>

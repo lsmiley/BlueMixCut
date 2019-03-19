@@ -1,0 +1,128 @@
+﻿@model SizingToolNew2.Models.Sizing
+
+@{
+    var wkstFTE = Model.WorkstationFTE;
+    var svrFTE = Model.ServerFTE;
+    var ipFTE = Model.IPEndpointFTE;
+    var addConsole = Model.AddlConFTE;
+
+
+
+}
+
+
+
+
+@* By default BeginForm use FormMethod.Post *@
+@using (Html.BeginForm("Update"))
+{
+
+    <div class="row" font-family:Arial">
+        <div class="col-md-3">
+            @Html.DropDownList("AvProductId", null, htmlAttributes: new { @class = "form-control", Style = "height: 33px" })
+            @Html.ValidationMessageFor(model => model.AvProductId, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-3">
+            @Html.DropDownList("LaborDeliveryId", null, htmlAttributes: new { @class = "form-control", Style = "height: 33px" })
+        </div>
+        <div class="col-md-1" style="background-color:#ffffff;">  Contract Months --> </div>
+        <div class="col-md-1" style="background-color:#ffffff;">
+            @Html.EditorFor(model => model.NumMonths_1, new { htmlAttributes = new { @class = "form-control", Style = "height:33px" } })
+
+        </div>
+
+    </div>
+
+    <input type="submit" value="Update" />
+}
+
+
+
+@* By default BeginForm use FormMethod.Post *@
+@using (Html.BeginForm("Update"))
+{
+
+
+    <div class="row" font-family:Arial">
+        <div class="col-md-3">
+            @Html.DropDownList("AvProductId", null, htmlAttributes: new { @class = "form-control", Style = "height: 33px" })
+            @Html.ValidationMessageFor(model => model.AvProductId, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-3">
+            @Html.DropDownList("LaborDeliveryId", null, htmlAttributes: new { @class = "form-control", Style = "height: 33px" })
+        </div>
+        <div class="col-md-1" style="background-color:#ffffff;">  Contract Months --> </div>
+        <div class="col-md-1" style="background-color:#ffffff;">
+            @Html.EditorFor(model => model.NumMonths_2, new { htmlAttributes = new { @class = "form-control", Style = "height:33px" } })
+
+        </div>
+    </div>
+
+        <input type="submit" value="Update" />
+        }
+
+
+
+        @* By default BeginForm use FormMethod.Post *@
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { role = "form" }))
+        {
+
+            <form action="~/ConvertUrlToPdf/SubmitAction" method="post">
+                <article class="post type-post status-publish format-standard hentry">
+                    <header class="entry-header" hidden>
+                        <h1 class="entry-title" hidden>SelectPdf for .NET - Convert from Html to Pdf - C# / ASP.NET MVC Sample</h1>
+                    </header>
+                    <!-- .entry-header -->
+
+                    <div class="entry-content">
+                        <p hidden>
+                            This sample shows how to use SelectPdf html to pdf converter to convert an url to pdf, also setting a few properties.
+                        </p>
+                        <p hidden>
+                            Url:<br />
+                            <input type="text" value=@Request.Url.AbsoluteUri name="TxtUrl" style="width: 90%;" />
+                        </p>
+                        <div class="col2" hidden>
+                            Pdf Page Size:<br />
+                            <select name="DdlPageSize">
+                                <option value="A1">A1</option>
+                                <option value="A2">A2</option>
+                                <option value="A3">A3</option>
+                                <option value="A4">A4</option>
+                                <option value="A5">A5</option>
+                                <option value="Letter" selected>Letter</option>
+                                <option value="HalfLetter">HalfLetter</option>
+                                <option value="Ledger">Ledger</option>
+                                <option value="Legal">Legal</option>
+                            </select><br />
+                            <br />
+                            Pdf Page Orientation:<br />
+                            <select name="DdlPageOrientation">
+                                <option value="Portrait" selected>Portrait</option>
+                                <option value="Landscape">Landscape</option>
+                            </select><br />
+                            <br />
+                        </div>
+                        <div class="col2" hidden>
+                            Web Page Width:<br />
+                            <input name="TxtWidth" type="text" value="1600" style="width: 50px;" /> px<br />
+                            <br />
+                            Web Page Height:<br />
+                            <input name="TxtHeight" type="text" value="" style="width: 50px;" /> px<br />
+                            (leave empty to auto detect)<br />
+                            <br />
+
+                        </div>
+                        <div class="col-clear"></div>
+                        <p>
+                            <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+                        </p>
+                    </div>
+                    <!-- .entry-content -->
+                </article>
+            </form>
+            <input type="submit" value="Update" />
+        }
+
+
+

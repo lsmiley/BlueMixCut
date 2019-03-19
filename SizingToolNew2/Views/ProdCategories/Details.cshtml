@@ -1,0 +1,42 @@
+﻿@model SizingToolNew2.Models.ProdCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProdCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryNote)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProdCategoryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,147 @@
+﻿@model IEnumerable<SizingToolNew2.Models.CustAcct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustAcctName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustAcctCodeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectorType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Web)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact1Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact1Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact2Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact2Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorNumProd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorNote)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustAcctName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustAcctCodeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SectorType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Web)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact1Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact1Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact2Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact2Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorNumProd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorNote)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustAcctId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustAcctId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustAcctId })
+        </td>
+    </tr>
+}
+
+</table>

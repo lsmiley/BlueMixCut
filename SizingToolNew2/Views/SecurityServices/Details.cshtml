@@ -1,0 +1,82 @@
+﻿@model SizingToolNew2.Models.SecurityService
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SecurityService</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvProductId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvProductId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceRelatedProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceRelatedProduct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceDeliveryMethod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceDeliveryMethod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceFrequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceFrequency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceComplexity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceComplexity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceFTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceFTE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SecurityServiceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

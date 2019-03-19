@@ -1,0 +1,58 @@
+﻿@model SizingToolNew2.Models.ConfigMaster
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ConfigMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigMasterModifyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigMasterModifyDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigMasterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigMasterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigMasterDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigMasterDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigMasterNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfigMasterNotes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ConfigMasterId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,42 @@
+﻿@model SizingToolNew2.Models.ProdType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProdType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdTypeDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdTypeDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Memo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Memo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProdTypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

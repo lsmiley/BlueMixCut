@@ -1,0 +1,99 @@
+﻿@model IEnumerable<SizingToolNew2.Models.SizingType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr style="font-size:12px">
+        <th>
+            @Html.DisplayNameFor(model => model.SizingId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingTypeDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingTypeNote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingPrimaryProduct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingSecondProduct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingThirdProduct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingForthProduct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingPrimaryService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingSecondService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingThirdService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingForthService)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="font-size:12px">
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingTypeDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingTypeNote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingPrimaryProduct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingSecondProduct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingThirdProduct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingForthProduct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingPrimaryService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingSecondService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingThirdService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizingForthService)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SizingTypeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SizingTypeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SizingTypeId })
+        </td>
+    </tr>
+}
+
+</table>

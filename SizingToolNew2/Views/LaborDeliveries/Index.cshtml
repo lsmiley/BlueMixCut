@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SizingToolNew2.Models.LaborDelivery>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div id="laborList01">@Html.Partial("_LaborList01")</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+  @*  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> // JQuery Reference
+
+    <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.css">*@
+
+
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <link href="~/Content/DataTables/css/dataTables.jqueryui.css" rel="stylesheet" />
+
+    <script src="~/Scripts/DataTables/dataTables.jqueryui.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.jqueryui.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.css">
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#Labor01-data-table').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "scrollY": "400px",
+                "order": [[0, "desc"]]
+            });
+        });
+    </script>
+
+}

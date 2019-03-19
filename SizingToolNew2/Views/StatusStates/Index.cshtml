@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SizingToolNew2.Models.StatusState>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr style="font-size:12px">
+        <th>
+            @Html.DisplayNameFor(model => model.StatusStateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusStateDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusStateType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Memo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="font-size:12px">
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusStateName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusStateDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusStateType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Memo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StatusStateId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StatusStateId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StatusStateId })
+        </td>
+    </tr>
+}
+
+</table>

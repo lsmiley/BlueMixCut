@@ -1,0 +1,1186 @@
+﻿@model SizingToolNew2.Models.TnTWorksheet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TnTWorksheet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TnTDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TnTDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExecuteTransitionPlan_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExecuteTransitionPlan_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExecuteTransitionPlan_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExecuteTransitionPlan_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExecuteTransitionPlan_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExecuteTransitionPlan_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExecuteTransitionPlan_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExecuteTransitionPlan_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExecuteTransitionPlan_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExecuteTransitionPlan_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBestPracticeCustom_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBestPracticeCustom_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBestPracticeCustom_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBestPracticeCustom_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBestPracticeCustom_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBestPracticeCustom_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBestPracticeCustom_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBestPracticeCustom_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBestPracticeCustom_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBestPracticeCustom_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestInfrastructurePOC_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestInfrastructurePOC_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestInfrastructurePOC_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestInfrastructurePOC_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestInfrastructurePOC_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestInfrastructurePOC_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestInfrastructurePOC_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestInfrastructurePOC_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestInfrastructurePOC_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestInfrastructurePOC_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TroubleshootTune_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TroubleshootTune_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TroubleshootTune_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TroubleshootTune_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TroubleshootTune_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TroubleshootTune_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TroubleshootTune_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TroubleshootTune_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TroubleshootTune_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TroubleshootTune_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigure_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigure_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigure_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigure_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigure_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigure_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigure_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigure_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigure_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigure_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdministratorTraining_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdministratorTraining_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdministratorTraining_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdministratorTraining_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdministratorTraining_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdministratorTraining_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdministratorTraining_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdministratorTraining_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdministratorTraining_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdministratorTraining_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopServiceResponsibilityMatrix_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopServiceResponsibilityMatrix_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopServiceResponsibilityMatrix_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopServiceResponsibilityMatrix_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopServiceResponsibilityMatrix_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopServiceResponsibilityMatrix_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopServiceResponsibilityMatrix_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopServiceResponsibilityMatrix_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopServiceResponsibilityMatrix_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopServiceResponsibilityMatrix_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishAnyNeededServiceAccounts_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishAnyNeededServiceAccounts_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishAnyNeededServiceAccounts_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishAnyNeededServiceAccounts_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishAnyNeededServiceAccounts_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishAnyNeededServiceAccounts_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishAnyNeededServiceAccounts_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishAnyNeededServiceAccounts_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishAnyNeededServiceAccounts_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishAnyNeededServiceAccounts_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResearchAndSetupEmailAutomation_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResearchAndSetupEmailAutomation_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResearchAndSetupEmailAutomation_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResearchAndSetupEmailAutomation_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResearchAndSetupEmailAutomation_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResearchAndSetupEmailAutomation_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResearchAndSetupEmailAutomation_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResearchAndSetupEmailAutomation_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResearchAndSetupEmailAutomation_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResearchAndSetupEmailAutomation_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureRemoteConsoles_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureRemoteConsoles_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureRemoteConsoles_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureRemoteConsoles_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureRemoteConsoles_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureRemoteConsoles_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureRemoteConsoles_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureRemoteConsoles_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureRemoteConsoles_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureRemoteConsoles_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkWithSECOPS_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkWithSECOPS_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkWithSECOPS_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkWithSECOPS_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkWithSECOPS_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkWithSECOPS_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkWithSECOPS_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkWithSECOPS_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkWithSECOPS_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkWithSECOPS_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffingCcoordinating_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StaffingCcoordinating_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffingCcoordinating_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StaffingCcoordinating_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffingCcoordinating_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StaffingCcoordinating_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffingCcoordinating_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StaffingCcoordinating_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffingCcoordinating_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StaffingCcoordinating_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentifyTestDocument_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentifyTestDocument_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentifyTestDocument_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentifyTestDocument_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentifyTestDocument_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentifyTestDocument_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentifyTestDocument_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentifyTestDocument_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentifyTestDocument_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentifyTestDocument_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave1_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave1_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave1_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave1_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave1_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave1_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave1_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave1_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave1_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave1_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave2_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave2_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave2_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave2_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave2_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave2_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave2_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave2_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObtainNetworkAndOsAccessWave2_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObtainNetworkAndOsAccessWave2_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopProvideAgentSoftware_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopProvideAgentSoftware_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopProvideAgentSoftware_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopProvideAgentSoftware_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopProvideAgentSoftware_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopProvideAgentSoftware_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopProvideAgentSoftware_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopProvideAgentSoftware_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopProvideAgentSoftware_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopProvideAgentSoftware_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureODBC_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureODBC_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureODBC_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureODBC_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureODBC_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureODBC_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureODBC_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureODBC_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallConfigureODBC_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallConfigureODBC_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerReviewSignoff_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerReviewSignoff_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerReviewSignoff_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerReviewSignoff_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerReviewSignoff_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerReviewSignoff_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerReviewSignoff_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerReviewSignoff_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerReviewSignoff_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerReviewSignoff_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishHealthCheck_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishHealthCheck_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishHealthCheck_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishHealthCheck_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishHealthCheck_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishHealthCheck_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishHealthCheck_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishHealthCheck_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstablishHealthCheck_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstablishHealthCheck_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopWorkFlows_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopWorkFlows_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopWorkFlows_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopWorkFlows_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopWorkFlows_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopWorkFlows_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopWorkFlows_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopWorkFlows_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevelopWorkFlows_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevelopWorkFlows_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperationalDocumentation_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperationalDocumentation_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperationalDocumentation_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperationalDocumentation_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperationalDocumentation_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperationalDocumentation_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperationalDocumentation_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperationalDocumentation_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperationalDocumentation_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperationalDocumentation_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShadowEstablishReviewAllProcedures_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShadowEstablishReviewAllProcedures_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShadowEstablishReviewAllProcedures_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShadowEstablishReviewAllProcedures_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShadowEstablishReviewAllProcedures_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShadowEstablishReviewAllProcedures_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShadowEstablishReviewAllProcedures_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShadowEstablishReviewAllProcedures_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShadowEstablishReviewAllProcedures_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShadowEstablishReviewAllProcedures_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherDetail_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherDetail_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherDetail_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherDetail_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherDetail_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherDetail_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherDetail_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherDetail_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherDetail_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherDetail_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem1_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem1_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem1_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem1_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem1_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem1_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem1_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem1_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem1_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem1_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem2_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem2_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem2_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem2_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem2_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem2_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem2_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem2_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem2_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem2_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem3_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem3_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem3_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem3_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem3_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem3_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem3_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem3_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem3_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem3_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem4_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem4_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem4_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem4_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem4_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem4_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem4_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem4_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem4_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem4_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem5_Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem5_Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem5_TransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem5_TransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem5_TransitionHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem5_TransitionHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem5_TransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem5_TransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialItem5_TransformationHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecialItem5_TransformationHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalTransitionHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalTransitionHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalTransformationHoursItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalTransformationHoursItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumTransitionWeeks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumTransitionWeeks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumTransformationWeeks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumTransformationWeeks)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TnTId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

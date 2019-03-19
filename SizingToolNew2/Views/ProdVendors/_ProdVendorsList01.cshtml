@@ -1,0 +1,121 @@
+﻿@model IEnumerable<SizingToolNew2.Models.ProdVendor>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary list-panel" id="list-panel">
+            <div class="panel-heading list-panel-heading">
+
+
+                <div class="panel-body">
+                    <table id="ProdVendorsList01-data-table"
+                           class="table table-striped table-bordered"
+                           style="width:100%">
+                        <thead>
+
+                            <tr style="font-size:12px">
+                                <th>
+                                    Vendor Name
+                                </th>
+                                <th>
+                                    Code Name
+                                </th>
+                                <th>
+                                    Vendor Category
+                                </th>
+                                <th>
+                                    # of Products
+                                </th>
+                                @* <th>
+                                        @Html.DisplayNameFor(model => model.VendorNote)
+                                    </th>*@
+                                <th>
+                                    Website URL
+                                </th>
+                                <th>
+                                    Contact
+                                </th>
+                                <th>
+                                    Phone
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.Contact2Name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Contact2Phone)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Contact2Email)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ContractNum)
+                                    </th>*@
+                                <th></th>
+                            </tr>
+
+
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr style="font-size:12px">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorCodeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorCategory)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NumVendorProducts)
+                                    </td>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.VendorNote)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VendorWebURL)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Contact1Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Contact1Phone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Contact1Email)
+                                    </td>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.Contact2Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Contact2Phone)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Contact2Email)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ContractNum)
+                                        </td>*@
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.ProdVendorId }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.ProdVendorId }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.ProdVendorId })
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

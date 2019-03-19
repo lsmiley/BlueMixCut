@@ -1,0 +1,74 @@
+﻿@model SizingToolNew2.Models.Sizing
+
+<div>
+    @Html.DropDownList("ddlproduct1", (IEnumerable<SelectListItem>)ViewBag.Employees, new { id = "ddl_product1" })<br />
+    <input id="texAvProductId" type="text" /><br />
+    <input id="txtProdName" type="text" /><br />
+    <input id="txtProdConPlexityBase" type="text" /><br />
+    <input id="txtProdComplexityFac" type="text" /><br />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+        $(function () {
+            $("#ddl_product1").change(function () {
+              //  alert($(this).val() + " " + $(this).find("option:selected").html());
+                var id = $(this).val();
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("GetAvProductsByID01", "Dashboard_Old")',
+                    data: '{id: "' + id + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        //alert(data.LastName);
+                        $("#texAvProductId").val(data.AvProductId);
+                        $("txtProdName").val(data.ProductName);
+                        $("txtProdConPlexityBase").val(data.ProductComplexityBase);
+                        $("#txtProdComplexityFac").val(data.ProductComplexityFac );
+                    },
+
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve counties.');
+                    }
+                });
+
+            });
+    });
+
+</script>
+

@@ -1,0 +1,381 @@
+﻿@model SizingToolNew2.Models.LaborDelivery
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>LaborDelivery</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.RegionNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.RegionNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RegionNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Regions, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Regions, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Regions, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeliveryOption, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.DeliveryOption, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DeliveryOption, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CurrencyType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.CurrencyType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CurrencyType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DefaultFTE_Year, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.DefaultFTE_Year, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DefaultFTE_Year, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WorkWeek, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.WorkWeek, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WorkWeek, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeliveryCtrCostFactor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.DeliveryCtrCostFactor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DeliveryCtrCostFactor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group-sm" style="font:500">
+
+            <div class="row">
+                <div class="col-md-1" style="background-color:#C6E2EE;"> :</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;"> - $ Cost -</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">Count</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">Percent %</div>
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-family:Arial">
+                <div class="col-md-1" style="background-color:#C6E2EE; font-style:italic; text-align:right; line-height:23px">Band 2:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band2, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band2, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band2Count, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band2Count, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band2Percentage, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band2Percentage, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+
+
+            <div class="row" style="font-weight:bold; font-family:Arial">
+                <div class="col-md-1" style="background-color:#C6E2EE; font-style:italic; text-align:right; line-height:23px">Band 3:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band3, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band3, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band3Count, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band3Count, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band3Percentage, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band3Percentage, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-family:Arial">
+                <div class="col-md-1" style="background-color:#C6E2EE; font-style:italic; text-align:right; line-height:23px">Band 4:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band4, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band4, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band4Count, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band4Count, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band4Percentage, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band4Percentage, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-family:Arial">
+                <div class="col-md-1" style="background-color:#C6E2EE; font-style:italic; text-align:right; line-height:23px">Band 5:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band5, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band5, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band5Count, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band5Count, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band5Percentage, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band5Percentage, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-family:Arial">
+                <div class="col-md-1" style="background-color:#C6E2EE; font-style:italic; text-align:right; line-height:23px">Band 6:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band6, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band6, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band6Count, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band6Count, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band6Percentage, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band6Percentage, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-family:Arial">
+                <div class="col-md-1" style="background-color:#C6E2EE; font-style:italic; text-align:right; line-height:23px">Band 7:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band7, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band7, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band7Count, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band7Count, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band7Percentage, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band7Percentage, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-family:Arial">
+                <div class="col-md-1" style="background-color:#C6E2EE; font-style:italic; text-align:right; line-height:23px">Band 8:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band8, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band8, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band8Count, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band8Count, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band8Percentage, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band8Percentage, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-family:Arial">
+                <div class="col-md-1" style="background-color:#C6E2EE; font-style:italic; text-align:right; line-height:23px">Band 9:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band9, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band9, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band9Count, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band9Count, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band9Percentage, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band9Percentage, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-family:Arial">
+                <div class="col-md-1" style="background-color:#C6E2EE; font-style:italic; text-align:right; line-height:23px">Band 10:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band10, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band10, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band10Count, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band10Count, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Band10Percentage, new { htmlAttributes = new { @class = "form-control", Style = "height:23px" } })
+                    @Html.ValidationMessageFor(model => model.Band10Percentage, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-1" style="background-color:#C6E2EE;"> :</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;"> :</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;"> :</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;"> :</div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        @*  <div class="form-group">
+                @Html.LabelFor(model => model.Band2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Band3, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Band4, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band4, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band4, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Band5, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band5, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band5, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Band6, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band6, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band6, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Band7, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band7, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band7, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Band8, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band8, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band8, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Band9, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band9, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band9, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Band10, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band10, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band10, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Band10Count, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.EditorFor(model => model.Band10Count, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Band10, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-2">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        // Code to Block Post on Enter Key Press
+    $(document).keypress(function (e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            return false;
+        }
+    });
+    </script>
+}

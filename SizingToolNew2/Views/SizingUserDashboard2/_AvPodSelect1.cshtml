@@ -1,0 +1,19 @@
+﻿@model SizingToolNew2.Models.AvProduct
+
+<div id="RegSuccessDivTwo">
+    @using (Ajax.BeginForm("_PartialStepTwo", "MVC0308", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "RegSuccessDivTwo",
+        HttpMethod = "Post"
+    }))
+    {
+        <h2>_PartialStepTwo</h2>
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+
+        @Html.TextBoxFor(m => m.PublisherId)
+        <button type="submit">Second Step</button>
+    }
+</div>

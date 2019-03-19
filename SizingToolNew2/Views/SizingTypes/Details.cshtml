@@ -1,0 +1,114 @@
+﻿@model SizingToolNew2.Models.SizingType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SizingType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingTypeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingTypeDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingTypeNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingTypeNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingPrimaryProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingPrimaryProduct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingSecondProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingSecondProduct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingThirdProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingThirdProduct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingForthProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingForthProduct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingPrimaryService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingPrimaryService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingSecondService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingSecondService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingThirdService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingThirdService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizingForthService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizingForthService)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SizingTypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

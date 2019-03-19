@@ -1,0 +1,321 @@
+﻿@model IEnumerable<SizingToolNew2.Models.ConfigTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigMaster.ConfigMasterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigCreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigModifyDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigNummber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizeModifier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorModifier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoursModifier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagementModifier1stLine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagementModifier2ndLine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskFactor_Low)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskFactor_Med)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RiskFactor_High)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCost_Education)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCost_Travel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherCost_Equipment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndpointRangeModifier1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndpointRangeModifier2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndpointRangeModifier3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndpointRangeModifier4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndpointRangeModifier5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndpointRangeModifier6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rpt_BiWeeklyModifier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rpt_WeeklyModifier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rpt_DailyModifier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rpt_CustomModifier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefaultEndpointFac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fac_FracHrs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fac_AdjWkstn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fac_AdjSvrs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fac_AdjIPs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fac_SvrCalc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Frm_ComponentFac12)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigMaster.ConfigMasterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigCreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigModifyDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigNummber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizeModifier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorModifier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoursModifier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagementModifier1stLine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagementModifier2ndLine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RiskFactor_Low)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RiskFactor_Med)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RiskFactor_High)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCost_Education)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCost_Travel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherCost_Equipment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndpointRangeModifier1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndpointRangeModifier2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndpointRangeModifier3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndpointRangeModifier4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndpointRangeModifier5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndpointRangeModifier6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rpt_BiWeeklyModifier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rpt_WeeklyModifier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rpt_DailyModifier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rpt_CustomModifier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DefaultEndpointFac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fac_FracHrs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fac_AdjWkstn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fac_AdjSvrs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fac_AdjIPs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fac_SvrCalc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Frm_ComponentFac12)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ConfigId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ConfigId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ConfigId })
+        </td>
+    </tr>
+}
+
+</table>

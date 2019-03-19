@@ -1,0 +1,138 @@
+﻿@model IEnumerable<SizingToolNew2.Models.Sizing>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<div id="OldSIzingCode">
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AcctCust.AcctName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvProduct.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigTable.ConfigName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LaborDelivery.Regions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizingType.SizingTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusState.StatusStateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TnTWorksheet.TnTDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayForSizingID)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcctCust.AcctName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvProduct.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfigTable.ConfigName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaborDelivery.Regions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizingType.SizingTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusState.StatusStateName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TnTWorksheet.TnTDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayForSizingID)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SizingId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SizingId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SizingId })
+                @Html.ActionLink("PrintSelect-PDF", "SubmitAction", new { id = item.SizingId })
+            </td>
+        </tr>
+    }
+
+</table>
+</div>
+
+<form action="/ConvertUrlToPdf/SubmitAction" method="post">
+    <article class="post type-post status-publish format-standard hentry">
+        <header class="entry-header">
+            <h1 class="entry-title">SelectPdf for .NET - Convert from Html to Pdf - C# / ASP.NET MVC Sample</h1>
+        </header>
+        <!-- .entry-header -->
+
+        <div class="entry-content">
+            <p>
+                This sample shows how to use SelectPdf html to pdf converter to convert an url to pdf, also setting a few properties.
+            </p>
+            <p>
+                Url:<br />
+                <input type="text" value=@Request.Url.AbsoluteUri name="TxtUrl" style="width: 90%;" />
+            </p>
+            <div class="col2">
+                Pdf Page Size:<br />
+                <select name="DdlPageSize">
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="A3">A3</option>
+                    <option value="A4" selected>A4</option>
+                    <option value="A5">A5</option>
+                    <option value="Letter">Letter</option>
+                    <option value="HalfLetter">HalfLetter</option>
+                    <option value="Ledger">Ledger</option>
+                    <option value="Legal">Legal</option>
+                </select><br />
+                <br />
+                Pdf Page Orientation:<br />
+                <select name="DdlPageOrientation">
+                    <option value="Portrait" selected>Portrait</option>
+                    <option value="Landscape">Landscape</option>
+                </select><br />
+                <br />
+            </div>
+            <div class="col2">
+                Web Page Width:<br />
+                <input name="TxtWidth" type="text" value="1024" style="width: 50px;" /> px<br />
+                <br />
+                Web Page Height:<br />
+                <input name="TxtHeight" type="text" value="" style="width: 50px;" /> px<br />
+                (leave empty to auto detect)<br />
+                <br />
+
+            </div>
+            <div class="col-clear"></div>
+            <p>
+                <input type="submit" name="BtnConvert" value="Create PDF" class="mybutton" />
+            </p>
+        </div>
+        <!-- .entry-content -->
+    </article>
+</form>

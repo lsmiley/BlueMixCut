@@ -1,0 +1,160 @@
+﻿@model SizingToolNew2.Models.Sizing
+
+<div classs="row" id="ProductComponentX1">
+    <div class="col-md-12">
+        <div class="box box-default">
+            <div class="box-header with-border">
+
+                <h2>Add / Remove: Product Components</h2>
+            </div>
+            <div class="row" style="font-weight:bold; font-family:Arial; text-align:center">
+                <div class="col-md-2" style="background-color:#ffffff;">
+
+                </div>
+
+                <div class="col-md-2" style="background-color:#C6E2EE;">
+
+                </div>
+                <div class="col-md-3" style="background-color:#C6E2EE;">
+
+                </div>
+
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-family:Arial; font-size:small">
+                <div class="col-md-2" style="background-color:#ffffff;"></div>
+                <div class="col-md-2" style="background-color:#C6E2EE;">  Component/Name:</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">Hours</div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-size:small">
+                <div class="col-md-2" style="background-color:#ffffff;">
+                    .
+                </div>
+
+
+                <div class="col-md-2" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.Component1Desc, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px" })
+                </div>
+
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.ComponentComplexityFac1, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px, widtth:50px" })
+                </div>
+
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Prod1Componet1)
+                    @Html.ValidationMessageFor(model => model.Prod1Componet1, "", new { @class = "text-danger", Style = "height:25px" })
+                </div>
+
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-size:small">
+                <div class="col-md-2" style="background-color:#ffffff; font-size-adjust:0.45;">
+                    .
+                </div>
+                <div class="col-md-2" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.Component2Desc, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px, width:100px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.ComponentComplexityFac2, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px, widtth:50px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Prod1Componet2)
+                    @Html.ValidationMessageFor(model => model.Prod1Componet2, "", new { @class = "text-danger", Style = "height:25px, width:100px" })
+                </div>
+
+
+            </div>
+
+            <div class="row" style="font-weight:bold; font-size:small">
+                <div class="col-md-2" style="background-color:#ffffff;">
+                    .
+                </div>
+                <div class="col-md-2" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.Component3Desc, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.ComponentComplexityFac3, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px, widtth:50px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Prod1Componet3)
+                    @Html.ValidationMessageFor(model => model.Prod1Componet3, "", new { @class = "text-danger", Style = "height:25px, width:100px" })
+                </div>
+
+
+            </div>
+            <div class="row" style="font-weight:bold; font-size:small">
+                <div class="col-md-1" style="background-color:#ffffff;">.</div>
+                <div class="col-md-1" style="background-color:#ffffff;">.</div>
+                <div class="col-md-2" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.Component4Desc, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.ComponentComplexityFac4, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px, widtth:50px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Prod1Componet4)
+                    @Html.ValidationMessageFor(model => model.Prod1Componet4, "", new { @class = "text-danger", Style = "height:25px, width:100px" })
+                </div>
+
+
+            </div>
+            <div class="row" style="font-weight:bold; font-size:small">
+                <div class="col-md-1" style="background-color:#ffffff;">.</div>
+                <div class="col-md-1" style="background-color:#ffffff;">.</div>
+                <div class="col-md-2" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.Component5Desc, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.ComponentComplexityFac5, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px, widtth:50px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Prod1Componet5)
+                    @Html.ValidationMessageFor(model => model.Prod1Componet5, "", new { @class = "text-danger", Style = "height:25px, width:100px" })
+                </div>
+
+
+
+            </div>
+            <div class="row" style="font-weight:bold; font-size:small">
+                <div class="col-md-1" style="background-color:#ffffff;">.</div>
+                <div class="col-md-1" style="background-color:#ffffff;">.</div>
+                <div class="col-md-2" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.Component6Desc, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.ComponentComplexityFac6, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px, widtth:50px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Prod1Componet6)
+                    @Html.ValidationMessageFor(model => model.Prod1Componet6, "", new { @class = "text-danger", Style = "height:25px, width:100px" })
+                </div>
+
+
+
+            </div>
+            <div class="row" style="font-weight:bold; font-size:small">
+                <div class="col-md-1" style="background-color:#ffffff;">.</div>
+                <div class="col-md-1" style="background-color:#ffffff;">.</div>
+                <div class="col-md-2" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.Component7Desc, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.TextBoxFor(s => s.AvProduct.ComponentComplexityFac7, new { @class = "myEditable", disabled = "disabled", @readonly = "readonly", Style = "height:25px, widtth:50px" })
+                </div>
+                <div class="col-md-1" style="background-color:#C6E2EE;">
+                    @Html.EditorFor(model => model.Prod1Componet7)
+                    @Html.ValidationMessageFor(model => model.Prod1Componet7, "", new { @class = "text-danger", Style = "height:25px, width:100px" })
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
