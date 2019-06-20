@@ -1,0 +1,1046 @@
+﻿@model SizingToolNew2.Models.Sizing
+
+@{
+
+
+
+    #region " Start of default values "
+
+    // Setting Field default values Start Here.
+
+
+    // AcctName = "Select an Account";
+    var ExecuteTransitionPlan_Count = 1;
+    var ExecuteTransitionPlan_TransformationHoursItem = 250;
+    var ExecuteTransitionPlan_TransitionHoursItem = 250;
+    var ExecuteTransitionPlan_TransitionHours = ExecuteTransitionPlan_Count * ExecuteTransitionPlan_TransitionHoursItem;
+    var ExecuteTransitionPlan_TransformationHours = ExecuteTransitionPlan_Count * ExecuteTransitionPlan_TransformationHoursItem;
+
+
+
+    var CreateBestPracticeCustom_Count = 1;
+    var CreateBestPracticeCustom_TransformationHoursItem = 33;
+    var CreateBestPracticeCustom_TransitionHoursItem = 40;
+    var CreateBestPracticeCustom_TransitionHours = CreateBestPracticeCustom_Count * CreateBestPracticeCustom_TransitionHoursItem;
+    var CreateBestPracticeCustom_TransformationHours = CreateBestPracticeCustom_Count * CreateBestPracticeCustom_TransformationHoursItem;
+
+    var TestInfrastructurePOC_Count = 1;
+    var TestInfrastructurePOC_TransitionHoursItem = 40;
+    var TestInfrastructurePOC_TransformationHoursItem = 33;
+    var TestInfrastructurePOC_TransitionHours = TestInfrastructurePOC_Count * TestInfrastructurePOC_TransitionHoursItem;
+    var TestInfrastructurePOC_TransformationHours = TestInfrastructurePOC_Count * TestInfrastructurePOC_TransformationHoursItem;
+
+    var TroubleshootTune_Count = 1;
+    var TroubleshootTune_TransitionHoursItem = 40;
+    var TroubleshootTune_TransformationHoursItem = 33;
+    var TroubleshootTune_TransitionHours = TroubleshootTune_Count * TroubleshootTune_TransitionHoursItem;
+    var TroubleshootTune_TransformationHours = TroubleshootTune_Count * TroubleshootTune_TransformationHoursItem;
+
+    var InstallConfigure_Count = 1;
+    var InstallConfigure_TransitionHoursItem = 40;
+    var InstallConfigure_TransformationHoursItem = 33;
+    var InstallConfigure_TransitionHours = InstallConfigure_Count * InstallConfigure_TransitionHoursItem;
+    var InstallConfigure_TransformationHours = InstallConfigure_Count * InstallConfigure_TransformationHoursItem;
+
+    var AdministratorTraining_Count = 1;
+    var AdministratorTraining_TransitionHoursItem = 20;
+    var AdministratorTraining_TransformationHoursItem = 17;
+    var AdministratorTraining_TransitionHours = AdministratorTraining_Count * AdministratorTraining_TransitionHoursItem;
+    var AdministratorTraining_TransformationHours = AdministratorTraining_Count * AdministratorTraining_TransformationHoursItem;
+
+    var DevelopServiceResponsibilityMatrix_Count = 1;
+    var DevelopServiceResponsibilityMatrix_TransitionHoursItem = 16;
+    var DevelopServiceResponsibilityMatrix_TransformationHoursItem = 13;
+    var DevelopServiceResponsibilityMatrix_TransitionHours = DevelopServiceResponsibilityMatrix_Count * DevelopServiceResponsibilityMatrix_TransitionHoursItem;
+    var DevelopServiceResponsibilityMatrix_TransformationHours = DevelopServiceResponsibilityMatrix_Count * DevelopServiceResponsibilityMatrix_TransformationHoursItem;
+
+    var EstablishAnyNeededServiceAccounts_Count = 1;
+    var EstablishAnyNeededServiceAccounts_TransitionHoursItem = 16;
+    var EstablishAnyNeededServiceAccounts_TransformationHoursItem = 13;
+    var EstablishAnyNeededServiceAccounts_TransitionHours = EstablishAnyNeededServiceAccounts_Count * EstablishAnyNeededServiceAccounts_TransitionHoursItem;
+    var EstablishAnyNeededServiceAccounts_TransformationHours = EstablishAnyNeededServiceAccounts_Count * EstablishAnyNeededServiceAccounts_TransformationHoursItem;
+
+    var ResearchAndSetupEmailAutomation_Count = 1;
+    var ResearchAndSetupEmailAutomation_TransitionHoursItem = 16;
+    var ResearchAndSetupEmailAutomation_TransformationHoursItem = 13;
+    var ResearchAndSetupEmailAutomation_TransitionHours = ResearchAndSetupEmailAutomation_Count * ResearchAndSetupEmailAutomation_TransitionHoursItem;
+    var ResearchAndSetupEmailAutomation_TransformationHours = ResearchAndSetupEmailAutomation_Count * ResearchAndSetupEmailAutomation_TransformationHoursItem;
+
+
+    var InstallConfigureRemoteConsoles_Count = 1;
+    var InstallConfigureRemoteConsoles_TransitionHoursItem = 16;
+    var InstallConfigureRemoteConsoles_TransformationHoursItem = 13;
+    var InstallConfigureRemoteConsoles_TransitionHours = InstallConfigureRemoteConsoles_Count * InstallConfigureRemoteConsoles_TransitionHoursItem;
+    var InstallConfigureRemoteConsoles_TransformationHours = InstallConfigureRemoteConsoles_Count * InstallConfigureRemoteConsoles_TransformationHoursItem;
+
+    var WorkWithSECOPS_Count = 1;
+    var WorkWithSECOPS_TransitionHoursItem = 16;
+    var WorkWithSECOPS_TransformationHoursItem = 13;
+    var WorkWithSECOPS_TransitionHours = WorkWithSECOPS_Count * WorkWithSECOPS_TransitionHoursItem;
+    var WorkWithSECOPS_TransformationHours = WorkWithSECOPS_Count * WorkWithSECOPS_TransformationHoursItem;
+
+    var StaffingCcoordinating_Count = 1;
+    var StaffingCcoordinating_TransitionHoursItem = 10;
+    var StaffingCcoordinating_TransformationHoursItem = 8;
+    var StaffingCcoordinating_TransitionHours = StaffingCcoordinating_Count * StaffingCcoordinating_TransitionHoursItem;
+    var StaffingCcoordinating_TransformationHours = StaffingCcoordinating_Count * StaffingCcoordinating_TransformationHoursItem;
+
+    var IdentifyTestDocument_Count = 1;
+    var IdentifyTestDocument_TransitionHoursItem = 10;
+    var IdentifyTestDocument_TransformationHoursItem = 8;
+    var IdentifyTestDocument_TransitionHours = IdentifyTestDocument_Count * IdentifyTestDocument_TransitionHoursItem;
+    var IdentifyTestDocument_TransformationHours = IdentifyTestDocument_Count * IdentifyTestDocument_TransformationHoursItem;
+
+    var ObtainNetworkAndOsAccessWave1_Count = 1;
+    var ObtainNetworkAndOsAccessWave1_TransitionHoursItem = 10;
+    var ObtainNetworkAndOsAccessWave1_TransformationHoursItem = 8;
+    var ObtainNetworkAndOsAccessWave1_TransitionHours = ObtainNetworkAndOsAccessWave1_Count * ObtainNetworkAndOsAccessWave1_TransitionHoursItem;
+    var ObtainNetworkAndOsAccessWave1_TransformationHours = ObtainNetworkAndOsAccessWave1_Count * ObtainNetworkAndOsAccessWave1_TransformationHoursItem;
+
+    var ObtainNetworkAndOsAccessWave2_Count = 1;
+    var ObtainNetworkAndOsAccessWave2_TransitionHoursItem = 10;
+    var ObtainNetworkAndOsAccessWave2_TransformationHoursItem = 8;
+    var ObtainNetworkAndOsAccessWave2_TransitionHours = ObtainNetworkAndOsAccessWave2_Count * ObtainNetworkAndOsAccessWave2_TransitionHoursItem;
+    var ObtainNetworkAndOsAccessWave2_TransformationHours = ObtainNetworkAndOsAccessWave2_Count * ObtainNetworkAndOsAccessWave2_TransformationHoursItem;
+
+    var DevelopProvideAgentSoftware_Count = 1;
+    var DevelopProvideAgentSoftware_TransitionHoursItem = 10;
+    var DevelopProvideAgentSoftware_TransformationHoursItem = 8;
+    var DevelopProvideAgentSoftware_TransitionHours = DevelopProvideAgentSoftware_Count * DevelopProvideAgentSoftware_TransitionHoursItem;
+    var DevelopProvideAgentSoftware_TransformationHours = DevelopProvideAgentSoftware_Count * DevelopProvideAgentSoftware_TransformationHoursItem;
+
+    var InstallConfigureODBC_Count = 1;
+    var InstallConfigureODBC_TransitionHoursItem = 10;
+    var InstallConfigureODBC_TransformationHoursItem = 8;
+    var InstallConfigureODBC_TransitionHours = InstallConfigureODBC_Count * InstallConfigureODBC_TransitionHoursItem;
+    var InstallConfigureODBC_TransformationHours = InstallConfigureODBC_Count * InstallConfigureODBC_TransformationHoursItem;
+
+    var CustomerReviewSignoff_Count = 1;
+    var CustomerReviewSignoff_TransitionHoursItem = 10;
+    var CustomerReviewSignoff_TransformationHoursItem = 8;
+    var CustomerReviewSignoff_TransitionHours = CustomerReviewSignoff_Count * CustomerReviewSignoff_TransitionHoursItem;
+    var CustomerReviewSignoff_TransformationHours = CustomerReviewSignoff_Count * CustomerReviewSignoff_TransformationHoursItem;
+
+    var EstablishHealthCheck_Count = 1;
+    var EstablishHealthCheck_TransitionHoursItem = 10;
+    var EstablishHealthCheck_TransformationHoursItem = 8;
+    var EstablishHealthCheck_TransitionHours = EstablishHealthCheck_Count * EstablishHealthCheck_TransitionHoursItem;
+    var EstablishHealthCheck_TransformationHours = EstablishHealthCheck_Count * EstablishHealthCheck_TransformationHoursItem;
+
+    var DevelopWorkFlows_Count = 1;
+    var DevelopWorkFlows_TransitionHoursItem = 10;
+    var DevelopWorkFlows_TransformationHoursItem = 8;
+    var DevelopWorkFlows_TransitionHours = DevelopWorkFlows_Count * DevelopWorkFlows_TransitionHoursItem;
+    var DevelopWorkFlows_TransformationHours = DevelopWorkFlows_Count * DevelopWorkFlows_TransformationHoursItem;
+
+    var OperationalDocumentation_Count = 1;
+    var OperationalDocumentation_TransitionHoursItem = 10;
+    var OperationalDocumentation_TransformationHoursItem = 8;
+    var OperationalDocumentation_TransitionHours = OperationalDocumentation_Count * OperationalDocumentation_TransitionHoursItem;
+    var OperationalDocumentation_TransformationHours = OperationalDocumentation_Count * OperationalDocumentation_TransformationHoursItem;
+
+    var ShadowEstablishReviewAllProcedures_Count = 1;
+    var ShadowEstablishReviewAllProcedures_TransitionHoursItem = 60;
+    var ShadowEstablishReviewAllProcedures_TransformationHoursItem = 50;
+    var ShadowEstablishReviewAllProcedures_TransitionHours = ShadowEstablishReviewAllProcedures_Count * ShadowEstablishReviewAllProcedures_TransitionHoursItem;
+    var ShadowEstablishReviewAllProcedures_TransformationHours = ShadowEstablishReviewAllProcedures_Count * ShadowEstablishReviewAllProcedures_TransformationHoursItem;
+
+    var OtherDetail_Count = 1;
+    var OtherDetail_TransitionHoursItem = 249;
+    var OtherDetail_TransformationHoursItem = 208;
+    var OtherDetail_TransitionHours = OtherDetail_Count * OtherDetail_TransitionHoursItem;
+    var OtherDetail_TransformationHours = OtherDetail_Count * OtherDetail_TransformationHoursItem;
+
+    var SpecialItem1_Count = 0.01;
+    var SpecialItem1_TransitionHoursItem = 0.01;
+    var SpecialItem1_TransformationHoursItem = 0.01;
+    var SpecialItem1_TransitionHours = SpecialItem1_Count * SpecialItem1_TransitionHoursItem;
+    var SpecialItem1_TransformationHours = SpecialItem1_Count * SpecialItem1_TransformationHoursItem;
+
+    var SpecialItem2_Count = 0.01;
+    var SpecialItem2_TransitionHoursItem = 0.01;
+    var SpecialItem2_TransformationHoursItem = 0.01;
+    var SpecialItem2_TransitionHours = SpecialItem2_Count * SpecialItem2_TransitionHoursItem;
+    var SpecialItem2_TransformationHours = SpecialItem2_Count * SpecialItem2_TransformationHoursItem;
+
+    var SpecialItem3_Count = 0.01;
+    var SpecialItem3_TransitionHoursItem = 0.01;
+    var SpecialItem3_TransformationHoursItem = 0.01;
+    var SpecialItem3_TransitionHours = SpecialItem3_Count * SpecialItem3_TransitionHoursItem;
+    var SpecialItem3_TransformationHours = SpecialItem3_Count * SpecialItem3_TransformationHoursItem;
+
+    var SpecialItem4_Count = 0.01;
+    var SpecialItem4_TransitionHoursItem = 0.01;
+    var SpecialItem4_TransformationHoursItem = 0.01;
+    var SpecialItem4_TransitionHours = SpecialItem4_Count * SpecialItem4_TransitionHoursItem;
+    var SpecialItem4_TransformationHours = SpecialItem4_Count * SpecialItem4_TransformationHoursItem;
+
+    var SpecialItem5_Count = 0.01;
+    var SpecialItem5_TransitionHoursItem = 0.01;
+    var SpecialItem5_TransformationHoursItem = 0.01;
+    var SpecialItem5_TransitionHours = SpecialItem5_Count * SpecialItem5_TransitionHoursItem;
+    var SpecialItem5_TransformationHours = SpecialItem5_Count * SpecialItem5_TransformationHoursItem;
+
+    var TransitionFirstLineManagementBand8 = (0);
+    var TransitionSecondLineManagementBand8 = (0);
+
+
+    // Management Modifiers
+    var ManagementMod1stLine = (0.05);
+    var ManagementMod2ndLine = (.0083);
+
+
+    // TotalTransitionHoursItem = SpecialItem1_TransitionHours + SpecialItem2_TransitionHours + SpecialItem3_TransitionHours + SpecialItem4_TransitionHours + SpecialItem5_TransitionHours;
+    // TotalTransformationHoursItem = (SpecialItem1_TransformationHours + SpecialItem2_TransformationHours + SpecialItem3_TransformationHours + SpecialItem4_TransformationHours + SpecialItem5_TransformationHours);
+
+    #endregion
+
+
+}
+
+
+{
+<div id="tabs-5">
+    <p>T and T Worksheet</p>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10"><h3>'Infrastructure and EndPoint Security  Sizing Transition & Transformation Worksheet</h3></div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-1">#</div>
+        <div class="col-md-6">Description</div>
+        <div class="col-md-1">Count</div>
+        <div class="col-md-1">Transition Hours/Item</div>
+        <div class="col-md-1">Transition Hours</div>
+        <div class="col-md-1">Transformation Hours/Item</div>
+        <div class="col-md-1">Transformation Hours</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-6">Execute transition plan, task tracking, conferences, minutes, communication, status reporting, etc</div>
+        <div class="col-md-1">
+            @Html.DisplayFor(model => model.TnTWorksheet.ExecuteTransitionPlan_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ExecuteTransitionPlan_Count, "", new { @class = "text-danger" })
+            <div style="background-color:#eaeae9; height:23px; text-align:center; padding: 5px 3px 3px 3px;">@String.Format("{0:0.000}", ExecuteTransitionPlan_Count)</div>
+
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ExecuteTransitionPlan_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ExecuteTransitionPlan_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ExecuteTransitionPlan_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ExecuteTransitionPlan_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ExecuteTransitionPlan_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ExecuteTransitionPlan_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ExecuteTransitionPlan_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ExecuteTransitionPlan_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-6">Create (best practice/custom), Review, Deploy and Document initial policies (incl. QA test of policies on endpoints)</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CreateBestPracticeCustom_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.CreateBestPracticeCustom_Count, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CreateBestPracticeCustom_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.CreateBestPracticeCustom_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CreateBestPracticeCustom_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.CreateBestPracticeCustom_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CreateBestPracticeCustom_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.CreateBestPracticeCustom_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CreateBestPracticeCustom_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.CreateBestPracticeCustom_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">3</div>
+        <div class="col-md-6">Test infrastructure (POC test, non-production data test, stress test, server/console failover, etc.).</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TestInfrastructurePOC_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TestInfrastructurePOC_Count, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TestInfrastructurePOC_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TestInfrastructurePOC_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TestInfrastructurePOC_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TestInfrastructurePOC_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TestInfrastructurePOC_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TestInfrastructurePOC_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TestInfrastructurePOC_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TestInfrastructurePOC_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-1">4</div>
+        <div class="col-md-6">Troubleshoot/tune infrastructure. Engage vendor and other teams as needed</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TroubleshootTune_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TroubleshootTune_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TroubleshootTune_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TroubleshootTune_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TroubleshootTune_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TroubleshootTune_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TroubleshootTune_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigure_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.TroubleshootTune_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TroubleshootTune_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-1">4</div>
+        <div class="col-md-6">Install/configure product on infrastructure servers; patch or hotfix</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigure_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigure_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigure_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigure_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigure_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigure_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigure_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigure_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigure_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigure_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">5</div>
+        <div class="col-md-6">Administrator training of GDC pooled resources</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.AdministratorTraining_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.AdministratorTraining_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.AdministratorTraining_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.AdministratorTraining_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.AdministratorTraining_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.AdministratorTraining_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.AdministratorTraining_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.AdministratorTraining_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.AdministratorTraining_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.AdministratorTraining_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-1">6</div>
+        <div class="col-md-6">Develop Service Responsibility Matrix; review among stakeholders</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopServiceResponsibilityMatrix_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-1">7</div>
+        <div class="col-md-6">Establish any needed service accounts, business justifications, approval processes, testing.</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishAnyNeededServiceAccounts_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-1">8</div>
+        <div class="col-md-6">Research and setup email automation (SMTP or via special triggers) - includes alerts, failure notifications, etc. as needed.</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ResearchAndSetupEmailAutomation_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">9</div>
+        <div class="col-md-6">Install/configure remote consoles</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureRemoteConsoles_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">10</div>
+        <div class="col-md-6">Work with SECOPS to ensure proper performance; understanding of error codes, baseline performance expectation, etc.</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.WorkWithSECOPS_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.WorkWithSECOPS_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.WorkWithSECOPS_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.WorkWithSECOPS_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.WorkWithSECOPS_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.WorkWithSECOPS_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.WorkWithSECOPS_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.WorkWithSECOPS_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.WorkWithSECOPS_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.WorkWithSECOPS_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">11</div>
+        <div class="col-md-6">Staffing (coordinating)</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.StaffingCcoordinating_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.StaffingCcoordinating_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.StaffingCcoordinating_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.StaffingCcoordinating_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.StaffingCcoordinating_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.StaffingCcoordinating_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.StaffingCcoordinating_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.StaffingCcoordinating_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.StaffingCcoordinating_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.StaffingCcoordinating_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">12</div>
+        <div class="col-md-6">Identify/test/document onboarding procedures.</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.IdentifyTestDocument_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.IdentifyTestDocument_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.IdentifyTestDocument_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.IdentifyTestDocument_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.IdentifyTestDocument_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.IdentifyTestDocument_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.IdentifyTestDocument_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.IdentifyTestDocument_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.IdentifyTestDocument_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.IdentifyTestDocument_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">13</div>
+        <div class="col-md-6">Obtain network and OS access - Wave 1 (Initial staffing needed for Knowledge Transfer)</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave1_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">14</div>
+        <div class="col-md-6">Obtain network and OS access - Wave 2 (Staffing needed for Steady State)</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ObtainNetworkAndOsAccessWave2_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1">15</div>
+        <div class="col-md-6">Develop/provide agent to software deployment group; oversee agent deployment (manual install required)</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopProvideAgentSoftware_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-md-1">16</div>
+        <div class="col-md-6">Install/configure ODBC or other connectors to metaconsoles; </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CustomerReviewSignoff_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureODBC_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CustomerReviewSignoff_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.CustomerReviewSignoff_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CustomerReviewSignoff_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.CustomerReviewSignoff_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CustomerReviewSignoff_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.CustomerReviewSignoff_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.CustomerReviewSignoff_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.CustomerReviewSignoff_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">17</div>
+        <div class="col-md-6">Customer review and sign-off on infrastructure set up, test results, etc.</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureODBC_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureODBC_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureODBC_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureODBC_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureODBC_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureODBC_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureODBC_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureODBC_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.InstallConfigureODBC_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.InstallConfigureODBC_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">18</div>
+        <div class="col-md-6">Establish Health check regimen for product and infrastructure</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishHealthCheck_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishHealthCheck_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishHealthCheck_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishHealthCheck_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishHealthCheck_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishHealthCheck_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishHealthCheck_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishHealthCheck_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.EstablishHealthCheck_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.EstablishHealthCheck_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">19</div>
+        <div class="col-md-6">Develop workflows for patch management, change management, incident management, policy review</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopWorkFlows_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopWorkFlows_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopWorkFlows_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopWorkFlows_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopWorkFlows_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopWorkFlows_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopWorkFlows_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopWorkFlows_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.DevelopWorkFlows_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.DevelopWorkFlows_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">20</div>
+        <div class="col-md-6">Operational documentation</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OperationalDocumentation_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OperationalDocumentation_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OperationalDocumentation_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OperationalDocumentation_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OperationalDocumentation_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OperationalDocumentation_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OperationalDocumentation_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OperationalDocumentation_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OperationalDocumentation_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OperationalDocumentation_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">21</div>
+        <div class="col-md-6">Shadow/Establish/Review all procedures, monitoring of console, health check, support ticket queue, etc.</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.ShadowEstablishReviewAllProcedures_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">22</div>
+        <div class="col-md-6">Other (details available in project plan)</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OtherDetail_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OtherDetail_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OtherDetail_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OtherDetail_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OtherDetail_TransitionHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OtherDetail_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OtherDetail_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OtherDetail_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.OtherDetail_TransformationHours, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.OtherDetail_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">23</div>
+        <div class="col-md-6">Special Items 1</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem1_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem1_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem1_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem1_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem1_TransitionHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem1_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem1_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem1_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem1_TransformationHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem1_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">24</div>
+        <div class="col-md-6">Special Items 2</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem2_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem2_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem2_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem2_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem2_TransitionHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem2_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem2_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem2_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem2_TransformationHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem2_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-1">25</div>
+        <div class="col-md-6">Special Items 3</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem3_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem3_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem3_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem3_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem3_TransitionHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem3_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem3_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem3_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem3_TransformationHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem3_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-1">26</div>
+        <div class="col-md-6">Special Items 4</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem4_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem4_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem4_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem4_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem4_TransitionHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem4_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem4_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem4_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem4_TransformationHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem4_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">27</div>
+        <div class="col-md-6">Special Item 5</div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem5_Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem5_Count, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem5_TransitionHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem5_TransitionHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem5_TransitionHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem5_TransitionHours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem5_TransformationHoursItem, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem5_TransformationHoursItem, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1">
+            @Html.EditorFor(model => model.TnTWorksheet.SpecialItem5_TransformationHours, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.SpecialItem5_TransformationHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">.</div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-6"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1" style="font-weight:bold; font-family:Arial; font-size:x-small">Transition Hrs</div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1" style="font-weight:bold; font-family:Arial; font-size:x-small">Tranform Hrs</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1">.</div>
+        <div class="col-md-6">.</div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1" style="font-weight:bold; font-family:Arial">
+            @Html.EditorFor(model => model.TotalTransitionHoursItem_BZ, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TotalTransitionHoursItem_BZ, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1" style="font-weight:bold; font-family:Arial">
+            @Html.EditorFor(model => model.TotalTransformationHoursItem_BZ, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TotalTransformationHoursItem_BZ, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-1">.</div>
+        <div class="col-md-6">.</div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1" style="font-weight:bold; font-family:Arial">
+            @Html.EditorFor(model => model.TnTWorksheet.TransitionSubTotalsHoursItems, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TransitionSubTotalsHoursItems, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1" style="font-weight:bold; font-family:Arial">
+            @Html.EditorFor(model => model.TnTWorksheet.TransformationSubTotalsHoursItems, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.TnTWorksheet.TransformationSubTotalsHoursItems, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-6"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1" style="font-weight:bold; font-family:Arial; font-size:x-small">.</div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1" style="font-weight:bold; font-family:Arial; font-size:x-small">.</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">.</div>
+        <div class="col-md-6">.</div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        @*    <div class="col-md-1" style="font-weight:bold; font-family:Arial;">
+                @Html.EditorFor(model => model.TransitionWeeks, new         { htmlAttributes = new {@class = "form-control",@style = "Background-color: #ffcc99;" } })
+
+                @Html.ValidationMessageFor(model => model.TransitionWeeks, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1" style="font-weight:bold; font-family:Arial">
+                @Html.EditorFor(model => model.TransformatonWeeks, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
+                @Html.ValidationMessageFor(model => model.TransformatonWeeks, "", new { @class = "text-danger" })
+            </div>*@
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <input type="submit" value="Re-Calculate Form" class="btn btn-primary" />
+        </div>
+        <div class="col-md-6">.col-md-6</div>
+
+    </div>
+
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Save" class="btn btn-default" />
+    </div>
+</div>
+}
+
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

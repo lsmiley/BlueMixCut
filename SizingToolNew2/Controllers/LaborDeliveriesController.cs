@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SizingToolNew2.Models;
+using System.Data.Entity.Infrastructure;
 
 namespace SizingToolNew2.Controllers
 {
@@ -19,7 +20,8 @@ namespace SizingToolNew2.Controllers
         // GET: LaborDeliveries
         public async Task<ActionResult> Index()
         {
-            return View(await db.LaborDeliverys.ToListAsync());
+            var laborDeliverys = db.LaborDeliverys.Include(l => l.LaborDeliveryType);
+            return View(await laborDeliverys.ToListAsync());
         }
 
         // GET: LaborDeliveries/Details/5
@@ -40,6 +42,38 @@ namespace SizingToolNew2.Controllers
         // GET: LaborDeliveries/Create
         public ActionResult Create()
         {
+            ViewBag.LaborDeliveryTypeId = new SelectList(db.LaborDeliveryTypes, "LaborDeliveryTypeId", "DeliveryTypeName");
+            ViewBag.SizingType = new SelectList(db.SizingTypes, "SizingTypeId", "SizingTypeName");
+
+            List<SelectListItem> listItems = new List<SelectListItem>();
+            listItems.Add(new SelectListItem(){Value = "111",Text = "Car1"});
+            listItems.Add(new SelectListItem(){Value = "222",Text = "Car2"});
+            listItems.Add(new SelectListItem(){Value = "3333",Text = "Car3", Selected=true});
+            
+            //ViewBag.DeliveryType = new SelectList(listItems, "Value", "Text");
+
+            #region ViewData
+            List<SelectListItem> mySkills = new List<SelectListItem>() {
+        new SelectListItem {Text = "ASP.NET MVC", Value = "1"},
+        new SelectListItem {Text = "ASP.NET WEB API", Value = "2"},
+        new SelectListItem {Text = "ENTITY FRAMEWORK", Value = "3"},
+        new SelectListItem {Text = "DOCUSIGN", Value = "4"},
+        new SelectListItem {Text = "ORCHARD CMS", Value = "5"},
+        new SelectListItem {Text = "JQUERY", Value = "6"},
+        new SelectListItem {Text = "ZENDESK", Value = "7"},
+        new SelectListItem {Text = "LINQ", Value = "8"},
+        new SelectListItem {Text = "C#", Value = "9"},
+        new SelectListItem { Text = "GOOGLE ANALYTICS", Value = "10" },
+    };
+            ViewData["MySkills"] = mySkills;
+            #endregion
+            {
+                var fromDatabaseEF = new SelectList(db.LaborDeliveryTypes.ToList(), "LaborDeliveryTypeId", "DeliveryUseDescription");
+                ViewData["DBLaborDeliveryTypes"] = fromDatabaseEF;
+
+            }
+            
+
             return View();
         }
 
@@ -48,14 +82,56 @@ namespace SizingToolNew2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "LaborDeliveryId,RegionNumber,Regions,DeliveryOption,CurrencyType,DefaultFTE_Year,WorkWeek,DeliveryCtrCostFactor,Band2,Band2Name,Band2Count,Band2Percentage,Band3,Band3Name,Band3Count,Band3Percentage,Band4,Band4Name,Band4Count,Band4Percentage,Band5,Band5Name,Band5Count,Band5Percentage,Band6,Band6Name,Band6Count,Band6Percentage,Band7,Band7Name,Band7Count,Band7Percentage,Band8,Band8Name,Band8Count,Band8Percentage,Band9,Band9Name,Band9Count,Band9Percentage,Band10,Band10Name,Band10Count,Band10Percentage,BandsTotalCount")] LaborDelivery laborDelivery)
+        public async Task<ActionResult> Create([Bind(Include = "LaborDeliveryId,RegionNumber,Regions,DeliveryOption,LaborDeliveryTypeId,CurrencyType,DefaultFTE_Year,WorkWeek,DeliveryCtrCostFactor,Band2,Band2Name,Band2Count,Band2Percentage,Band3,Band3Name,Band3Count,Band3Percentage,Band4,Band4Name,Band4Count,Band4Percentage,Band5,Band5Name,Band5Count,Band5Percentage,Band6,Band6Name,Band6Count,Band6Percentage,Band7,Band7Name,Band7Count,Band7Percentage,Band8,Band8Name,Band8Count,Band8Percentage,Band9,Band9Name,Band9Count,Band9Percentage,Band10,Band10Name,Band10Count,Band10Percentage,BandsTotalCount,DeliveryType,DeliveryUseDescription,MemoDeliveryNote1,DeliveryOwnerFirstName,DeliveryOwnerLastName,DeliveryOwnerFullName,DeliveryOwnerEmail,CreateBy")] LaborDelivery laborDelivery)
         {
             if (ModelState.IsValid)
             {
+
+            
+                var typeDeliverys = new List<SelectListItem>();
+                typeDeliverys.Add(new SelectListItem() { Text = "Select...", Value = string.Empty });
+                typeDeliverys.Add(new SelectListItem() { Text = "Shared/Hosted-Cloud-Support", Value = "0" });
+                typeDeliverys.Add(new SelectListItem() { Text = "Dedicated-Support", Value = "1" });
+                typeDeliverys.Add(new SelectListItem() { Text = "Project/RFS/NBD", Value = "2" });
+                typeDeliverys.Add(new SelectListItem() { Text = "Custom", Value = "9" });
+
+                ViewBag.DeliveryType = typeDeliverys;
+                {
+                    #region ViewData
+                List<SelectListItem> mySkills = new List<SelectListItem>() {
+        new SelectListItem {Text = "ASP.NET MVC", Value = "1"},
+        new SelectListItem {Text = "ASP.NET WEB API", Value = "2"},
+        new SelectListItem {Text = "ENTITY FRAMEWORK", Value = "3"},
+        new SelectListItem {Text = "DOCUSIGN", Value = "4"},
+        new SelectListItem {Text = "ORCHARD CMS", Value = "5"},
+        new SelectListItem {Text = "JQUERY", Value = "6"},
+        new SelectListItem {Text = "ZENDESK", Value = "7"},
+        new SelectListItem {Text = "LINQ", Value = "8"},
+        new SelectListItem {Text = "C#", Value = "9"},
+        new SelectListItem { Text = "GOOGLE ANALYTICS", Value = "10" },
+    };
+                    ViewData["MySkills"] = mySkills;
+                    #endregion
+                }
+
                 db.LaborDeliverys.Add(laborDelivery);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            ViewBag.LaborDeliveryTypeId = new SelectList(db.LaborDeliveryTypes, "LaborDeliveryTypeId", "DeliveryTypeName", laborDelivery.LaborDeliveryTypeId);
+
+            //{    List<string> ListItems = new List<string>();
+            //    ListItems.Add("Select");
+            //    ListItems.Add("StdGeoDelivery");
+            //    ListItems.Add("Shared/Hosted-Cloud-Support");
+            //    ListItems.Add("Dedicated-Support");
+            //    ListItems.Add("Project/RFS/NBD");
+            //    ListItems.Add("Custom");
+            //    SelectList DeliveryTypes = new SelectList(ListItems);
+            //    ViewData["DeliveryTypes"] = DeliveryTypes;
+
+
+
 
             return View(laborDelivery);
         }
@@ -72,6 +148,24 @@ namespace SizingToolNew2.Controllers
             {
                 return HttpNotFound();
             }
+
+            #region ViewData
+            List<SelectListItem> mySkills = new List<SelectListItem>() {
+        new SelectListItem {Text = "ASP.NET MVC", Value = "1"},
+        new SelectListItem {Text = "ASP.NET WEB API", Value = "2"},
+        new SelectListItem {Text = "ENTITY FRAMEWORK", Value = "3"},
+        new SelectListItem {Text = "DOCUSIGN", Value = "4"},
+        new SelectListItem {Text = "ORCHARD CMS", Value = "5"},
+        new SelectListItem {Text = "JQUERY", Value = "6"},
+        new SelectListItem {Text = "ZENDESK", Value = "7"},
+        new SelectListItem {Text = "LINQ", Value = "8"},
+        new SelectListItem {Text = "C#", Value = "9"},
+        new SelectListItem { Text = "GOOGLE ANALYTICS", Value = "10" },
+    };
+            ViewData["MySkills"] = mySkills;
+            #endregion
+
+            ViewBag.LaborDeliveryTypeId = new SelectList(db.LaborDeliveryTypes, "LaborDeliveryTypeId", "DeliveryTypeName", laborDelivery.LaborDeliveryTypeId);
             return View(laborDelivery);
         }
 
@@ -80,7 +174,7 @@ namespace SizingToolNew2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "LaborDeliveryId,RegionNumber,Regions,DeliveryOption,CurrencyType,DefaultFTE_Year,WorkWeek,DeliveryCtrCostFactor,Band2,Band2Name,Band2Count,Band2Percentage,Band3,Band3Name,Band3Count,Band3Percentage,Band4,Band4Name,Band4Count,Band4Percentage,Band5,Band5Name,Band5Count,Band5Percentage,Band6,Band6Name,Band6Count,Band6Percentage,Band7,Band7Name,Band7Count,Band7Percentage,Band8,Band8Name,Band8Count,Band8Percentage,Band9,Band9Name,Band9Count,Band9Percentage,Band10,Band10Name,Band10Count,Band10Percentage,BandsTotalCount")] LaborDelivery laborDelivery)
+        public async Task<ActionResult> Edit([Bind(Include = "LaborDeliveryId,RegionNumber,Regions,DeliveryOption,LaborDeliveryTypeId,CurrencyType,DefaultFTE_Year,WorkWeek,DeliveryCtrCostFactor,Band2,Band2Name,Band2Count,Band2Percentage,Band3,Band3Name,Band3Count,Band3Percentage,Band4,Band4Name,Band4Count,Band4Percentage,Band5,Band5Name,Band5Count,Band5Percentage,Band6,Band6Name,Band6Count,Band6Percentage,Band7,Band7Name,Band7Count,Band7Percentage,Band8,Band8Name,Band8Count,Band8Percentage,Band9,Band9Name,Band9Count,Band9Percentage,Band10,Band10Name,Band10Count,Band10Percentage,BandsTotalCount,DeliveryType,DeliveryUseDescription,MemoDeliveryNote1,DeliveryOwnerFirstName,DeliveryOwnerLastName,DeliveryOwnerFullName,DeliveryOwnerEmail,CreateBy")] LaborDelivery laborDelivery)
         {
             if (ModelState.IsValid)
             {
@@ -88,6 +182,24 @@ namespace SizingToolNew2.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+
+            #region ViewData
+            List<SelectListItem> mySkills = new List<SelectListItem>() {
+        new SelectListItem {Text = "ASP.NET MVC", Value = "1"},
+        new SelectListItem {Text = "ASP.NET WEB API", Value = "2"},
+        new SelectListItem {Text = "ENTITY FRAMEWORK", Value = "3"},
+        new SelectListItem {Text = "DOCUSIGN", Value = "4"},
+        new SelectListItem {Text = "ORCHARD CMS", Value = "5"},
+        new SelectListItem {Text = "JQUERY", Value = "6"},
+        new SelectListItem {Text = "ZENDESK", Value = "7"},
+        new SelectListItem {Text = "LINQ", Value = "8"},
+        new SelectListItem {Text = "C#", Value = "9"},
+        new SelectListItem { Text = "GOOGLE ANALYTICS", Value = "10" },
+    };
+            ViewData["MySkills"] = mySkills;
+            #endregion
+
+            ViewBag.LaborDeliveryTypeId = new SelectList(db.LaborDeliveryTypes, "LaborDeliveryTypeId", "DeliveryTypeName", laborDelivery.LaborDeliveryTypeId);
             return View(laborDelivery);
         }
 

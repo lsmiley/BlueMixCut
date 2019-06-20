@@ -27,6 +27,7 @@ namespace SizingToolNew2.Models
 
         {
 
+
         }
         
         public DbSet<AcctCust> AcctCusts { get; set; }
@@ -47,12 +48,17 @@ namespace SizingToolNew2.Models
         public DbSet<StatusState> StatusStates { get; set; }
         public DbSet<ConfigMaster> ConfigMasters { get; set; }
         public DbSet<TnTWorksheet> TnTWorksheet { get; set; }
-      
+        public DbSet<LaborDeliveryType> LaborDeliveryTypes { get; set; }
+
+
 
 
 
         public static SizingDbContext Create()
         {
+
+
+
             return new SizingDbContext();
 
         }
@@ -60,6 +66,9 @@ namespace SizingToolNew2.Models
         public System.Data.Entity.DbSet<SizingToolNew2.ViewModels.SizingComponent5VM> SizingComponent5VM { get; set; }
 
         public System.Data.Entity.DbSet<SizingToolNew2.ViewModels.TestVM10> TestVM10 { get; set; }
+
+
+       
 
 
 
@@ -73,11 +82,11 @@ namespace SizingToolNew2.Models
 
     // public System.Data.Entity.DbSet<SizingToolNew2.Models.SizingVM> SizingVMs { get; set; }
 
-    //     protected override void OnModelCreating(DbModelBuilder modelBuilder)
-    //    {
-    //   modelBuilder.Entity<SizingDetail>().HasRequired(x => x.Sizing);
-    //   base.OnModelCreating(modelBuilder);
-    //    }
+    //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    //{
+    //    modelBuilder.Entity<SizingDetail>().HasRequired(x => x.Sizing);
+    //    base.OnModelCreating(modelBuilder);
+    //}
 
     //     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     //    {
@@ -96,4 +105,4 @@ namespace SizingToolNew2.Models
     //   }
 }
 
-     
+

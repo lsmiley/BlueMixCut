@@ -1,0 +1,143 @@
+﻿@model IEnumerable<SizingToolNew2.Models.Sizing>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/Images/ibm security shield wordmark stack blue20_by_30pct.png" />
+
+    </div>
+    <div class="col-md-6">
+
+        <h1 class="panel-title list-panel-title">My Sizings - Dashboard</h1>
+
+    </div>
+    <div class="col-md-2">
+        .
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">.</div>
+    <div class="col-md-6">
+    </div>
+
+    <div class="box box-default">
+
+
+    </div>
+    <div class="box box-default, bg-gray" style="width:90%;height:auto">
+        <div class="box-header with-border">
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-aqua"><i class="fa fa-gears"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">@Model.Where(Sizing => Sizing.StatusState.StatusStateName == "New Sizing").ToList().Count - New Requests</span>
+                            <span class="info-box-text">@Model.Where(Sizing => Sizing.SizingType.SizingTypeName == "SR-MSS").ToList().Count - Sizing Requests </span>
+                            <span class="info-box-text">@Model.Where(Sizing => Sizing.SizingType.SizingTypeName == "NBIE").ToList().Count - NBIE Requests </span>
+                        </div><!-- /.info-box-content -->
+                    </div><!-- /.info-box -->
+                </div><!-- /.col -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-red-active"><i class="fa fa-hand-o-right"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text"> <span class="info-box-text">@Model.Where(Sizing => Sizing.StatusState.StatusStateName == "Pending Requester Info").ToList().Count - Pending Requester Info </span></span>
+                            <span class="info-box-text"> <span class="info-box-text">@Model.Where(Sizing => Sizing.StatusState.StatusStateName == "Pend Review").ToList().Count - Pending Review </span></span>
+                            <span class="info-box-text"> <span class="info-box-text">@Model.Where(Sizing => Sizing.StatusState.StatusStateName == "Pending Approval").ToList().Count - Pending Approval</span></span>
+                        </div><!-- /.info-box-content -->
+                    </div><!-- /.info-box -->
+                </div><!-- /.col -->
+                <!-- fix for small devices only -->
+                <div class="clearfix visible-sm-block"></div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-yellow"><i class="fa fa-unlock-alt"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">@Model.Where(Sizing => Sizing.StatusState.StatusStateName == "In-Progress").ToList().Count - In-Progress</span>
+                            <span class="info-box-text">@Model.Where(Sizing => Sizing.StatusState.StatusStateName == "In-Progress Expedited").ToList().Count - In-Progress Expedited </span>
+                            <span class="info-box-text">@Model.Where(Sizing => Sizing.StatusState.StatusStateName == "Queued").ToList().Count - Queued</span>
+
+                        </div><!-- /.info-box-content -->
+                    </div><!-- /.info-box -->
+                </div><!-- /.col -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-green"><i class="ion ion-ios-people-outline"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Closed - Sizing Requests</span>
+                            <span class="info-box-number">18 - Last 30 Days</span>
+                        </div><!-- /.info-box-content -->
+                    </div><!-- /.info-box -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div>
+    </div>
+
+    <div id="DashBoard9">@Html.Partial("_TestDashBoard9")</div>
+
+
+    <div class="col-md-2">.</div>
+
+    @*<div id="DashBoard10">@Html.Partial("_TestSizingTableDataTables")</div>*@
+
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <link href="~/Content/DataTables/css/dataTables.jqueryui.css" rel="stylesheet" />
+
+    <script src="~/Scripts/DataTables/dataTables.jqueryui.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.jqueryui.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.css">
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#DashBoard9-data-table').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "scrollY": "400px",
+                "order": [[0, "desc"]]
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#DashBoard10-data-table').DataTable({
+
+                "pagingType": "full_numbers",
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "scrollY": "400px",
+                "order": [[0, "desc"]]
+            });
+
+        });
+
+
+    </script>
+}

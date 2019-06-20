@@ -43,6 +43,12 @@
                                Delivery
                             </th>
                             <th>
+                                @Html.DisplayNameFor(model => model.DeliveryCtrCostFactor)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LaborDeliveryTypeId)
+                            </th>
+                            <th>
                                 @Html.DisplayNameFor(model => model.CurrencyType)
                             </th>
                             <th>
@@ -99,6 +105,12 @@
                                     </td>*@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.DeliveryOption)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DeliveryCtrCostFactor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LaborDeliveryTypeId)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.CurrencyType)

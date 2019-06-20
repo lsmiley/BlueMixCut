@@ -307,6 +307,7 @@ namespace SizingToolNew2.Controllers
 
             return View(sizing);
         }
+
         [AuthLog(Roles = "Administrator, Solution Manager, Solution Architect, Sizer, Viewer")]
         public ActionResult ProcessForm(Sizing obj, string submit)
         {
@@ -523,6 +524,83 @@ namespace SizingToolNew2.Controllers
         // GET: SizingUserDashboard2/GBO/5
         [AllowAnonymous]
         public async Task<ActionResult> GBO(int? id)
+        {
+
+            ViewBag.AcctCustId = new SelectList(db.AcctCusts, "AcctCustId", "AcctName");
+            ViewBag.AvProductId = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.ConfigId = new SelectList(db.ConfigTables, "ConfigId", "ConfigName");
+            ViewBag.LaborDeliveryId = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.SizingTypeId = new SelectList(db.SizingTypes, "SizingTypeId", "SizingTypeName");
+            ViewBag.StatusStateId = new SelectList(db.StatusStates, "StatusStateId", "StatusStateName");
+            ViewBag.TnTId = new SelectList(db.TnTWorksheet, "TnTId", "TnTDescription");
+
+            // Added for multiple Product Drop-Downs
+            ViewBag.Product1 = new SelectList(db.AvProducts, "AvProductId", "ProductName", "Select One");
+            ViewBag.Product2 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product3 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product4 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product5 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product6 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product7 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product8 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product9 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product10 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product11 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.Product12 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.ddlProduct13 = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.jobID = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.AvProductList = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.AntiVirusProd1 = new SelectList(db.AvProducts, "AvProductId", "TotalComplexity", "Select");
+
+            // ViewBag.ddl_AvProduct1 = new SelectList(db.AvProducts, "AvProductId", "ProductName", sizing.AvProductId);
+            ViewBag.ProductData = new SelectList(db.AvProducts, "AvProductId", "ProductName");
+            ViewBag.CountriesList = new SelectList(db.AvProducts, "AvproductId", "ProductName");
+
+            // Added for multiple Delivery Center Drop-Downs
+            ViewBag.DeliveredFrom1 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom2 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom3 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom4 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom5 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom6 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom7 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom8 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom9 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom10 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom11 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+            ViewBag.DeliveredFrom12 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Regions");
+
+            // Added for Band Level Drop usage in Formula to calc FTE
+            ViewBag.Bands1 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands2 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands3 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands4 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands5 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands6 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands7 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands8 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands9 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands10 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands11 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+            ViewBag.Bands12 = new SelectList(db.LaborDeliverys, "LaborDeliveryId", "Band3", "16");
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Sizing sizing = await db.Sizings.FindAsync(id);
+            if (sizing == null)
+            {
+                return HttpNotFound();
+            }
+            return View(sizing);
+        }
+
+
+
+        // GET: SizingUserDashboard2/GBONew/5
+        [AllowAnonymous]
+        public async Task<ActionResult> GBONew(int? id)
         {
 
             ViewBag.AcctCustId = new SelectList(db.AcctCusts, "AcctCustId", "AcctName");

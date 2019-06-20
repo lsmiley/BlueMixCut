@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SizingToolNew2.Models.LaborDeliveryType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryUseDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemoDeliveryNote1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryUseDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemoDeliveryNote1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryOwnerFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryOwnerLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryOwnerFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryOwnerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.LaborDeliveryTypeId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.LaborDeliveryTypeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.LaborDeliveryTypeId })
+        </td>
+    </tr>
+}
+
+</table>

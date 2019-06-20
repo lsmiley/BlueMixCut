@@ -1,0 +1,197 @@
+﻿@model SizingToolNew2.Models.AvProduct
+
+
+<body>
+
+    @*<div class="container-fluid">
+        <div class="row">
+
+            <form action="../submit" id="formentry" class="form-horizontal" role="form" data-parsley-validate novalidate>
+                <div class="container-fluid shadow">
+                    <div class="row">
+                        <div id="valErr" class="row viewerror clearfix hidden">
+                            <div class="alert alert-danger">Oops! Seems there are some errors..</div>
+                        </div>
+                        <div id="valOk" class="row viewerror clearfix hidden">
+                            <div class="alert alert-success">Yay! ..</div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group" style="display: block;">
+                                            <label class="control-label control-label-left col-sm-3">Required: Support Tasks</label>
+                                            <div class="controls col-sm-9">
+
+                                                <label class="checkbox col-md-3" for="checkbox45"><input type="checkbox" value="Separate Install" id="checkbox45" name="field44" data-parsley-errors-container="#errId1">Separate Install</label><label class="checkbox col-md-3" for="checkbox46"><input type="checkbox" value="Separate Update/Patch" id="checkbox46" name="field44" data-parsley-errors-container="#errId1">Separate Update/Patch</label><label class="checkbox col-md-3" for="checkbox47"><input type="checkbox" value="Separate Upgrade" id="checkbox47" name="field44" data-parsley-errors-container="#errId1">Separate Upgrade</label><label class="checkbox col-md-3"><input id="checkbox52" name="field44" type="checkbox" value="Policy Configuration" data-parsley-errors-container="#errId1">Policy Configuration</label><span id="errId1" class="error"></span>
+                                            </div>
+
+                                        </div><div class="form-group">
+                                            <label class="control-label control-label-left col-sm-3">Required Support Roles</label>
+                                            <div class="controls col-sm-9">
+
+                                                <label class="checkbox col-md-3" for="checkbox63"><input type="checkbox" value="Malware Admin" id="checkbox63" name="field62" data-parsley-errors-container="#errId2">Malware Admin</label><label class="checkbox col-md-3" for="checkbox64"><input type="checkbox" value="Wintel Admin" id="checkbox64" name="field62" data-parsley-errors-container="#errId2">Wintel Admin</label><label class="checkbox col-md-3" for="checkbox65"><input type="checkbox" value="ISA" id="checkbox65" name="field62" data-parsley-errors-container="#errId2">ISA</label><label class="checkbox col-md-3"><input id="checkbox70" name="field62" type="checkbox" value="NOC Admin" data-parsley-errors-container="#errId2">NOC Admin</label><span id="errId2" class="error"></span>
+                                            </div>
+
+                                        </div><div class="form-group" style="display: block;">
+                                            <label class="control-label control-label-left col-sm-3">Generated Effort &amp; Impact</label>
+                                            <div class="controls col-sm-9">
+
+                                                <label class="checkbox col-md-3" for="checkbox103"><input type="checkbox" value="Incident Response" id="checkbox103" name="field102" data-parsley-errors-container="#errId3">Incident Response</label><label class="checkbox col-md-3" for="checkbox104"><input type="checkbox" value="Internet Traffic" id="checkbox104" name="field102" data-parsley-errors-container="#errId3">Internet Traffic</label><label class="checkbox col-md-3" for="checkbox105"><input type="checkbox" value="Network Traffic" id="checkbox105" name="field102" data-parsley-errors-container="#errId3">Network Traffic</label><label class="checkbox col-md-3"><input id="checkbox110" name="field102" type="checkbox" value="Computer Performance" data-parsley-errors-container="#errId3">Computer Performance</label><span id="errId3" class="error"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div><div class="form-group" rel="popover" data-trigger="hover" data-content="Select One Option
+to Reflect
+Fraction/Percentage
+of work against
+the Base" data-original-title="">
+                                    <label class="control-label col-sm-3">Components</label>
+                                    <div class="controls col-sm-9">
+
+                                        <label class="radio-inline" for="radio125"><input type="radio" value="Option 1" id="radio125" name="field124" data-parsley-errors-container="#errId4">2%</label><label class="radio-inline" for="radio126"><input type="radio" value="Option 2" id="radio126" name="field124" data-parsley-errors-container="#errId4">10%</label><label class="radio-inline" for="radio127"><input type="radio" value="Option 3" id="radio127" name="field124" data-parsley-errors-container="#errId4">15%</label><label class="radio-inline"><input id="radio128" name="field124" type="radio" data-parsley-errors-container="#errId4">25%</label><label class="radio-inline"><input id="radio129" name="field124" type="radio" data-parsley-errors-container="#errId4">35%</label><label class="radio-inline"><input id="radio130" name="field124" type="radio" data-parsley-errors-container="#errId4">55%</label><label class="radio-inline"><input id="radio147" name="field124" type="radio" data-parsley-errors-container="#errId4">65%</label><label class="radio-inline"><input id="radio148" name="field124" type="radio" data-parsley-errors-container="#errId4">75%</label><label class="radio-inline"><input id="radio149" name="field124" type="radio" data-parsley-errors-container="#errId4">85%</label><label class="radio-inline"><input id="radio150" name="field124" type="radio" data-parsley-errors-container="#errId4">90%</label><span class="help-block radio-inline">On A Scale of 2% through  90% Select overall Effort Component represents against the whole Product's FTE</span><span id="errId4" class="error"></span>
+                                    </div>
+
+                                </div><div class="row">
+                                    <div class="col-md-9">
+                                        <div class="form-group" rel="popover" data-trigger="hover" data-content="Explain:Component's function..!" data-original-title="">
+                                            <label class="control-label control-label-left col-sm-3" for="ComponentNotes:">Component Notes:</label>
+                                            <div class="controls col-sm-9">
+
+                                                <textarea id="ComponentNotes:" rows="3" class="form-control k-textbox" data-role="textarea" data-parsley-errors-container="#errId5"></textarea><span class="help-block">Note</span><span id="errId5" class="error"></span>
+                                            </div>
+
+                                        </div>
+                                    </div><div class="col-md-3">
+                                        <div class="form-group">
+
+
+
+                                            <button id="button180" type="button" class="btn btn-default">Button</button>
+                                        </div>
+                                    </div>
+                                </div><div class="row"><div class="col-md-12"></div></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>*@
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" style="display: block;">
+                        <label class="control-label control-label-left col-sm-3">Required: Support Tasks</label>
+                        <div class="controls col-sm-9">
+
+                            <label class="checkbox col-md-3" for="checkbox45"><input type="checkbox" value="Separate Install" id="checkbox45" name="field44" data-parsley-errors-container="#errId1">Separate Install</label><label class="checkbox col-md-3" for="checkbox46"><input type="checkbox" value="Separate Update/Patch" id="checkbox46" name="field44" data-parsley-errors-container="#errId1">Separate Update/Patch</label><label class="checkbox col-md-3" for="checkbox47"><input type="checkbox" value="Separate Upgrade" id="checkbox47" name="field44" data-parsley-errors-container="#errId1">Separate Upgrade</label><label class="checkbox col-md-3"><input id="checkbox52" name="field44" type="checkbox" value="Policy Configuration" data-parsley-errors-container="#errId1">Policy Configuration</label><span id="errId1" class="error"></span>
+                        </div>
+
+                    </div><div class="form-group">
+                        <label class="control-label control-label-left col-sm-3">Required Support Roles</label>
+                        <div class="controls col-sm-9">
+
+                            <label class="checkbox col-md-3" for="checkbox63"><input type="checkbox" value="Malware Admin" id="checkbox63" name="field62" data-parsley-errors-container="#errId2">Malware Admin</label><label class="checkbox col-md-3" for="checkbox64"><input type="checkbox" value="Wintel Admin" id="checkbox64" name="field62" data-parsley-errors-container="#errId2">Wintel Admin</label><label class="checkbox col-md-3" for="checkbox65"><input type="checkbox" value="ISA" id="checkbox65" name="field62" data-parsley-errors-container="#errId2">ISA</label><label class="checkbox col-md-3"><input id="checkbox70" name="field62" type="checkbox" value="NOC Admin" data-parsley-errors-container="#errId2">NOC Admin</label><span id="errId2" class="error"></span>
+                        </div>
+
+                    </div><div class="form-group" style="display: block;">
+                        <label class="control-label control-label-left col-sm-3">Generated Effort &amp; Impact</label>
+                        <div class="controls col-sm-9">
+
+                            <label class="checkbox col-md-3" for="checkbox103"><input type="checkbox" value="Incident Response" id="checkbox103" name="field102" data-parsley-errors-container="#errId3">Incident Response</label><label class="checkbox col-md-3" for="checkbox104"><input type="checkbox" value="Internet Traffic" id="checkbox104" name="field102" data-parsley-errors-container="#errId3">Internet Traffic</label><label class="checkbox col-md-3" for="checkbox105"><input type="checkbox" value="Network Traffic" id="checkbox105" name="field102" data-parsley-errors-container="#errId3">Network Traffic</label><label class="checkbox col-md-3"><input id="checkbox110" name="field102" type="checkbox" value="Computer Performance" data-parsley-errors-container="#errId3">Computer Performance</label><span id="errId3" class="error"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div><div class="form-group" rel="popover" data-trigger="hover" data-content="Select One Option
+to Reflect
+Fraction/Percentage
+of work against
+the Base" data-original-title="">
+                <label class="control-label col-sm-3">Components</label>
+                <div class="controls col-sm-9">
+
+                    <label class="radio-inline" for="radio125"><input type="radio" value="Option 1" id="radio125" name="field124" data-parsley-errors-container="#errId4">2%</label>
+                    <label class="radio-inline" for="radio126"><input type="radio" value="Option 2" id="radio126" name="field124" data-parsley-errors-container="#errId4">10%</label>
+                    <label class="radio-inline" for="radio127"><input type="radio" value="Option 3" id="radio127" name="field124" data-parsley-errors-container="#errId4">15%</label>
+                    <label class="radio-inline"><input id="radio128" name="field124" type="radio" data-parsley-errors-container="#errId4">25%</label>
+                    <label class="radio-inline"><input id="radio129" name="field124" type="radio" data-parsley-errors-container="#errId4">35%</label>
+                    <label class="radio-inline"><input id="radio130" name="field124" type="radio" data-parsley-errors-container="#errId4">55%</label>
+                    <label class="radio-inline"><input id="radio147" name="field124" type="radio" data-parsley-errors-container="#errId4">65%</label>
+                    <label class="radio-inline"><input id="radio148" name="field124" type="radio" data-parsley-errors-container="#errId4">75%</label>
+                    <label class="radio-inline"><input id="radio149" name="field124" type="radio" data-parsley-errors-container="#errId4">85%</label>
+                    <label class="radio-inline"><input id="radio150" name="field124" type="radio" data-parsley-errors-container="#errId4">90%</label>
+                    <span class="help-block radio-inline">On A Scale of 2% through  90% Select overall Effort Component represents against the whole Product's FTE</span><span id="errId4" class="error"></span>
+                </div>
+
+            </div>
+                  <div class="row">
+                      <div class="col-md-1">
+                          <label class="radio-inline"><input id="radio128" name="field124" type="radio" data-parsley-errors-container="#errId4">25%</label>
+                      </div>
+                      <div class="col-md-1">
+                          <label class="radio-inline"><input id="radio129" name="field124" type="radio" data-parsley-errors-container="#errId4">35%</label>
+                      </div>
+                      <div class="col-md-1">
+                          <label class="radio-inline"><input id="radio130" name="field124" type="radio" data-parsley-errors-container="#errId4">55%</label>
+                      </div>
+                      <div class="col-md-1">
+                          <label class="radio-inline"><input id="radio147" name="field124" type="radio" data-parsley-errors-container="#errId4">65%</label>
+                      </div>
+                      <div class="col-md-1">
+                          <label class="radio-inline"><input id="radio148" name="field124" type="radio" data-parsley-errors-container="#errId4">75%</label>
+                      </div>
+                      <div class="col-md-1">
+                          <label class="radio-inline"><input id="radio149" name="field124" type="radio" data-parsley-errors-container="#errId4">85%</label>
+                      </div>
+                      <div class="col-md-1">
+                          <label class="radio-inline"><input id="radio150" name="field124" type="radio" data-parsley-errors-container="#errId4">90%</label>
+                      </div>
+                      <div class="col-md-1"></div>
+                      <div class="col-md-1"></div>
+
+
+                  </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="form-group" rel="popover" data-trigger="hover" data-content="Explain:Component's function..!" data-original-title="">
+                        <label class="control-label control-label-left col-sm-3" for="ComponentNotes:">Component Notes:</label>
+                        <div class="controls col-sm-9">
+
+                            <textarea id="ComponentNotes:" rows="3" class="form-control k-textbox" data-role="textarea" data-parsley-errors-container="#errId5"></textarea><span class="help-block">Note</span><span id="errId5" class="error"></span>
+                        </div>
+
+                    </div>
+                </div><div class="col-md-3">
+                    <div class="form-group">
+
+
+
+                        <button id="button180" type="button" class="btn btn-default">Button</button>
+                    </div>
+                </div>
+            </div><div class="row"><div class="col-md-12"></div></div>
+        </div>
+    </div>
+    
+
+    <script src="http://cdn.kendostatic.com/2014.1.318/js/jquery.min.js"></script>
+    <script src="http://protostrap.com/Assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="http://wenzhixin.net.cn/p/bootstrap-table/src/bootstrap-table.js" type="text/javascript"></script>
+
+    <script src="http://protostrap.com/Assets/inputmask/js/jquery.inputmask.js" type="text/javascript"></script>
+    <script src="http://cdn.kendostatic.com/2014.1.318/js/kendo.all.min.js"></script>
+    <script src="http://protostrap.com/Assets/parsely/parsley.extend.js" type="text/javascript"></script>
+    <script src="http://protostrap.com/Assets/parsely/2.0/parsley.js" type="text/javascript"></script>
+    <script src="http://protostrap.com/Assets/download.js" type="text/javascript"></script>
+    <script src="http://protostrap.com/Assets/protostrap.js" type="text/javascript"></script>
+</body>

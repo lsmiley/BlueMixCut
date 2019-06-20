@@ -1,0 +1,442 @@
+﻿@model SizingToolNew2.Models.LaborDelivery
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LaborDelivery</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LaborDeliveryType.DeliveryTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LaborDeliveryType.DeliveryTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegionNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Regions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Regions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryOption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryOption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencyType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrencyType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultFTE_Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultFTE_Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkWeek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkWeek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryCtrCostFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryCtrCostFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band2Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band2Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band2Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band2Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band2Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band2Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band3Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band3Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band3Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band3Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band3Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band3Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band4Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band4Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band4Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band4Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band4Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band4Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band5Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band5Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band5Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band5Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band5Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band5Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band6Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band6Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band6Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band6Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band6Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band6Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band7Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band7Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band7Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band7Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band7Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band7Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band8Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band8Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band8Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band8Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band8Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band8Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band9Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band9Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band9Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band9Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band9Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band9Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band10Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band10Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band10Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band10Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Band10Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Band10Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BandsTotalCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BandsTotalCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryUseDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryUseDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoDeliveryNote1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoDeliveryNote1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryOwnerFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryOwnerLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryOwnerFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryOwnerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LaborDeliveryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

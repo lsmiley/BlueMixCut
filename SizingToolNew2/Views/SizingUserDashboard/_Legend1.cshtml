@@ -1,5 +1,16 @@
 ﻿@model SizingToolNew2.Models.Sizing
 
+@{ 
+    //var TransitionSubTotalsHours_AZ = (Model.TnTWorksheet.TransitionFirstLineManagementBand8 + Model.TnTWorksheet.TransitionSecondLineManagementBand8 + Model.TnTWorksheet.TotalTransitionHoursItem);
+    // var TranformationSubTotalsHours_AZ = (Model.TnTWorksheet.TransformationFirstLineManagementBand8 + Model.TnTWorksheet.TransformationSecondLineManagementBand8 + Model.TnTWorksheet.TotalTransformationHoursItem);
+
+    var TransitionSubTotalsHours_AZ = (Model.TransitionWeeks * Model.Prod1WorkWeek);
+    var TranformationSubTotalsHours_AZ = (Model.TransformationWeeks * Model.Prod1WorkWeek);
+
+
+}
+
+
 <div class="panel-group" id="MainPanel" style="width:1350px">
     <div class="row" id="Legend">
         <div class="col-md-4">
@@ -169,7 +180,11 @@
                     <div class="row">
 
                         <div class="col-md-5" style="font-size:10px">Hours</div>
-                        <div class="col-md-3" style="font-size:10px">
+                        @*<div class="col-md-3" style="font-size:10px">
+            @Html.DisplayFor(model => model.TotalTransitionHoursItem_BZ, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+            @Html.ValidationMessageFor(model => model.TotalTransitionHoursItem_BZ, "", new { @class = "text-danger" })
+        </div>*@
+                        <div class="col-md-3" style="font-size:11px">
                             @Html.DisplayFor(model => model.TnTWorksheet.TotalTransitionHoursItem, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
                             @Html.ValidationMessageFor(model => model.TnTWorksheet.TotalTransitionHoursItem, "", new { @class = "text-danger" })
                         </div>
@@ -238,10 +253,13 @@
                         <div class="col-md-3" style="font-weight:bold; font-family:Arial; font-size:12px; color:blue">
                             @Html.DisplayFor(model => model.TnTWorksheet.TransitionSubTotalsHours, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
                             @Html.ValidationMessageFor(model => model.TnTWorksheet.TransitionSubTotalsHours, "", new { @class = "text-danger" })
+                            <div style="height:23px; text-align:center; padding: 5px 3px 3px 3px;">@String.Format("{0:0.0}", TransitionSubTotalsHours_AZ)</div>
                         </div>
+
                         <div class="col-md-4" style="font-weight:bold; font-family:Arial; font-size:12px; color:blue">
                             @Html.DisplayFor(model => model.TnTWorksheet.TranformationSubTotalsHours, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
                             @Html.ValidationMessageFor(model => model.TnTWorksheet.TranformationSubTotalsHours, "", new { @class = "text-danger" })
+                            <div style="height:23px; text-align:center; padding: 5px 3px 3px 3px;">@String.Format("{0:0.0}", TranformationSubTotalsHours_AZ)</div>
                         </div>
                     </div>
 

@@ -109,4 +109,7 @@ namespace SizingToolNew2
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
     }
+
+
+
 }

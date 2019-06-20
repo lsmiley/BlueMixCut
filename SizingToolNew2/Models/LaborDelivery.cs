@@ -4,8 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
-
+using System.Web.Mvc;
 
 namespace SizingToolNew2.Models
 {
@@ -39,7 +38,7 @@ namespace SizingToolNew2.Models
             Band9Count = 0;
             Band10Count = 0;
 
-
+            
 
 
 
@@ -58,10 +57,13 @@ namespace SizingToolNew2.Models
 
         [Key]
         public int LaborDeliveryId { get; set; }
+
         public int RegionNumber { get { return LaborDeliveryId; } set { } }
         public string Regions { get; set; }
         public string DeliveryOption { get; set; }
 
+        public int LaborDeliveryTypeId { get; set; }
+       
 
         [Display(Name = "Currency")]
         public string CurrencyType { get; set; }
@@ -252,8 +254,6 @@ namespace SizingToolNew2.Models
         public double Band10Percentage { get { return (((Band10Count + BandsTotalCount) / BandsTotalCount) - 1); } set { } }
 
 
-
-
         // public int PercentBand { get { return (Band10Count / BandsTotalCount) * 100; } set { } }
 
 
@@ -261,7 +261,43 @@ namespace SizingToolNew2.Models
         public double BandsTotalCount { get { return (Band2Count + Band3Count + Band4Count + Band5Count + Band6Count + Band7Count + Band8Count + Band9Count + Band10Count); } set { } }
 
 
-        public virtual ICollection<Sizing> Sizings { get; set; }
+        //// Removed and transfered to Controller in new form
+        //public static List<SelectListItem> DeliveryTypeLists
+        //{
+        //    get
+        //    {
+        //        return new List<SelectListItem>() {
+        //      new SelectListItem() {Text = "Standard GEO  Delivery", Value = "Std-GEO"},
+        //      new SelectListItem() {Text = "Shared-Hosted / Cloud Support", Value = "Shared-H"},
+        //      new SelectListItem() {Text = "Dedicated-Support", Value = "Dedicated"},
+        //      new SelectListItem() {Text = "Project/RFS/NBD", Value = "Project"},
+        //      new SelectListItem() {Text = "Custom", Value = "Custom"},
+        //        };
+        //    }
+        //}
 
+        public string DeliveryType { get; set; }
+        public string DeliveryUseDescription { get; set; }
+
+        [AllowHtml]
+        public string MemoDeliveryNote1 { get; set; }
+
+        [Display(Name = "First Name")]
+        public string DeliveryOwnerFirstName { get; set; }
+        [Display(Name = "Last Name")]
+        public string DeliveryOwnerLastName { get; set; }
+        [Display(Name = "Full Name")]
+        public string DeliveryOwnerFullName { get; set; }
+        [Display(Name = "Owner Email")]
+        public string DeliveryOwnerEmail { get; set; }
+
+        public string CreateBy { get; set; }
+
+        [ForeignKey("LaborDeliveryTypeId")]
+        public virtual LaborDeliveryType LaborDeliveryType { get; set; }
+
+
+        public virtual ICollection<Sizing> Sizings { get; set; }
+        
     }
 }

@@ -1,0 +1,74 @@
+﻿@model SizingToolNew2.Models.LaborDeliveryType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LaborDeliveryType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryUseDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryUseDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoDeliveryNote1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoDeliveryNote1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryOwnerFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryOwnerLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryOwnerFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryOwnerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LaborDeliveryTypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

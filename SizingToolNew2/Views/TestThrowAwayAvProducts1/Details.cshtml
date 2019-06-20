@@ -1,0 +1,738 @@
+﻿@model SizingToolNew2.Models.AvProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AvProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdCategory.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdCategory.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdVendor.VendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdVendor.VendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductTypeFamily)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductTypeFamily)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductComplexityBase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductComplexityBase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductComplexityFac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductComplexityFac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numcomponent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numcomponent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryComp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryComp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryCompDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryCompDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryComplexity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryComplexity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalComplexity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalComplexity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoProductNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoProductNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoTechnicalNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoTechnicalNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component1Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component1Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent1Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent1Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent1TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent1TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component2Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component2Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent2Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent2Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent2TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent2TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component3Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component3Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent3Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent3Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent3TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent3TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component4Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component4Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent4Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent4Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent4TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent4TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component5Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component5Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent5Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent5Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent5TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent5TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component6Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component6Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent6Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent6Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent6TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent6TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component7Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component7Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent7Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent7Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent7TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent7TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component8Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component8Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent8Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent8Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent8TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent8TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component9Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component9Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent9Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent9Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent9TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent9TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component10Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component10Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent10Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent10Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent10TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent10TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component11Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component11Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent11Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent11Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent11TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent11TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component12Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component12Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component13Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component13Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent13Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent13Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent13TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent13TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component14)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component14)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component14Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component14Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac14)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac14)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent14Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent14Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent14TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent14TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Component15Desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Component15Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentComplexityFac15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentComplexityFac15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent15Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent15Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoComponent15TechNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoComponent15TechNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumComponents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumComponents)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AvProductId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

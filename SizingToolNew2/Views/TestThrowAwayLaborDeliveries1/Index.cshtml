@@ -1,0 +1,345 @@
+﻿@model IEnumerable<SizingToolNew2.Models.LaborDelivery>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LaborDeliveryTypes.DeliveryTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Regions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryOption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrencyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefaultFTE_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryCtrCostFactor)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Band2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band2Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band2Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band2Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band3Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band3Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band3Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band4Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band4Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band4Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band5Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band5Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band5Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band6Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band6Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band6Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band7Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band7Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band7Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band8Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band8Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band8Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band9Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band9Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band9Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band10Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band10Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Band10Percentage)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.BandsTotalCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryType)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.DeliveryUseDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemoDeliveryNote1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryOwnerEmail)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LaborDeliveryTypes.DeliveryTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegionNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Regions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryOption)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrencyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DefaultFTE_Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryCtrCostFactor)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Band2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band2Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band2Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band2Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band3Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band3Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band3Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band4Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band4Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band4Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band5Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band5Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band5Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band6Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band6Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band6Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band7Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band7Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band7Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band8Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band8Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band8Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band9Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band9Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band9Percentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band10Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band10Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Band10Percentage)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.BandsTotalCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryType)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DeliveryUseDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemoDeliveryNote1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryOwnerFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryOwnerLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryOwnerFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryOwnerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateBy)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LaborDeliveryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LaborDeliveryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LaborDeliveryId })
+        </td>
+    </tr>
+}
+
+</table>

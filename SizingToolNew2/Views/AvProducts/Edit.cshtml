@@ -1,6 +1,19 @@
 ﻿@model SizingToolNew2.Models.AvProduct
 
 @{
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>*@
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">*@
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+
+
     ViewBag.Title = "Edit";
 }
 
@@ -31,472 +44,1035 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.AvProductId)
 
-        <div id="AvProductHead">
+        @*<div id="AvProductHead">
 
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="box box-default">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Vendor / Delivery</h3>
-                            <div class="box-tools pull-right">
-                                <span class="label label-default">Info:</span>
-                            </div><!-- /.box-tools -->
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Vendor / Delivery</h3>
+                                <div class="box-tools pull-right">
+                                    <span class="label label-default">Info:</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
 
-                            <div class="row">
-                                <div class="col-4" style="font-size:10px">
-                                    Select Product:
+                                <div class="row">
+                                    <div class="col-4" style="font-size:10px">
+                                        Select Product:
+                                    </div>
+                                    <div class="col-8">
+                                        @Html.DropDownList("ProdVendorId", null, htmlAttributes: new { @class = "form-control", style = "font-size:12px" })
+                                        @Html.ValidationMessageFor(model => model.ProdVendorId, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                                <div class="col-8">
-                                    @Html.DropDownList("ProdVendorId", null, htmlAttributes: new { @class = "form-control", style = "font-size:12px" })
-                                    @Html.ValidationMessageFor(model => model.ProdVendorId, "", new { @class = "text-danger" })
+                                <div class="row">
+                                    <div class="col-4" style="font-size:10px">
+                                        Select Category:
+                                    </div>
+                                    <div class="col-8">
+                                        @Html.DropDownList("ProdCategoryId", null, htmlAttributes: new { @class = "form-control", style = "font-size:12px" })
+                                        @Html.ValidationMessageFor(model => model.ProdCategoryId, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4" style="font-size:10px">
-                                    Select Category:
-                                </div>
-                                <div class="col-8">
-                                    @Html.DropDownList("ProdCategoryId", null, htmlAttributes: new { @class = "form-control", style = "font-size:12px" })
-                                    @Html.ValidationMessageFor(model => model.ProdCategoryId, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div><!-- /.box-body -->
-                    </div><!-- /.box -->
-                </div>
-                <div class="col-md-6">
-                    <div class="box box-default">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Product Details</h3>
-                            <div class="box-tools pull-right">
-                                <span class="label label-default">Details</span>
-                            </div><!-- /.box-tools -->
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-2" style="font-size:12px">Product Code:</div>
-                                <div class="col-4" style="font-size:10px">
-                                    @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-2" style="font-size:12px">PrimaryCompponet</div>
-                                <div class="col-4">
-                                    @Html.EditorFor(model => model.PrimaryComp, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.PrimaryComp, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-2" style="font-size:12px">Product Type</div>
-                                <div class="col-4">
-                                    @Html.EditorFor(model => model.ProductType, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductType, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-2" style="font-size:12px">Primary Comp. Desc</div>
-                                <div class="col-4">
-                                    @Html.EditorFor(model => model.PrimaryCompDesc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.PrimaryCompDesc, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-2" style="font-size:12px">Description:</div>
-                                <div class="col-4">
-                                    @Html.EditorFor(model => model.ProductDesc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductDesc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-2" style="font-size:12px"># Components</div>
-                                <div class="col-4">
-                                    @Html.EditorFor(model => model.Numcomponent, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Numcomponent, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-2" style="font-size:12px">Support Type:</div>
-                                <div class="col-4">
-                                    @Html.EditorFor(model => model.ProductTypeFamily, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductTypeFamily, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-2" style="font-size:12px">Note:</div>
-                                <div class="col-4">
-                                    @Html.EditorFor(model => model.ProductNote, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductNote, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div><!-- /.box-body -->
-                    </div><!-- /.box -->
-                </div>
-                <div class="col-md-3">
-                    <div class="box box-default">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Description and Info:</h3>
-                            <div class="box-tools pull-right">
-                                <span class="label label-default">8 New Messages</span>
-                            </div><!-- /.box-tools -->
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-5" style="font-size:12px">Product Complexity:</div>
-                                <div class="col-5">
-                                    @Html.EditorFor(model => model.ProductComplexityBase, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductComplexityBase, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5" style="font-size:12px">Primary Complexity:</div>
-                                <div class="col-5">
-                                    @Html.EditorFor(model => model.PrimaryComplexity, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.PrimaryComplexity, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5" style="font-size:12px">Complexity Factor:</div>
-                                <div class="col-5">
-                                    @Html.EditorFor(model => model.ProductComplexityFac, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductComplexityFac, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5" style="font-size:12px">Total Complexity</div>
-                                <div class="col-5">
-                                    @Html.EditorFor(model => model.TotalComplexity, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.TotalComplexity, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                        </div>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
                     </div>
-                </div><!-- /.box-body -->
-            </div><!-- /.box -->
-        </div>
+                    <div class="col-md-6">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Product Details</h3>
+                                <div class="box-tools pull-right">
+                                    <span class="label label-default">Details</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-2" style="font-size:12px">Product Code:</div>
+                                    <div class="col-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-2" style="font-size:12px">PrimaryCompponet</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.PrimaryComp, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PrimaryComp, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2" style="font-size:12px">Product Type</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.ProductType, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ProductType, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-2" style="font-size:12px">Primary Comp. Desc</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.PrimaryCompDesc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PrimaryCompDesc, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2" style="font-size:12px">Description:</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.ProductDesc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ProductDesc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-2" style="font-size:12px"># Components</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.Numcomponent, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Numcomponent, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2" style="font-size:12px">Support Type:</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.ProductTypeFamily, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ProductTypeFamily, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-2" style="font-size:12px">Note:</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.ProductNote, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ProductNote, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Description and Info:</h3>
+                                <div class="box-tools pull-right">
+                                    <span class="label label-default">8 New Messages</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-5" style="font-size:12px">Product Base Hrs:</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.ProductComplexityBase, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ProductComplexityBase, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5" style="font-size:12px">Primary Complexity:</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.PrimaryComplexity, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PrimaryComplexity, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5" style="font-size:12px">Complexity Factor:</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.ProductComplexityFac, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ProductComplexityFac, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5" style="font-size:12px">Total Complexity</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.TotalComplexity, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.TotalComplexity, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div>*@
         <div class="col-md-2"></div>
 
 
-        <div id="ProductsPane">
+        @*<div id="ProductsPane">
 
-            <div class="row" style="width:95%">
+                <div class="row" style="width:95%">
 
-                <div class="col-md-4">
-                    <div class="box">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Default Components</h3>
-                            <div class="box-tools pull-right">
-                                <!-- Buttons, labels, and many other things can be placed here! -->
-                                <!-- Here is a label for example -->
-                                <span class="label label-primary">Info:</span>
-                            </div><!-- /.box-tools -->
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
-                            <div id="HighestComplexityComponentA" class="row">
-                                <div class="col-md-6">Name</div>
-                                <div class="col-md-3">Factor</div>
-                                <div class="col-md-3">Default?</div>
-                            </div>
-                            <div id="AvCompnent1" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component1Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component1Desc, "", new { @class = "text-danger" })
+                    <div class="col-md-4">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Default Components</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Info:</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="HighestComplexityComponentA" class="row">
+                                    <div class="col-md-6">Name</div>
+                                    <div class="col-md-3">Factor</div>
+                                    <div class="col-md-3">Default?</div>
                                 </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac1, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac1, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component1)
-                                        @Html.ValidationMessageFor(model => model.Component1, "", new { @class = "text-danger" })
+                                <div id="AvCompnent1" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component1Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component1Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac1, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac1, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component1)
+                                            @Html.ValidationMessageFor(model => model.Component1, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent2" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component2Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component2Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac2, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac2, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component2)
-                                        @Html.ValidationMessageFor(model => model.Component2, "", new { @class = "text-danger" })
+                                <div id="AvCompnent2" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component2Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component2Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac2, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac2, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component2)
+                                            @Html.ValidationMessageFor(model => model.Component2, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent3" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component3Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component3Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac3, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac3, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component3)
-                                        @Html.ValidationMessageFor(model => model.Component3, "", new { @class = "text-danger" })
+                                <div id="AvCompnent3" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component3Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component3Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac3, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac3, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component3)
+                                            @Html.ValidationMessageFor(model => model.Component3, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent4" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component4Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component4Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac4, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac4, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component4)
-                                        @Html.ValidationMessageFor(model => model.Component4, "", new { @class = "text-danger" })
+                                <div id="AvCompnent4" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component4Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component4Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac4, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac4, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component4)
+                                            @Html.ValidationMessageFor(model => model.Component4, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent5" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component5Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component5Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac5, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac5, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component5)
-                                        @Html.ValidationMessageFor(model => model.Component5, "", new { @class = "text-danger" })
+                                <div id="AvCompnent5" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component5Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component5Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac5, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac5, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component5)
+                                            @Html.ValidationMessageFor(model => model.Component5, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            The footer of the box
-                        </div><!-- box-footer -->
-                    </div><!-- /.box -->
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box
+                            </div><!-- box-footer -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Components</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Info:</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="HighestComplexityComponent" class="row">
+                                    <div class="col-md-6">Name</div>
+                                    <div class="col-md-3">Factor</div>
+                                    <div class="col-md-3" style="text-align:left">Default?</div>
+                                </div>
+                                <div id="AvCompnent6" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component6Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component6Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac6, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac6, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component6)
+                                            @Html.ValidationMessageFor(model => model.Component6, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent7" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component7Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component7Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac7, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac7, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component7)
+                                            @Html.ValidationMessageFor(model => model.Component7, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent8" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component8Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component8Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac8, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac8, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component8)
+                                            @Html.ValidationMessageFor(model => model.Component8, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent9" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component9Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component9Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac9, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac9, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component9)
+                                            @Html.ValidationMessageFor(model => model.Component9, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent10" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component10Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component10Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac10, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac10, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component10)
+                                            @Html.ValidationMessageFor(model => model.Component10, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box
+                            </div><!-- box-footer -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Components</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Info:</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="HighestComplexityComponent" class="row">
+                                    <div class="col-md-6">Name</div>
+                                    <div class="col-md-3">Factor</div>
+                                    <div class="col-md-3">Default?</div>
+                                </div>
+                                <div id="AvCompnent11" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component11Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component11Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac11, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac11, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component11)
+                                            @Html.ValidationMessageFor(model => model.Component11, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent12" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component12Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component12Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac12, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac12, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component12)
+                                            @Html.ValidationMessageFor(model => model.Component12, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent13" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component13Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component13Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac13, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac13, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component13)
+                                            @Html.ValidationMessageFor(model => model.Component13, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent14" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component14Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component14Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac14, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac14, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component14)
+                                            @Html.ValidationMessageFor(model => model.Component14, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent15" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component15Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component15Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac15, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac15, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component15)
+                                            @Html.ValidationMessageFor(model => model.Component15, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box
+                            </div><!-- box-footer -->
+                        </div><!-- /.box -->
+                    </div>
+
+
                 </div>
-                <div class="col-md-4">
 
-                    <div class="box">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Components</h3>
-                            <div class="box-tools pull-right">
-                                <!-- Buttons, labels, and many other things can be placed here! -->
-                                <!-- Here is a label for example -->
-                                <span class="label label-primary">Info:</span>
-                            </div><!-- /.box-tools -->
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
-                            <div id="HighestComplexityComponent" class="row">
-                                <div class="col-md-6">Name</div>
-                                <div class="col-md-3">Factor</div>
-                                <div class="col-md-3" style="text-align:left">Default?</div>
-                            </div>
-                            <div id="AvCompnent6" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component6Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component6Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac6, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac6, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component6)
-                                        @Html.ValidationMessageFor(model => model.Component6, "", new { @class = "text-danger" })
+
+            </div>*@
+
+
+
+
+
+
+    </div>
+
+
+
+
+    @*<div class="container-fluid maxWidth">*@
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">Product Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#components">Components</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#technotes">Technical Notes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#techdata">Technical Data</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu1">Primary Complexity Calculator</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu2">Complexity Factor Calculator</a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="home" class="container tab-pane active">
+            <br>
+            <h3>Details</h3>
+            <div id="AvProductHead">
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Vendor / Category</h3>
+                                <div class="box-tools pull-right">
+
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+
+                                <div class="row">
+                                    <div class="col-4" style="font-size:10px">
+                                        Select Product:
+                                    </div>
+                                    <div class="col-8">
+                                        @Html.DropDownList("ProdVendorId", null, htmlAttributes: new { @class = "form-control", style = "font-size:10px" })
+                                        @Html.ValidationMessageFor(model => model.ProdVendorId, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent7" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component7Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component7Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac7, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac7, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component7)
-                                        @Html.ValidationMessageFor(model => model.Component7, "", new { @class = "text-danger" })
+                                <div class="row">
+                                    <div class="col-4" style="font-size:10px">
+                                        Select Category:
+                                    </div>
+                                    <div class="col-8">
+                                        @Html.DropDownList("ProdCategoryId", null, htmlAttributes: new { @class = "form-control", style = "font-size:10px" })
+                                        @Html.ValidationMessageFor(model => model.ProdCategoryId, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent8" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component8Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component8Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac8, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac8, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component8)
-                                        @Html.ValidationMessageFor(model => model.Component8, "", new { @class = "text-danger" })
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Product Details</h3>
+                                <div class="box-tools pull-right">
+                                    <span class="label label-default">Details</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-2" style="font-size:10px">Product Code:</div>
+                                    <div class="col-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-2" style="font-size:10px">PrimaryCompponet</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.PrimaryComp, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.PrimaryComp, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent9" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component9Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component9Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac9, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac9, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component9)
-                                        @Html.ValidationMessageFor(model => model.Component9, "", new { @class = "text-danger" })
+                                <div class="row">
+                                    <div class="col-2" style="font-size:10px">Product Type</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.ProductType, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ProductType, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-2" style="font-size:10px">Primary Comp. Desc</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.PrimaryCompDesc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.PrimaryCompDesc, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent10" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component10Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component10Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac10, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac10, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component10)
-                                        @Html.ValidationMessageFor(model => model.Component10, "", new { @class = "text-danger" })
+                                <div class="row">
+                                    <div class="col-2" style="font-size:10px">Description:</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.ProductDesc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ProductDesc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-2" style="font-size:10px"># Components</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.Numcomponent, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Numcomponent, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-2" style="font-size:10px">Support Type:</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.ProductTypeFamily, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ProductTypeFamily, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-2" style="font-size:10px">Note:</div>
+                                    <div class="col-4">
+                                        @Html.EditorFor(model => model.ProductNote, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ProductNote, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Description and Info:</h3>
+                                <div class="box-tools pull-right">
+                                    <span class="label label-default">Help</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-5" style="font-size:10px">Product Base Hrs:</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.ProductComplexityBase, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ProductComplexityBase, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5" style="font-size:10px">Primary Complexity:</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.PrimaryComplexity, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.PrimaryComplexity, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5" style="font-size:10px">Complexity Factor:</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.ProductComplexityFac, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ProductComplexityFac, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5" style="font-size:10px">Total Complexity</div>
+                                    <div class="col-5">
+                                        @Html.EditorFor(model => model.TotalComplexity, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.TotalComplexity, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
                             </div>
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            The footer of the box
-                        </div><!-- box-footer -->
-                    </div><!-- /.box -->
+                        </div>
+
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+                <!-- Widget: user widget style 1 -->
+
+
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Primary Complexity to Deliver Service of Base Product: Without Add-Ons or Additional Components</h3>
+                        <div class="box-tools pull-right">
+                            <!-- Buttons, labels, and many other things can be placed here! -->
+                            <!-- Here is a label for example -->
+                            <span class="label label-primary">What is this..?:</span>
+                        </div><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+
+
+                        <form action="../submit" id="formentry" class="form-horizontal" role="form" data-parsley-validate novalidate>
+                            <div class="container-fluid shadow">
+                                <div class="row">
+                                    @*<div id="valErr" class="row viewerror clearfix hidden">
+                                            <div class="alert alert-danger">Oops! Seems there are some errors..</div>
+                                        </div>
+                                        <div id="valOk" class="row viewerror clearfix hidden">
+                                            <div class="alert alert-success">Yay! ..</div>
+                                        </div>*@
+
+
+
+                                  
+
+
+
+
+
+                                </div>
+                            </div>
+                        </form>
+
+
+
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        The footer of the box
+                    </div><!-- box-footer -->
                 </div>
-                <div class="col-md-4">
-                    <div class="box">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Components</h3>
-                            <div class="box-tools pull-right">
-                                <!-- Buttons, labels, and many other things can be placed here! -->
-                                <!-- Here is a label for example -->
-                                <span class="label label-primary">Info:</span>
-                            </div><!-- /.box-tools -->
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
-                            <div id="HighestComplexityComponent" class="row">
-                                <div class="col-md-6">Name</div>
-                                <div class="col-md-3">Factor</div>
-                                <div class="col-md-3">Default?</div>
-                            </div>
-                            <div id="AvCompnent11" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component11Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component11Desc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div id="components" class="container tab-pane fade">
+            <br>
+            <h3>Product Components - </h3>
+            <h4 style="font-style:italic; color:#3937ca">Enter here the # Number of Hours for Labor/Effort each Component adds to the overall Product's Service Delivery...!</h4>
+            <p style="font-style:italic; color:red; font-size:12px">If you do not know the number of Hours of Labor/Effort use the "Complexity Caculator"</p>
+            <div id="ProductsPane">
+
+                <div class="row" style="width:100%">
+
+                    <div class="col-md-4">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Default Components</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Help:</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="HighestComplexityComponentA" class="row">
+                                    <div class="col-md-6">Name</div>
+                                    <div class="col-md-3">Hours</div>
+                                    <div class="col-md-3">Default?</div>
                                 </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac11, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac11, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component11)
-                                        @Html.ValidationMessageFor(model => model.Component11, "", new { @class = "text-danger" })
+                                <div id="AvCompnent1" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component1Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component1Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac1, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac1, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component1)
+                                            @Html.ValidationMessageFor(model => model.Component1, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent12" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component12Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component12Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac12, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac12, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component12)
-                                        @Html.ValidationMessageFor(model => model.Component12, "", new { @class = "text-danger" })
+                                <div id="AvCompnent2" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component2Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component2Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac2, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac2, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component2)
+                                            @Html.ValidationMessageFor(model => model.Component2, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent13" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component13Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component13Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac13, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac13, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component13)
-                                        @Html.ValidationMessageFor(model => model.Component13, "", new { @class = "text-danger" })
+                                <div id="AvCompnent3" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component3Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component3Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac3, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac3, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component3)
+                                            @Html.ValidationMessageFor(model => model.Component3, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent14" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component14Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component14Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac14, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac14, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component14)
-                                        @Html.ValidationMessageFor(model => model.Component14, "", new { @class = "text-danger" })
+                                <div id="AvCompnent4" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component4Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component4Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac4, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac4, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component4)
+                                            @Html.ValidationMessageFor(model => model.Component4, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="AvCompnent15" class="row">
-                                <div class="col-md-6">
-                                    @Html.EditorFor(model => model.Component15Desc, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Component15Desc, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.ComponentComplexityFac15, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ComponentComplexityFac15, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        @Html.EditorFor(model => model.Component15)
-                                        @Html.ValidationMessageFor(model => model.Component15, "", new { @class = "text-danger" })
+                                <div id="AvCompnent5" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component5Desc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Component5Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac5, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac5, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component5)
+                                            @Html.ValidationMessageFor(model => model.Component5, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            The footer of the box
-                        </div><!-- box-footer -->
-                    </div><!-- /.box -->
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box
+                            </div><!-- box-footer -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Components</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Info:</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="HighestComplexityComponent" class="row">
+                                    <div class="col-md-6">Name</div>
+                                    <div class="col-md-3">Hours</div>
+                                    <div class="col-md-3" style="text-align:left">Default?</div>
+                                </div>
+                                <div id="AvCompnent6" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component6Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component6Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac6, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac6, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component6)
+                                            @Html.ValidationMessageFor(model => model.Component6, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent7" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component7Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component7Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac7, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac7, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component7)
+                                            @Html.ValidationMessageFor(model => model.Component7, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent8" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component8Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component8Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac8, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac8, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component8)
+                                            @Html.ValidationMessageFor(model => model.Component8, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent9" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component9Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component9Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac9, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac9, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component9)
+                                            @Html.ValidationMessageFor(model => model.Component9, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent10" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component10Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component10Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac10, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac10, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component10)
+                                            @Html.ValidationMessageFor(model => model.Component10, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box
+                            </div><!-- box-footer -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Components</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Info:</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="HighestComplexityComponent" class="row">
+                                    <div class="col-md-6">Name</div>
+                                    <div class="col-md-3">Hours</div>
+                                    <div class="col-md-3">Default?</div>
+                                </div>
+                                <div id="AvCompnent11" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component11Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component11Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac11, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac11, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component11)
+                                            @Html.ValidationMessageFor(model => model.Component11, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent12" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component12Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component12Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac12, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac12, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component12)
+                                            @Html.ValidationMessageFor(model => model.Component12, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent13" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component13Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component13Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac13, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac13, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component13)
+                                            @Html.ValidationMessageFor(model => model.Component13, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent14" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component14Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component14Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac14, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac14, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component14)
+                                            @Html.ValidationMessageFor(model => model.Component14, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="AvCompnent15" class="row">
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Component15Desc, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.Component15Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        @Html.EditorFor(model => model.ComponentComplexityFac15, new { htmlAttributes = new { @class = "form-control", style = "font-size:12px" } })
+                                        @Html.ValidationMessageFor(model => model.ComponentComplexityFac15, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Component15)
+                                            @Html.ValidationMessageFor(model => model.Component15, "", new { @class = "text-danger", style = "font-size:12px" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box
+                            </div><!-- box-footer -->
+                        </div><!-- /.box -->
+                    </div>
+
+
                 </div>
 
 
             </div>
-
-
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NumComponents, "# Active Components:", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-2">
-                @Html.EditorFor(model => model.NumComponents, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NumComponents, "", new { @class = "text-danger" })
+        <div id="technotes" class="container tab-pane fade">
+            <br>
+            <h3>Notes</h3>
+            <div class="row">
+                @Html.TextAreaFor(m => m.MemoProductNote, new { @class = "form-control", @placeholder = "Enter an ample Description for this Product", })
             </div>
         </div>
+        <div id="techdata" class="container tab-pane fade">
+            <br>
+            <h3>Vendor Related Data....., Instructions, Links, Spec Sheets, White Papers, Etc </h3>
+            <div class="row" style="align-content:center">
+                @Html.TextAreaFor(m => m.MemoTechnicalNote, new { @class = "form-control", @placeholder = "Enter an ample Description for this Product", })
+            </div>
+        </div>
+        <div id="menu1" class="container tab-pane fade">
+            <br>
+            <h3>Primary Complexity Calculator</h3>
+            <div id="AvComponent">@Html.Partial("_AvComponent1")</div>
+        </div>
+        <div id="menu2" class="container tab-pane fade">
+            <br>
+            <h3>Component Calculator 2</h3>
+            <div id="ComponetComplexityFactor">@Html.Partial("_ComponentComplexityFactor")</div>
+        </div>
 
+        <div class="row">
+            @*<div id="ComponetComplexityFactor2">@Html.Partial("_ComponentComplexityFactor2")</div>*@
+
+        </div>
 
 
         <div class="form-group">
@@ -504,8 +1080,28 @@
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
+
     </div>
+    @*</div>*@
+
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumComponents, "# Active Components:", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.NumComponents, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NumComponents, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+
+
+
+
 }
+
+
+
 
 <div>
     @Html.ActionLink("Back to List", "Index")
@@ -515,8 +1111,20 @@
     @Scripts.Render("~/bundles/jqueryval")
 
 
+    @*<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>*@
+    <script src="~/Scripts/AdminLTE/plugins/jQueryUI/jquery-ui-1.10.3.min.js"></script>
+    
+    @*<script src="~/ckeditor/ckeditor.js"></script>*@
+    <script src="~/Scripts/AdminLTE/plugins/ckeditor/ckeditor.js"></script>
+
+    @*<script src="~/ckeditor/adapters/jquery.js"></script>*@
+    <script src="~/Scripts/AdminLTE/plugins/ckeditor/adapters/jquery.js"></script>
+
+    @*<script src="~/ckeditor/plugins/templates/templates/default.js"></script>*@
+    <script src="~/Scripts/AdminLTE/plugins/ckeditor/plugins/templates/templates/default.js"></script>
+
+    @*Code to Block Use of "Enter Key" from saving or entering Records*@
     <script>
-        // Code to Block Post on Enter Key Press
         $(document).keypress(function (e) {
             if (e.keyCode === 13) {
                 e.preventDefault();
@@ -525,4 +1133,667 @@
         });
     </script>
 
+    @*Style for Slider*@
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .price-box {
+            margin: 0 auto;
+            background: #E9E9E9;
+            border-radius: 10px;
+            padding: 40px 15px;
+            width: 500px;
+        }
+
+        .ui-widget-content {
+            border: 1px solid #bdc3c7;
+            background: #e1e1e1;
+            color: #222222;
+            margin-top: 4px;
+        }
+
+        .ui-slider .ui-slider-handle {
+            position: absolute;
+            z-index: 2;
+            width: 5.2em;
+            height: 2.2em;
+            cursor: default;
+            margin: 0 -40px auto !important;
+            text-align: center;
+            line-height: 30px;
+            color: #FFFFFF;
+            font-size: 15px;
+        }
+
+            .ui-slider .ui-slider-handle .glyphicon {
+                color: #FFFFFF;
+                margin: 0 3px;
+                font-size: 11px;
+                opacity: 0.5;
+            }
+
+        .ui-corner-all {
+            border-radius: 20px;
+        }
+
+        .ui-slider-horizontal .ui-slider-handle {
+            top: -.9em;
+        }
+
+        .ui-state-default,
+        .ui-widget-content .ui-state-default {
+            border: 1px solid #f9f9f9;
+            background: #3498db;
+        }
+
+        .ui-slider-horizontal .ui-slider-handle {
+            margin-left: -0.5em;
+        }
+
+        .ui-slider .ui-slider-handle {
+            cursor: pointer;
+        }
+
+        .ui-slider a,
+        .ui-slider a:focus {
+            cursor: pointer;
+            outline: none;
+        }
+
+        .price, .lead p {
+            font-weight: 600;
+            font-size: 32px;
+            display: inline-block;
+            line-height: 60px;
+        }
+
+        h4.great {
+            background: #00ac98;
+            margin: 0 0 25px -60px;
+            padding: 7px 15px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            display: inline-block;
+            -moz-box-shadow: 2px 4px 5px 0 #ccc;
+            -webkit-box-shadow: 2px 4px 5px 0 #ccc;
+            box-shadow: 2px 4px 5px 0 #ccc;
+        }
+
+        .total {
+            border-bottom: 1px solid #7f8c8d;
+            /*display: inline;
+        padding: 10px 5px;*/
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+            .total:before {
+                content: "";
+                display: inline;
+                position: absolute;
+                left: 0;
+                bottom: 5px;
+                width: 100%;
+                height: 3px;
+                background: #7f8c8d;
+                opacity: 0.5;
+            }
+
+        .price-slider {
+            margin-bottom: 70px;
+        }
+
+            .price-slider span {
+                font-weight: 200;
+                display: inline-block;
+                color: #7f8c8d;
+                font-size: 13px;
+            }
+
+        .form-pricing {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .price-form {
+            background: #ffffff;
+            margin-bottom: 10px;
+            padding: 20px;
+            border: 1px solid #eeeeee;
+            border-radius: 4px;
+            /*-moz-box-shadow:    0 5px 5px 0 #ccc;
+        -webkit-box-shadow: 0 5px 5px 0 #ccc;
+        box-shadow:         0 5px 5px 0 #ccc;*/
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+            .form-group span.price {
+                font-weight: 200;
+                display: inline-block;
+                color: #7f8c8d;
+                font-size: 14px;
+            }
+
+        .help-text {
+            display: block;
+            margin-top: 32px;
+            margin-bottom: 10px;
+            color: #737373;
+            position: absolute;
+            /*margin-left: 20px;*/
+            font-weight: 200;
+            text-align: right;
+            width: 188px;
+        }
+
+        .price-form label {
+            font-weight: 200;
+            font-size: 21px;
+        }
+
+        img.payment {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .ui-slider-range-min {
+            background: #2980b9;
+        }
+
+        /* HR */
+
+        hr.style {
+            margin-top: 0;
+            border: 0;
+            border-bottom: 1px dashed #ccc;
+            background: #999;
+        }
+    </style>
+
+    @*Slider Control*@
+    <script>
+        $(document).ready(function () {
+            $("#slider").slider({
+                animate: true,
+                value: 0,
+                min: 0,
+                max: 24,
+                step: .25,
+                slide: function (event, ui) {
+                    update(1, ui.value); //changed
+                }
+            });
+
+            $("#slider2").slider({
+                animate: true,
+                value: 1,
+                min: 1,
+                max: 10,
+                step: 1,
+                slide: function (event, ui) {
+                    update(2, ui.value); //changed
+                }
+            });
+
+            $("#slider3").slider({
+                animate: true,
+                value: 0,
+                min: 0,
+                max: 168,
+                step: 1,
+                slide: function (event, ui) {
+                    update(3, ui.value); //changed
+                }
+            });
+
+            //Added, set initial value.
+            $("#amount").val(0);
+            $("#duration").val(0);
+            $("#frequency").val(0);
+            $("#amount-label").text(0);
+            $("#duration-label").text(0);
+            $("#frequency-label").text(0);
+
+            update();
+        });
+
+        //changed. now with parameter
+        function update(slider, val) {
+            //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
+            var $amount = slider == 1 ? val : $("#amount").val();
+            var $duration = slider == 2 ? val : $("#duration").val();
+            var $frequency = slider == 3 ? val : $("#frequency").val();
+
+            /* commented
+            $amount = $( "#slider" ).slider( "value" );
+            $duration = $( "#slider2" ).slider( "value" );
+            */
+
+            $total = " " + ($amount * $duration) * $frequency;
+            $("#amount").val($amount);
+            $("#amount-label").text($amount);
+            $("#duration").val($duration);
+            $("#duration-label").text($duration);
+            $("#frequency").val($frequency);
+            $("#frequency-label").text($frequency);
+            $("#total").val($total);
+            $("#total-label").text($total);
+
+            $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $amount + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+            $('#slider2 a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $duration + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+            $('#slider3 a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $frequency + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+        }
+
+
+    </script>
+
+    @*CKEditor Scripts for TextArea Fields *@
+    <script>
+        $(function () {
+            $('#my-textarea').ckeditor();
+        });
+
+    </script>
+
+    @*<script>
+            $(function () {
+                $('#MemoProductNote').ckeditor();
+
+
+            });
+
+        </script>*@
+
+    @*MemoProductNote*@
+    <script type="text/javascript">
+        //resize CKEditor with customised height and width
+        CKEDITOR.replace('MemoProductNote', {
+            width: "1150px",
+            height: "300px"
+        }
+        );
+    </script>
+
+
+    @*MemoTechnicalNote*@
+    <script type="text/javascript">
+        //resize CKEditor with customised height and width
+        CKEDITOR.replace('MemoTechnicalNote', {
+            width: "1150px",
+            height: "300px"
+        }
+        );
+    </script>
+
+    @*Style for CompactComplexityfactor2*@
+    @*<style>
+                  body {
+                      padding-top: 60px;
+                  }
+
+                  .price-box2 {
+                      margin: 0 auto;
+                      background: #E9E9E9;
+                      border-radius: 10px;
+                      padding: 40px 15px;
+                      /*width: 500px;*/
+                  }
+
+                  .ui-widget-content {
+                      border: 1px solid #bdc3c7;
+                      background: #e1e1e1;
+                      color: #222222;
+                      margin-top: 4px;
+                  }
+
+                  .ui-slider .ui-slider-handle {
+                      position: absolute;
+                      z-index: 2;
+                      width: 7.2em;
+                      height: 2.7em;
+                      cursor: default;
+                      margin: 0 -40px auto !important;
+                      text-align: center;
+                      line-height: 30px;
+                      color: #FFFFFF;
+                      font-size: 12px;
+                  }
+
+                      .ui-slider .ui-slider-handle .glyphicon {
+                          color: #FFFFFF;
+                          margin: 0 1px;
+                          font-size: 11px;
+                          opacity: 0.7;
+                      }
+
+                  .ui-corner-all {
+                      border-radius: 20px;
+                  }
+
+                  .ui-slider-horizontal .ui-slider-handle {
+                      top: -.9em;
+                  }
+
+                  .ui-state-default,
+                  .ui-widget-content .ui-state-default {
+                      border: 1px solid #f9f9f9;
+                      background: #3498db;
+                  }
+
+                  .ui-slider-horizontal .ui-slider-handle {
+                      margin-left: -0.5em;
+                  }
+
+                  .ui-slider .ui-slider-handle {
+                      cursor: pointer;
+                  }
+
+                  .ui-slider a,
+                  .ui-slider a:focus {
+                      cursor: pointer;
+                      outline: none;
+                  }
+
+                  .price, .lead p {
+                      font-weight: 600;
+                      font-size: 32px;
+                      display: inline-block;
+                      line-height: 60px;
+                      border: 0;
+                      width: 245px;
+                  }
+
+                  h4.great {
+                      background: #00ac98;
+                      margin: 0 0 25px -60px;
+                      padding: 7px 15px;
+                      color: #ffffff;
+                      font-size: 18px;
+                      font-weight: 600;
+                      border-radius: 5px;
+                      display: inline-block;
+                      -moz-box-shadow: 2px 4px 5px 0 #ccc;
+                      -webkit-box-shadow: 2px 4px 5px 0 #ccc;
+                      box-shadow: 2px 4px 5px 0 #ccc;
+                  }
+
+                  .total {
+                      border-bottom: 1px solid #7f8c8d;
+                      /*display: inline;
+            padding: 10px 5px;*/
+                      position: relative;
+                      padding-bottom: 20px;
+                  }
+
+                      .total:before {
+                          content: "";
+                          display: inline;
+                          position: absolute;
+                          left: 0;
+                          bottom: 5px;
+                          width: 100%;
+                          height: 3px;
+                          background: #7f8c8d;
+                          opacity: 0.5;
+                      }
+
+                  .price-slider2 {
+                      margin-bottom: 70px;
+                  }
+
+                      .price-slider2 span {
+                          font-weight: 200;
+                          display: inline-block;
+                          color: #7f8c8d;
+                          font-size: 13px;
+                      }
+
+                  .form-pricing {
+                      background: #ffffff;
+                      padding: 20px;
+                      border-radius: 4px;
+                  }
+
+                  .price-form2 {
+                      background: #ffffff;
+                      margin-bottom: 10px;
+                      padding: 20px;
+                      border: 1px solid #eeeeee;
+                      min-height: 520px;
+                      border-radius: 4px;
+                      /*-moz-box-shadow:    0 5px 5px 0 #ccc;
+              -webkit-box-shadow: 0 5px 5px 0 #ccc;
+              box-shadow:         0 5px 5px 0 #ccc;*/
+                  }
+
+                  .form-group {
+                      margin-bottom: 0;
+                  }
+
+                      .form-group span.price {
+                          font-weight: 200;
+                          display: inline-block;
+                          color: #7f8c8d;
+                          font-size: 14px;
+                      }
+
+                  .help-text {
+                      display: block;
+                      margin-top: -10px;
+                      margin-bottom: 10px;
+                      color: #737373;
+                      /*position: absolute;*/
+                      /*margin-left: 20px;*/
+                      font-weight: 200;
+                      /*text-align: right;*/
+                      width: 188px;
+                  }
+
+                  .price-form2 label {
+                      font-weight: 200;
+                      font-size: 21px;
+                  }
+
+                  img.payment {
+                      display: block;
+                      margin-left: auto;
+                      margin-right: auto
+                  }
+
+                  .ui-slider-range-min {
+                      background: #2980b9;
+                  }
+
+                  .active-month,
+                  .active-term {
+                      background: #3276b1;
+                  }
+
+                  /* HR */
+
+                  hr.style {
+                      margin-top: 0;
+                      border: 0;
+                      border-bottom: 1px dashed #ccc;
+                      background: #999;
+                  }
+        </style>*@
+
+    @*Slider CompactComplexityfactor2*@
+    <script>
+        // JavaScript Document
+        var p = {
+
+            0: "100K",
+            1: "150K",
+            2: "200K",
+            3: "250K",
+            4: "300K",
+            5: "350K",
+            6: "400K",
+            7: "450K",
+            8: "500K",
+            9: "550K",
+            10: "600K",
+            11: "650K",
+            12: "700K",
+            13: "750K",
+            14: "800K",
+            15: "850K",
+            16: "900K",
+            17: "950K",
+            18: "1,000K",
+            19: "1,100K",
+            20: "1,200K",
+            21: "1,300K",
+            22: "1,400K",
+            23: "1,500K",
+            24: "1,600K",
+            25: "1,700K",
+            26: "1,800K",
+            27: "19,00K",
+            28: "2,000K",
+        };
+
+        var t = {
+
+            0: "100000",
+            1: "150000",
+            2: "200000",
+            3: "250000",
+            4: "300000",
+            5: "350000",
+            6: "400000",
+            7: "450000",
+            8: "500000",
+            9: "550000",
+            10: "600000",
+            11: "650000",
+            12: "700000",
+            13: "750000",
+            14: "800000",
+            15: "850000",
+            16: "900000",
+            17: "950000",
+            18: "1000000",
+            19: "1100000",
+            20: "1200000",
+            21: "1300000",
+            22: "1400000",
+            23: "1500000",
+            24: "1600000",
+            25: "1700000",
+            26: "1800000",
+            27: "1900000",
+            28: "2000000",
+
+        }
+
+        var obj = {
+            '24month': {
+                'quarterly': '1.41',
+                'monthly': '1.28',
+                'weekly': '1.2'
+            },
+            '18month': {
+                'quarterly': '1.38',
+                'monthly': '1.25',
+                'weekly': '1.8'
+            },
+            '12month': {
+
+                'quarterly': '1.35',
+                'monthly': '1.225',
+                'weekly': '1.15'
+            }
+        };
+
+        $(document).ready(function () {
+
+            $("#total2").val("10000");
+
+
+
+            $("#slider_amirol2").slider({
+                range: "min",
+                animate: true,
+
+                min: 0,
+                max: 28,
+                step: 1,
+                slide:
+                    function (event, ui) {
+                        update(1, ui.value); //changed
+                        calcualtePrice(ui.value);
+                    }
+            });
+
+            $('.month').on('click', function (event) {
+                var id = $(this).attr('id');
+
+                $('.month').removeClass('selected-month');
+                $(this).addClass('selected-month');
+                $(".month").removeClass("active-month");
+                $(this).addClass("active-month");
+
+                $('#month').val(id);
+
+                calcualtePrice()
+            });
+
+            $('.term').on('click', function (event) {
+                var id = $(this).attr('id');
+
+                $('.term').removeClass('selected-term');
+                $(this).addClass('selected-term');
+                $(".term").removeClass("active-term");
+                $(this).addClass("active-term");
+                $('#term').val(id);
+
+                calcualtePrice()
+            });
+
+            update();
+            calcualtePrice();
+        });
+
+
+
+        function update(slider, val) {
+
+            if (undefined === val) val = 0;
+            var amount = p[val];
+
+            $('#sliderVal2').val(val);
+
+            $('#slider_amirol2 a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + amount + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+        }
+
+        function calcualtePrice(val) {
+
+            if (undefined === val)
+                val = $('#sliderVal2').val();
+
+            var month = $('#month').val();
+            var term = obj[month][$('#term').val()];
+
+            var totalPrice = t[val] * term;
+
+            $("#total").val(totalPrice.toFixed(2));
+            $("#total12").val(Math.round((totalPrice) / 12).toFixed(2));
+            $("#total52").val(Math.round((totalPrice) / 52).toFixed(2));
+        }
+
+
+    </script>
 }

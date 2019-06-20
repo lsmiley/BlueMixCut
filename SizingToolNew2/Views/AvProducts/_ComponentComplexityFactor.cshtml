@@ -1,0 +1,91 @@
+﻿@model SizingToolNew2.Models.AvProduct
+
+
+
+
+
+<div class="container">
+    <div class="container" style="align-items:center">
+
+        <div class="price-box">
+            <h3>Product Component Calculator</h3>
+
+
+            <form class="form-horizontal form-pricing" role="form">
+                <div class="price-slider">
+                    <h4 class="great">Unit of Work</h4>
+                    <span>How much "Time" does it take to perform Task/Function each time...?</span>
+                    <span> - In 15 Minute increments - </span>
+                    <div class="row">.</div>
+                    <div class="col-sm-12">
+                        <div id="slider"></div>
+                    </div>
+                </div>
+                <div class="price-slider">
+                    <h4 class="great">Complexity</h4>
+                    <span>Measure against the (Whole) Core Product or Service</span>
+                    <span>............., Easy........................ Medium......................... Hard...................., Dificult</span>
+                    <div class="row">.</div>
+                    <div class="col-sm-12">
+                        <div id="slider2"></div>
+                    </div>
+                </div>
+
+                <div class="price-slider">
+                    <h4 class="great">Frequency</h4>
+                    <span>Repeatability: How many Times per Week</span>
+                    <div class="col-sm-12">
+                        <div id="slider3"></div>
+                    </div>
+                </div>
+            </form>
+            <div class="price-form">
+                <div class="form-group">
+                    <label for="amount" class="col-sm-6 control-label">Unit Of Work): </label>
+                    <span class="help-text">How long does it take to Complete</span>
+                    <div class="col-sm-6">
+                        <input type="hidden" id="amount" class="form-control">
+                        <p class="price lead" id="amount-label"></p>
+                        <span class="price">. Hours</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="duration" class="col-sm-6 control-label">Complexity: </label>
+                    <span class="help-text">How Hard/Easy to Perform:</span>
+                    <div class="col-sm-6">
+                        <input type="hidden" id="duration" class="form-control">
+                        <p class="price lead" id="duration-label"></p>
+                        <span class="price">Effort - "Easy to Hard"</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="frequency" class="col-sm-6 control-label">Frequency: </label>
+                    <span class="help-text">How many Time Per Week</span>
+                    <div class="col-sm-6">
+                        <input type="hidden" id="frequency" class="form-control">
+                        <p class="price lead" id="frequency-label"></p>
+                        <span class="price">Hours</span>
+                    </div>
+                </div>
+
+                <hr class="style">
+                <div class="form-group total">
+                    <label for="total" class="col-sm-6 control-label"><strong>Total: </strong></label>
+                    <span class="help-text">Total Component's Hours</span>
+                    <div class="col-sm-6">
+                        <input type="hidden" id="total" class="form-control">
+                        <p class="price lead" id="total-label"></p>
+                        <span class="price">: Hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    
+
+</div>
+

@@ -62,7 +62,7 @@ namespace SizingToolNew2.Controllers
         [AuthLog(Roles = "Administrator, Solution Manager, Solution Architect")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "AvProductId,ProdVendorId,ProdCategoryId,ProdTypeId,SupportTypeId,ProductName,ProductDesc,ProductType,ProductTypeFamily,ProductNote,ProductComplexityBase,ProductComplexityFac,Numcomponent,PrimaryComp,PrimaryCompDesc,PrimaryComplexity,TotalComplexity,Component1,Component1Desc,ComponentComplexityFac1,Component2,Component2Desc,ComponentComplexityFac2,Component3,Component3Desc,ComponentComplexityFac3,Component4,Component4Desc,ComponentComplexityFac4,Component5,Component5Desc,ComponentComplexityFac5,Component6,Component6Desc,ComponentComplexityFac6,Component7,Component7Desc,ComponentComplexityFac7,Component8,Component8Desc,ComponentComplexityFac8,Component9,Component9Desc,ComponentComplexityFac9,Component10,Component10Desc,ComponentComplexityFac10,Component11,Component11Desc,ComponentComplexityFac11,Component12,Component12Desc,ComponentComplexityFac12,Component13,Component13Desc,ComponentComplexityFac13,Component14,Component14Desc,ComponentComplexityFac14,Component15,Component15Desc,ComponentComplexityFac15,NumComponents")] AvProduct avProduct)
+        public async Task<ActionResult> Create([Bind(Include = "AvProductId,ProdVendorId,ProdCategoryId,ProductName,ProductDesc,ProductType,ProductTypeFamily,ProductNote,ProductComplexityBase,ProductComplexityFac,Numcomponent,PrimaryComp,PrimaryCompDesc,PrimaryComplexity,TotalComplexity,MemoProductNote,MemoTechnicalNote,Component1,Component1Desc,ComponentComplexityFac1,MemoComponent1Note,MemoComponent1TechNote,Component2,Component2Desc,ComponentComplexityFac2,MemoComponent2Note,MemoComponent2TechNote,Component3,Component3Desc,ComponentComplexityFac3,MemoComponent3Note,MemoComponent3TechNote,Component4,Component4Desc,ComponentComplexityFac4,MemoComponent4Note,MemoComponent4TechNote,Component5,Component5Desc,ComponentComplexityFac5,MemoComponent5Note,MemoComponent5TechNote,Component6,Component6Desc,ComponentComplexityFac6,MemoComponent6Note,MemoComponent6TechNote,Component7,Component7Desc,ComponentComplexityFac7,MemoComponent7Note,MemoComponent7TechNote,Component8,Component8Desc,ComponentComplexityFac8,MemoComponent8Note,MemoComponent8TechNote,Component9,Component9Desc,ComponentComplexityFac9,MemoComponent9Note,MemoComponent9TechNote,Component10,Component10Desc,ComponentComplexityFac10,MemoComponent10Note,MemoComponent10TechNote,Component11,Component11Desc,ComponentComplexityFac11,MemoComponent11Note,MemoComponent11TechNote,Component12,Component12Desc,ComponentComplexityFac12,Component13,Component13Desc,ComponentComplexityFac13,MemoComponent13Note,MemoComponent13TechNote,Component14,Component14Desc,ComponentComplexityFac14,MemoComponent14Note,MemoComponent14TechNote,Component15,Component15Desc,ComponentComplexityFac15,MemoComponent15Note,MemoComponent15TechNote,NumComponents")] AvProduct avProduct)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace SizingToolNew2.Controllers
         [AuthLog(Roles = "Administrator, Solution Manager, Solution Architect")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "AvProductId,ProdVendorId,ProdCategoryId,ProdTypeId,SupportTypeId,ProductName,ProductDesc,ProductType,ProductTypeFamily,ProductNote,ProductComplexityBase,ProductComplexityFac,Numcomponent,PrimaryComp,PrimaryCompDesc,PrimaryComplexity,TotalComplexity,Component1,Component1Desc,ComponentComplexityFac1,Component2,Component2Desc,ComponentComplexityFac2,Component3,Component3Desc,ComponentComplexityFac3,Component4,Component4Desc,ComponentComplexityFac4,Component5,Component5Desc,ComponentComplexityFac5,Component6,Component6Desc,ComponentComplexityFac6,Component7,Component7Desc,ComponentComplexityFac7,Component8,Component8Desc,ComponentComplexityFac8,Component9,Component9Desc,ComponentComplexityFac9,Component10,Component10Desc,ComponentComplexityFac10,Component11,Component11Desc,ComponentComplexityFac11,Component12,Component12Desc,ComponentComplexityFac12,Component13,Component13Desc,ComponentComplexityFac13,Component14,Component14Desc,ComponentComplexityFac14,Component15,Component15Desc,ComponentComplexityFac15,NumComponents")] AvProduct avProduct)
+        public async Task<ActionResult> Edit([Bind(Include = "AvProductId,ProdVendorId,ProdCategoryId,ProductName,ProductDesc,ProductType,ProductTypeFamily,ProductNote,ProductComplexityBase,ProductComplexityFac,Numcomponent,PrimaryComp,PrimaryCompDesc,PrimaryComplexity,TotalComplexity,MemoProductNote,MemoTechnicalNote,Component1,Component1Desc,ComponentComplexityFac1,MemoComponent1Note,MemoComponent1TechNote,Component2,Component2Desc,ComponentComplexityFac2,MemoComponent2Note,MemoComponent2TechNote,Component3,Component3Desc,ComponentComplexityFac3,MemoComponent3Note,MemoComponent3TechNote,Component4,Component4Desc,ComponentComplexityFac4,MemoComponent4Note,MemoComponent4TechNote,Component5,Component5Desc,ComponentComplexityFac5,MemoComponent5Note,MemoComponent5TechNote,Component6,Component6Desc,ComponentComplexityFac6,MemoComponent6Note,MemoComponent6TechNote,Component7,Component7Desc,ComponentComplexityFac7,MemoComponent7Note,MemoComponent7TechNote,Component8,Component8Desc,ComponentComplexityFac8,MemoComponent8Note,MemoComponent8TechNote,Component9,Component9Desc,ComponentComplexityFac9,MemoComponent9Note,MemoComponent9TechNote,Component10,Component10Desc,ComponentComplexityFac10,MemoComponent10Note,MemoComponent10TechNote,Component11,Component11Desc,ComponentComplexityFac11,MemoComponent11Note,MemoComponent11TechNote,Component12,Component12Desc,ComponentComplexityFac12,Component13,Component13Desc,ComponentComplexityFac13,MemoComponent13Note,MemoComponent13TechNote,Component14,Component14Desc,ComponentComplexityFac14,MemoComponent14Note,MemoComponent14TechNote,Component15,Component15Desc,ComponentComplexityFac15,MemoComponent15Note,MemoComponent15TechNote,NumComponents")] AvProduct avProduct)
         {
             if (ModelState.IsValid)
             {
@@ -152,6 +152,25 @@ namespace SizingToolNew2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        ////[ValidateInput(false)]
+        ////[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //[HttpPost, ValidateInput(false)]
+        //public ActionResult SubmitMemo(AvProduct model)
+        //{
+        //    ViewBag.Text = model.MemoProductNote;
+        //    return View();
+        //}
+
+
+        [AuthLog(Roles = "Administrator, Solution Manager, Solution Architect, Sizer, Viewer")]
+        // GET: AvProducts
+        public ActionResult ComplexityCalc3()
+        {
+            var avProducts = db.AvProducts.Include(a => a.ProdCategory).Include(a => a.ProdVendor);
+            return View();
         }
     }
 }

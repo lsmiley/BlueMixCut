@@ -198,6 +198,10 @@ namespace SizingToolNew2.Models
             ManagementMod1stLine = (0.05);
             ManagementMod2ndLine = (.0083);
 
+
+            // TotalTransitionHoursItem = SpecialItem1_TransitionHours + SpecialItem2_TransitionHours + SpecialItem3_TransitionHours + SpecialItem4_TransitionHours + SpecialItem5_TransitionHours;
+            // TotalTransformationHoursItem = (SpecialItem1_TransformationHours + SpecialItem2_TransformationHours + SpecialItem3_TransformationHours + SpecialItem4_TransformationHours + SpecialItem5_TransformationHours);
+
             #endregion
 
         }
@@ -205,8 +209,8 @@ namespace SizingToolNew2.Models
 
 
         [Key]
-        public int TnTId { get; set; }
-        public int SizingId { get; set; }
+        public int? TnTId { get; set; }
+        public int? SizingId { get; set; }
         public string TnTDescription { get; set; }
 
         public virtual ICollection<Sizing> Sizings { get; set; }
@@ -339,7 +343,7 @@ SpecialItem4_TransitionHours
 +
 SpecialItem5_TransitionHours); } set { } }
 
-        public double TransformationSubTotalsHoursItems { get { return (ExecuteTransitionPlan_TransformationHours
+public double TransformationSubTotalsHoursItems { get { return (ExecuteTransitionPlan_TransformationHours
 +
 CreateBestPracticeCustom_TransformationHours
 +
@@ -600,14 +604,14 @@ SpecialItem5_TransformationHours); } set { } }
         [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double TotalCount => ExecuteTransitionPlan_Count + TestInfrastructurePOC_Count + TroubleshootTune_Count + InstallConfigure_Count + AdministratorTraining_Count + DevelopServiceResponsibilityMatrix_Count + EstablishAnyNeededServiceAccounts_Count + ResearchAndSetupEmailAutomation_Count + InstallConfigureRemoteConsoles_Count + WorkWithSECOPS_Count + StaffingCcoordinating_Count + IdentifyTestDocument_Count + ObtainNetworkAndOsAccessWave1_Count + ObtainNetworkAndOsAccessWave2_Count + DevelopProvideAgentSoftware_Count + InstallConfigureODBC_Count + CustomerReviewSignoff_Count + EstablishHealthCheck_Count + DevelopWorkFlows_Count + ShadowEstablishReviewAllProcedures_Count + OtherDetail_Count + SpecialItem1_Count + SpecialItem2_Count + SpecialItem4_Count + SpecialItem5_Count;
 
-        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:n4}", ApplyFormatInEditMode = true)]
         // public double TotalTransitionHoursItem  { get { return TransitionWeeks * Labor); } set { } }
         public double TotalTransitionHoursItem { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double TotalTransitionHours => ExecuteTransitionPlan_TransitionHours + TestInfrastructurePOC_TransitionHours + TroubleshootTune_TransitionHours + InstallConfigure_TransitionHours + AdministratorTraining_TransitionHours + DevelopServiceResponsibilityMatrix_TransitionHours + EstablishAnyNeededServiceAccounts_TransitionHours + ResearchAndSetupEmailAutomation_TransitionHours + InstallConfigureRemoteConsoles_TransitionHours + WorkWithSECOPS_TransitionHours + StaffingCcoordinating_TransitionHours + IdentifyTestDocument_TransitionHours + ObtainNetworkAndOsAccessWave1_TransitionHours + ObtainNetworkAndOsAccessWave2_TransitionHours + DevelopProvideAgentSoftware_TransitionHours + InstallConfigureODBC_TransitionHours + CustomerReviewSignoff_TransitionHours + EstablishHealthCheck_TransitionHours + DevelopWorkFlows_TransitionHours + ShadowEstablishReviewAllProcedures_TransitionHours + OtherDetail_TransitionHours + SpecialItem1_TransitionHours + SpecialItem2_TransitionHours + SpecialItem4_TransitionHours + SpecialItem5_TransitionHours;
 
-        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:n4}", ApplyFormatInEditMode = true)]
         // public double TotalTransformationHoursItem => ExecuteTransitionPlan_TransformationHoursItem + TestInfrastructurePOC_TransformationHoursItem + TroubleshootTune_TransformationHoursItem + InstallConfigure_TransformationHoursItem + AdministratorTraining_TransformationHoursItem + DevelopServiceResponsibilityMatrix_TransformationHoursItem + EstablishAnyNeededServiceAccounts_TransformationHoursItem + ResearchAndSetupEmailAutomation_TransformationHoursItem + InstallConfigureRemoteConsoles_TransformationHoursItem + WorkWithSECOPS_TransformationHoursItem + StaffingCcoordinating_TransformationHoursItem + IdentifyTestDocument_TransformationHoursItem + ObtainNetworkAndOsAccessWave1_TransformationHoursItem + ObtainNetworkAndOsAccessWave2_TransformationHoursItem + DevelopProvideAgentSoftware_TransformationHoursItem + InstallConfigureODBC_TransformationHoursItem + CustomerReviewSignoff_TransformationHoursItem + EstablishHealthCheck_TransformationHoursItem + DevelopWorkFlows_TransformationHoursItem + ShadowEstablishReviewAllProcedures_TransformationHoursItem + OtherDetail_TransformationHoursItem + SpecialItem1_TransformationHoursItem + SpecialItem2_TransformationHoursItem + SpecialItem4_TransformationHoursItem + SpecialItem5_TransformationHoursItem;
         public double TotalTransformationHoursItem { get; set; }
 

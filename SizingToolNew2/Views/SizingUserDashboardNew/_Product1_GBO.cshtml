@@ -1,0 +1,898 @@
+﻿@model SizingToolNew2.Models.Sizing
+@{
+    object ComponentComplexityFac1_2 = null;
+
+    var GBO_Hours2 = (Model.WkstnsHoursCalc1 + Model.SrvsHoursCalc1 + Model.IPsHoursCalc1 + Model.AddlConHoursCalc1 + Model.Prod2ComponentHours1 + Model.Prod2ComponentHours2 + Model.Prod2ComponentHours3 + Model.Prod2ComponentHours4 + Model.Prod2ComponentHours5 + Model.Prod2ComponentHours6 + Model.Prod2ComponentHours7 + Model.Prod2ComponentHours8 + Model.Prod2ComponentHours9 + Model.Prod2ComponentHours10 + Model.Prod2ComponentHours11 + Model.Prod2ComponentHours12 + Model.Prod2ComponentHours13 + Model.Prod2ComponentHours14 + Model.Prod2ComponentHours15);
+
+    var Prod2Band3Hours = (GBO_Hours2 * Model.Prod2_Band3_Percentage);
+    var Prod2Band4Hours = (GBO_Hours2 * Model.Prod2_Band4_Percentage);
+    var Prod2Band5Hours = (GBO_Hours2 * Model.Prod2_Band5_Percentage);
+    var Prod2Band6Hours = (GBO_Hours2 * Model.Prod2_Band6_Percentage);
+    var Prod2Band7Hours = (GBO_Hours2 * Model.Prod2_Band7_Percentage);
+    var Prod2Band8Hours = (GBO_Hours2 * Model.Prod2_Band8_Percentage);
+    var Prod2Band9Hours = (GBO_Hours2 * Model.Prod2_Band9_Percentage);
+
+    //MRC by BAND Calc for Product#2
+    var MRCGBO_Hours2 = (GBO_Hours2 / 12);
+    var MRCProd2Band3Hours = (Prod2Band3Hours / 12);
+    var MRCProd2Band4Hours = (Prod2Band4Hours / 12);
+    var MRCProd2Band5Hours = (Prod2Band5Hours / 12);
+    var MRCProd2Band6Hours = (Prod2Band6Hours / 12);
+    var MRCProd2Band7Hours = (Prod2Band7Hours / 12);
+    var MRCProd2Band8Hours = (Prod2Band8Hours / 12);
+    var MRCProd2Band9Hours = (Prod2Band9Hours / 12);
+
+
+
+}
+
+
+<div class="row" style="height:30px">
+    <div class="col-3" style="text-align:center; color:blue">
+        @Html.DisplayFor(model => model.DescProduct_2, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
+        @Html.ValidationMessageFor(model => model.DescProduct_2, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-3" style="text-align:center; color:blue">
+        @Html.DisplayFor(model => model.DescLaborDelivery_2, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
+        @Html.ValidationMessageFor(model => model.DescLaborDelivery_2, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-3" style="text-align:center">
+        @Html.DisplayFor(model => model.NumMonths_2, new { htmlAttributes = new { @class = "form-control", @style = "Background-color: #ffcc99;" } })
+        @Html.ValidationMessageFor(model => model.NumMonths_2, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-3" style="text-align:center">
+        
+    </div>
+</div>
+
+
+
+
+@*<div class="row">
+        <div class="col-md-4">
+            <div>
+                @Html.DropDownList("AvProducts", (IEnumerable<SelectListItem>)ViewBag.AvProductList, new { id = "ddl_AvProductList" })<br />
+                <input id="txtAvproductId" type="text" /><br />
+                <input id="txtProductName" type="text" /><br />
+                <input id="txtProductComplexityFac" type="text" /><br />
+                <input id="txtProductComplexityBase" type="text" /><br />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div>
+                @Html.DropDownList("LaborDeliverys", (IEnumerable<SelectListItem>)ViewBag.DeliveredFrom1, new { id = "ddl_DeliveredFrom1" })<br />
+                <input id="txtLaborDeliveryId" type="text" /><br />
+                <input id="txtRegions" type="text" /><br />
+                <input id="txtDefaultFTE_Year" type="text" /><br />
+                <input id="txtWorkWeek" type="text" /><br />
+                <input id="txtDeliveryCtrCostFactor" type="text" /><br />
+
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4"></div>
+
+
+    </div> *@
+
+
+
+<div class="form-group-sm" style="font:500">
+    @* <div class="row" font-family:Arial">
+            <div class="col-md-4" style="background-color:#C6E2EE;">.</div>
+            <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+            <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+            <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+            <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+            <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+            <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+            <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+            <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+        </div> *@
+    <div class="row" style="font-weight:bold; font-family:Arial; font-size:10px">
+
+        <div class="col-md-2"></div>
+        <div class="col-md-1">.</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">Hours</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">Band #3</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">Band #4</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">Band #5</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">Band #6</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">Band #7</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">Band #8</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">Band #9</div>
+        <div class="col-md-1"></div>
+
+    </div>
+
+
+
+    <div class="row" style="font-weight:normal; font-family:Arial; font-size:10px">
+        <div class="col-md-2"></div>
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-1" style="background-color:#F0F0F0; font-size:12px">
+            @String.Format("{0:0.00}", GBO_Hours2)
+        </div>
+
+        <div class="col-md-1" style="background-color:#F0F0F0; font-size:12px">
+            @String.Format("{0:0.00}", Prod2Band3Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#F0F0F0; font-size:12px">
+            @String.Format("{0:0.00}", Prod2Band4Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#F0F0F0; font-size:12px">
+            @String.Format("{0:0.00}", Prod2Band5Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#F0F0F0; font-size:12px">
+            @String.Format("{0:0.00}", Prod2Band6Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#F0F0F0; font-size:12px">
+            @String.Format("{0:0.00}", Prod2Band7Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#F0F0F0; font-size:12px">
+            @String.Format("{0:0.00}", Prod2Band8Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#F0F0F0; font-size:12px">
+            @String.Format("{0:0.00}", Prod2Band9Hours)
+        </div>
+    </div>
+
+    <div class="row" style="font-weight:normal; font-family:Arial; font-size:10px">
+        <div class="col-md-1"></div>
+        <div class="col-md-2" style="font-size:small;">
+            Monthly MRC Hours-->
+        </div>
+        <div class="col-md-1" style="background-color:#e0e0e0; font-size:12px">
+            @String.Format("{0:0.00}", MRCGBO_Hours2)
+        </div>
+
+        <div class="col-md-1" style="background-color:#e0e0e0; font-size:12px">
+            @String.Format("{0:0.00}", MRCProd2Band3Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#e0e0e0; font-size:12px">
+            @String.Format("{0:0.00}", MRCProd2Band4Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#e0e0e0; font-size:12px">
+            @String.Format("{0:0.00}", MRCProd2Band5Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#e0e0e0; font-size:12px">
+            @String.Format("{0:0.00}", MRCProd2Band6Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#e0e0e0; font-size:12px">
+            @String.Format("{0:0.00}", MRCProd2Band7Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#e0e0e0; font-size:12px">
+            @String.Format("{0:0.00}", MRCProd2Band8Hours)
+        </div>
+        <div class="col-md-1" style="background-color:#e0e0e0; font-size:12px">
+            @String.Format("{0:0.00}", MRCProd2Band9Hours)
+        </div>
+
+        <div class="col-md-1" style="font-weight:bold; font-family:Arial;">
+
+        </div>
+    </div>
+
+
+    <div class="row" style="font-weight:normal; font-family:Arial; font-size:10px">
+        <div class="col-md-3">.</div>
+        <div class="col-md-2" style="background-color:#C6E2EE;">.</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+        <div class="col-md-1" style="background-color:#C6E2EE;">.</div>
+        <div class="col-md-1"></div>
+    </div>
+    @* <div class="row">
+            <div class="col-md-3">
+
+                @Html.EditorFor(model => model.Prod2RegionId, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                @Html.ValidationMessageFor(model => model.Prod2RegionId, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-3">
+
+                @Html.EditorFor(model => model.Prod2Region, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                @Html.ValidationMessageFor(model => model.Prod2Region, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-3">
+
+                @Html.EditorFor(model => model.Prod2DefaultYear, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                @Html.ValidationMessageFor(model => model.Prod2DefaultYear, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-3">
+
+                @Html.EditorFor(model => model.Prod2WorkWeek, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", Style = "height:25px" } })
+                @Html.ValidationMessageFor(model => model.Prod2WorkWeek, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">Prod2ProdId</div>
+            <div class="col-md-3">Prod2ProdName</div>
+            <div class="col-md-3">Prod2ProdFac</div>
+            <div class="col-md-3">Prod2ProdBase</div>
+        </div> *@
+
+</div>
+
+<div id="Product2Pane">
+
+
+    <div hidden class="col-md-12">
+        <div class="box box-default" style="width: 1000px; padding: 5px; margin: 5px">
+
+            <div class="box-body">
+                <div class="box-header"> <h3>Add / Remove: Components</h3> </div>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Default Components</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Help</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="DefaultComplexityComponent" class="row">
+                                    <div class="col-md-4" style="font-size:10px">Name</div>
+                                    <div class="col-md-3" style="font-size:10px">Hours</div>
+                                    <div class="col-md-1" style="font-size:10px">Wkstn</div>
+                                    <div class="col-md-1" style="font-size:10px">Svr</div>
+                                    <div class="col-md-1" style="font-size:10px">IP/EP</div>
+                                    <div class="col-md-2" style="font-size:10px">Qty:</div>
+                                </div>
+                                <div id="AvCompnent1" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent1Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent2Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours1, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours1, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component1_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component1_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component1_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component1_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component1_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component1_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty1, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty1, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+
+
+                                <div id="AvCompnent2" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent2Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent2Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours2, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours2, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component2_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component2_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component2_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component2_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component2_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component2_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty2, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty2, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div id="AvCompnent3" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent3Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent3Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours3, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours3, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component3_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component3_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component3_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component3_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component3_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component3_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty3, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty3, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div id="AvCompnent4" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent4Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent4Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours4, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours4, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component4_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component4_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component4_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component4_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component4_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component4_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty4, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty4, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+                                <div id="AvCompnent5" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent5Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent5Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours5, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours5, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component5_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component5_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component5_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component5_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component5_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component5_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod1Component_Qty5, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty5, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box @ComponentComplexityFac1_2
+                            </div><!-- box-footer -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Higher( Complexity ) Components</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Help</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="HigherComplexityComponent" class="row">
+                                    <div class="col-md-4" style="font-size:10px">Name</div>
+                                    <div class="col-md-3" style="font-size:10px">Hours</div>
+                                    <div class="col-md-1" style="font-size:10px">Wkstn</div>
+                                    <div class="col-md-1" style="font-size:10px">Svr</div>
+                                    <div class="col-md-1" style="font-size:10px">IP/EP</div>
+                                    <div class="col-md-2" style="font-size:10px">Qty:</div>
+                                </div>
+                                <div id="AvCompnent6" class="row">
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent6Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent6Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours6, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours6, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component6_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component6_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component6_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component6_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component6_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component6_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty6, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty6, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div id="AvCompnent7" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent7Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent7Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours7, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours7, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component7_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component7_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component7_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component7_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component7_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component7_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty7, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty7, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div id="AvCompnent8" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent8Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent8Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours8, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours8, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component8_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component8_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component8_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component8_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component8_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component8_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty8, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty8, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div id="AvCompnent9" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent9Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent9Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours9, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours9, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component9_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component9_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component9_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component9_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component9_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component9_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty9, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty9, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div id="AvCompnent10" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent10Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent10Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours10, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours10, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component10_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component10_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component10_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component10_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component10_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component10_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty10, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty10, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box
+                            </div><!-- box-footer -->
+                        </div><!-- /.box -->
+                    </div>
+
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Highest ( Complexity ) Components</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Help</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="HighestComplexityComponent" class="row">
+                                    <div class="col-md-4" style="font-size:10px">Name</div>
+                                    <div class="col-md-3" style="font-size:10px">Hours</div>
+                                    <div class="col-md-1" style="font-size:10px">Wkstn</div>
+                                    <div class="col-md-1" style="font-size:10px">Svr</div>
+                                    <div class="col-md-3" style="font-size:10px">Qty:</div>
+                                </div>
+                                <div id="AvCompnent11" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent11Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent11Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours11, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod1ComponentHours11, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component11_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod1Component11_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component11_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod1Component11_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component11_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod1Component11_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty11, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod1Component_Qty11, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div id="AvCompnent12" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent12Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent12Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours12, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod1ComponentHours12, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component12_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod1Component12_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component12_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component12_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component12_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component12_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty12, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty12, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div id="AvCompnent13" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent13Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent13Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours13, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours13, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component13_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component13_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component13_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component13_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component13_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component13_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty13, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty13, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div id="AvCompnent14" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent14Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent14Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours14, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours14, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component14_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component14_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component14_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component14_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component14_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component14_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty14, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Component_Qty14, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div id="AvCompnent15" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Compnent15Desc, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod2Compnent15Desc, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-3" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.Prod2ComponentHours15, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.Prod2ComponentHours15, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component15_Wkstn)
+                                        @Html.ValidationMessageFor(model => model.Prod2Component15_Wkstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component15_Svr)
+                                        @Html.ValidationMessageFor(model => model.Prod1Component15_Svr, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-1" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component15_IP)
+                                        @Html.ValidationMessageFor(model => model.Prod1Component15_IP, "", new { @class = "text-danger", Style = "height:25px" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.Prod2Component_Qty15, new { htmlAttributes = new { @style = "width:75%" } })
+                                        @Html.ValidationMessageFor(model => model.Prod1Component_Qty15, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box
+                            </div><!-- box-footer -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Custom: "Add-Ons" and "Services"</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Help</span>
+                                </div><!-- /.box-tools -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="DefaultComplexityComponent" class="row">
+                                    <div class="col-md-4" style="font-size:10px">Name</div>
+                                    <div class="col-md-2" style="font-size:10px">Hours</div>
+                                    <div class="col-md-2" style="font-size:10px">Qty:</div>
+                                    <div class="col-md-2" style="font-size:10px">Total Hrs</div>
+
+                                </div>
+                                <div id="CustomCompnent1" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent1Desc, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent1Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent1_Hours, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent1_Hours, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent_Qty1, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent_Qty1, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent1_TotalHours, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent1_TotalHours, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+
+
+                                <div id="CustomCompnent2" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent2Desc, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent2Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent2_Hours, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent2_Hours, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent_Qty2, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod1Component_Qty2, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent2_TotalHours, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent2_TotalHours, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+
+                                <div id="CustomCompnent3" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent3Desc, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent3Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent3_Hours, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent3_Hours, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent_Qty3, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod1Component_Qty3, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent3_TotalHours, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent3_TotalHours, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+
+                                <div id="CustomCompnent4" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent4Desc, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent4Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent4_Hours, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent4_Hours, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent_Qty4, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod1Component_Qty4, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent4_TotalHours, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent4_TotalHours, "", new { @class = "text-danger" })
+                                    </div>
+
+
+                                </div>
+                                <div id="CustomCompnent5" class="row">
+
+                                    <div class="col-md-4" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent5Desc, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent5Desc, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent5_Hours, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent5_Hours, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.EditorFor(model => model.CustomComponent_Qty5, new { htmlAttributes = new { @class = "form-control", Style = "height:25px" } })
+                                        @Html.ValidationMessageFor(model => model.Prod1Component_Qty5, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2" style="font-size:10px">
+                                        @Html.TextBoxFor(model => model.CustomComponent5_TotalHours, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+                                        @Html.ValidationMessageFor(model => model.CustomComponent5_TotalHours, "", new { @class = "text-danger" })
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

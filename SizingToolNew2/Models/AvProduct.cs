@@ -67,7 +67,7 @@ namespace SizingToolNew2.Models
             [Display(Name = "Vendor")]
             public int ProdVendorId { get; set; }
             public int ProdCategoryId { get; set; }
-        [Display(Name = "Product")]
+            [Display(Name = "Product")]
             public string ProductName { get; set; }
             public string ProductDesc { get; set; }
             public string ProductType { get; set; }
@@ -81,70 +81,106 @@ namespace SizingToolNew2.Models
             public double PrimaryComplexity { get; set; }
             public double TotalComplexity { get { return ((ProductComplexityBase + PrimaryComplexity) * ProductComplexityFac); } set { } }
 
-            // Av Components Start
-            public bool Component1 { get; set; }
+        [AllowHtml]
+        public string MemoProductNote { get; set; }
+
+        [AllowHtml]
+        public string MemoTechnicalNote { get; set; }
+
+
+        // Av Components Start
+        public bool Component1 { get; set; }
             public string Component1Desc { get; set; }
             public double ComponentComplexityFac1 { get; set; }
+            public string MemoComponent1Note { get; set; }
+            public string MemoComponent1TechNote { get; set; }
+
 
             public bool Component2 { get; set; }
             public string Component2Desc { get; set; }
             public double ComponentComplexityFac2 { get; set; }
+        public string MemoComponent2Note { get; set; }
+        public string MemoComponent2TechNote { get; set; }
 
-            public bool Component3 { get; set; }
+        public bool Component3 { get; set; }
             public string Component3Desc { get; set; }
             public double ComponentComplexityFac3 { get; set; }
+        public string MemoComponent3Note { get; set; }
+        public string MemoComponent3TechNote { get; set; }
 
-            public bool Component4 { get; set; }
+        public bool Component4 { get; set; }
             public string Component4Desc { get; set; }
             public double ComponentComplexityFac4 { get; set; }
+        public string MemoComponent4Note { get; set; }
+        public string MemoComponent4TechNote { get; set; }
 
-            public bool Component5 { get; set; }
+        public bool Component5 { get; set; }
             public string Component5Desc { get; set; }
             public double ComponentComplexityFac5 { get; set; }
+        public string MemoComponent5Note { get; set; }
+        public string MemoComponent5TechNote { get; set; }
 
-            public bool Component6 { get; set; }
+        public bool Component6 { get; set; }
             public string Component6Desc { get; set; }
             public double ComponentComplexityFac6 { get; set; }
+        public string MemoComponent6Note { get; set; }
+        public string MemoComponent6TechNote { get; set; }
 
-            public bool Component7 { get; set; }
+        public bool Component7 { get; set; }
             public string Component7Desc { get; set; }
             public double ComponentComplexityFac7 { get; set; }
+        public string MemoComponent7Note { get; set; }
+        public string MemoComponent7TechNote { get; set; }
 
-            public bool Component8 { get; set; }
+        public bool Component8 { get; set; }
             public string Component8Desc { get; set; }
             public double ComponentComplexityFac8 { get; set; }
+        public string MemoComponent8Note { get; set; }
+        public string MemoComponent8TechNote { get; set; }
 
-            public bool Component9 { get; set; }
+        public bool Component9 { get; set; }
             public string Component9Desc { get; set; }
             public double ComponentComplexityFac9 { get; set; }
+        public string MemoComponent9Note { get; set; }
+        public string MemoComponent9TechNote { get; set; }
 
-            public bool Component10 { get; set; }
+        public bool Component10 { get; set; }
             public string Component10Desc { get; set; }
             public double ComponentComplexityFac10 { get; set; }
+        public string MemoComponent10Note { get; set; }
+        public string MemoComponent10TechNote { get; set; }
 
-            public bool Component11 { get; set; }
+        public bool Component11 { get; set; }
             public string Component11Desc { get; set; }
             public double ComponentComplexityFac11 { get; set; }
+        public string MemoComponent11Note { get; set; }
+        public string MemoComponent11TechNote { get; set; }
 
-            public bool Component12 { get; set; }
+        public bool Component12 { get; set; }
             public string Component12Desc { get; set; }
             public double ComponentComplexityFac12 { get; set; }
 
             public bool Component13 { get; set; }
             public string Component13Desc { get; set; }
             public double ComponentComplexityFac13 { get; set; }
+        public string MemoComponent13Note { get; set; }
+        public string MemoComponent13TechNote { get; set; }
 
-            public bool Component14 { get; set; }
+        public bool Component14 { get; set; }
             public string Component14Desc { get; set; }
             public double ComponentComplexityFac14 { get; set; }
+        public string MemoComponent14Note { get; set; }
+        public string MemoComponent14TechNote { get; set; }
 
-            public bool Component15 { get; set; }
+        public bool Component15 { get; set; }
             public string Component15Desc { get; set; }
             public double ComponentComplexityFac15 { get; set; }
+        public string MemoComponent15Note { get; set; }
+        public string MemoComponent15TechNote { get; set; }
 
 
 
-            public int NumComponents { get; set; }
+        public int NumComponents { get; set; }
 
         // public int AvProductsList_01 { get; set; }
         // public int AvProductsList_02 { get; set; }

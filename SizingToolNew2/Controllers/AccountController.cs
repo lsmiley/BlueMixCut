@@ -9,11 +9,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SizingToolNew2.Models;
+using SizingToolNew2.CustomFilters;
 
 
 namespace SizingToolNew2.Controllers
 {
-    [Authorize]
+     [Authorize]
     public class AccountController : Controller
     {
         private SizingDbContext db = new SizingDbContext();
@@ -138,7 +139,8 @@ namespace SizingToolNew2.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+         [AllowAnonymous]
+       //  [AuthLog(Roles = "Administrator, Solution Manager")]
         public ActionResult Register()
         {
             ViewBag.Name = new SelectList(db.Roles.ToList(), "Name", "Name");
@@ -150,6 +152,7 @@ namespace SizingToolNew2.Controllers
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
+       // [AuthLog(Roles = "Administrator, Solution Manager")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {

@@ -181,8 +181,11 @@ namespace SizingToolNew2.Models
             Username = "pdfadmin";
 
             // Prod1WorkWeek = LaborDelivery.WorkWeek;
-            Prod1WorkWeek = 38;
+            //Prod1WorkWeek = 38;
 
+            // Management Modifiers
+            ManagementMod1stLine = (0.05);
+            ManagementMod2ndLine = (.0083);
 
         }
 
@@ -200,7 +203,12 @@ namespace SizingToolNew2.Models
 
        // public int ProdCategoryId { get; set; }
         public int LaborDeliveryId { get; set; }
+
         public int TnTId { get; set; }
+        [ForeignKey("TnTId")]
+        public virtual TnTWorksheet TnTWorksheet { get; set; }
+        public virtual ICollection<TnTWorksheet> TnTWorksheets { get; set; }
+
         [Display(Name = "Status")]
         public int StatusStateId { get; set; }
 
@@ -280,11 +288,9 @@ namespace SizingToolNew2.Models
 
         [ForeignKey("AvProductId")]
         public virtual AvProduct AvProduct { get; set; }
+        public virtual ICollection<AvProduct> AvProducts { get; set; }
 
-        [ForeignKey("TnTId")]
-        public virtual TnTWorksheet TnTWorksheet { get; set; }
-
-       [ForeignKey("AcctCustId")]
+        [ForeignKey("AcctCustId")]
         public virtual AcctCust AcctCust { get; set; }
         public virtual ICollection<AcctCust> AcctCusts { get; set; }
 
@@ -293,6 +299,7 @@ namespace SizingToolNew2.Models
 
          [ForeignKey("LaborDeliveryId")]
          public virtual LaborDelivery LaborDelivery { get; set; }
+        //public virtual ICollection<LaborDelivery> LaborDeliverys { get; set; }
 
         [ForeignKey("StatusStateId")]
         public virtual StatusState StatusState { get; set; }
@@ -301,7 +308,7 @@ namespace SizingToolNew2.Models
         public virtual ProdCategory ProdCategory { get; set; }
 
 
-        public virtual ICollection<AvProduct> AvProducts { get; set; }
+        
 
 
         #region " NBIE Sizer Info and Input "
@@ -845,11 +852,11 @@ namespace SizingToolNew2.Models
         //....., Component Hours
         [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double Prod1ComponentHours1 { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n0}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double Prod2ComponentHours1 { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n0}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double Prod3ComponentHours1 { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n0}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double Prod4ComponentHours1 { get; set; }
 
         //Wkstns
@@ -1758,7 +1765,7 @@ namespace SizingToolNew2.Models
         public double Prod2Component10_WkstnHours { get; set; }
         [DisplayFormat(DataFormatString = "{0:n0}", ApplyFormatInEditMode = true)]
         public double Prod3Component10_WkstnHours { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n0}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:n3}", ApplyFormatInEditMode = true)]
         public double Prod4Component10_WkstnHours { get; set; }
 
 
@@ -2312,6 +2319,7 @@ namespace SizingToolNew2.Models
         [DisplayFormat(DataFormatString = "{0:n3}", ApplyFormatInEditMode = true)]
         public double SteadyStateFTETtl { get { return WorkstationFTE + WorkstationFTE1 + WorkstationFTE2 + WorkstationFTE3 + ServerFTE + ServerFTE1 + ServerFTE2 + ServerFTE3 + IPEndpointFTE + IPEndpointFTE1 + IPEndpointFTE2 + IPEndpointFTE3 + AddlConFTE + AddlConFTE1 + AddlConFTE2 + AddlConFTE3; } set { } }
 
+        
 
         public double NewSteadyStateSubTtl { get; set; }
 
@@ -2339,6 +2347,11 @@ namespace SizingToolNew2.Models
         public double Prod2WorkWeek { get; set; }
         public double Prod3WorkWeek { get; set; }
         public double Prod4WorkWeek { get; set; }
+                      
+        public double DeliveryCtrCostFactor_1 { get; set; }
+        public double DeliveryCtrCostFactor_2 { get; set; }
+        public double DeliveryCtrCostFactor_3 { get; set; }
+        public double DeliveryCtrCostFactor_4 { get; set; }
 
         //   public int Prod2ProdId { get; set; }
         //   public string Prod2ProdName { get; set; }
@@ -2377,19 +2390,19 @@ namespace SizingToolNew2.Models
         public string DescProduct_4 { get; set; }
 
         public string DescLaborDelivery_1 { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        //[DisplayFormat(DataFormatString = "{0:n00}", ApplyFormatInEditMode = true)]
         public double Default_Yr_LaborDelivery_1 { get; set; }
 
         public string DescLaborDelivery_2 { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        
         public double Default_Yr_LaborDelivery_2 { get; set; }
 
         public string DescLaborDelivery_3 { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        
         public double Default_Yr_LaborDelivery_3 { get; set; }
 
         public string DescLaborDelivery_4 { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        
         public double Default_Yr_LaborDelivery_4 { get; set; }
 
         // Hours Calc for GBO Output
@@ -2415,7 +2428,7 @@ namespace SizingToolNew2.Models
         [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double Prod1_Band9_Percentage { get; set; }
 
-        // Prod2 which is really Product #3
+        // Prod2
         [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double Prod2_Band3_Percentage { get; set; }
 
@@ -2438,7 +2451,7 @@ namespace SizingToolNew2.Models
         public double Prod2_Band9_Percentage { get; set; }
 
 
-        //Prod3 which is really Product #4
+        //Prod3
         [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double Prod3_Band3_Percentage { get; set; }
 
@@ -2459,6 +2472,28 @@ namespace SizingToolNew2.Models
 
         [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public double Prod3_Band9_Percentage { get; set; }
+
+        //Prod4
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double Prod4_Band3_Percentage { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double Prod4_Band4_Percentage { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double Prod4_Band5_Percentage { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double Prod4_Band6_Percentage { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double Prod4_Band7_Percentage { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double Prod4_Band8_Percentage { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double Prod4_Band9_Percentage { get; set; }
 
         #endregion
 
@@ -2483,7 +2518,7 @@ namespace SizingToolNew2.Models
 
 
         #region Hours Over-ride Calc
-           public double Prod1Hours_OverRide { get; set; }
+        public double Prod1Hours_OverRide { get; set; }
            public double Prod2Hours_OverRide { get; set; }
            public double Prod3Hours_OverRide { get; set; }
            public double Prod4Hours_OverRide { get; set; }
@@ -2520,5 +2555,84 @@ namespace SizingToolNew2.Models
 
         #endregion End Memo Notes Section
 
+        #region Transition and Transformation Calc
+
+        //public double TotalTransitionHoursItem_BZ { get { return TransitionWeeks * Prod1WorkWeek; } set { } }
+        //public double TotalTransformationHoursItem_BZ { get { return TransformationWeeks * Prod1WorkWeek; } set { } }
+
+
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem1_TransitionHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem2_TransitionHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem3_TransitionHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem4_TransitionHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem5_TransitionHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double TotalTransitionHoursItem_BZ { get { return  (TransitionWeeks * Prod1WorkWeek) +(SpecialItem1_TransitionHours + SpecialItem2_TransitionHours + SpecialItem3_TransitionHours + SpecialItem4_TransitionHours  + SpecialItem5_TransitionHours); } set { } }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double TransitionFirstLineManagementBand8 { get { return (ManagementMod1stLine * TotalTransitionHoursItem_BZ); } set { } }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double TransitionSecondLineManagementBand8 { get { return (ManagementMod2ndLine * TotalTransitionHoursItem_BZ); } set { } }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double TransitionFirstLineManagementBand8Hours { get { return (ManagementMod1stLine * TotalTransitionHoursItem_BZ); } set { } }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem1_TransformationHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem2_TransformationHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem3_TransformationHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem4_TransformationHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double SpecialItem5_TransformationHours { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double TotalTransformationHoursItem_BZ { get { return (TransformationWeeks * Prod1WorkWeek) + (SpecialItem1_TransformationHours + SpecialItem2_TransformationHours + SpecialItem3_TransformationHours + SpecialItem4_TransformationHours + SpecialItem5_TransformationHours); } set { } }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double TransformationFirstLineManagementBand8 { get { return (ManagementMod1stLine * TotalTransformationHoursItem_BZ); } set { } }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double TransformationSecondLineManagementBand8 { get { return (ManagementMod2ndLine * TotalTransformationHoursItem_BZ); } set { } }
+
+
+        // Management Modifiers (Variable)
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double ManagementMod1stLine { get { return (0.05); } set { } }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double ManagementMod2ndLine { get { return (0.0083); } set { } }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double TransitionHoursFTE { get { return ((ManagementMod2ndLine * TotalTransitionHoursItem_BZ) / 100); } set { } }
+
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
+        public double TransfortionHoursFTE { get { return ((ManagementMod2ndLine * TotalTransformationHoursItem_BZ) / 100); } set { } }
+
+
+
+
+
+        #endregion Transition and Transformation Calc
+
+        public int LaborDeliveryTypeId{ get; set; }
     }
 }

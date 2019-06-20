@@ -1,13 +1,21 @@
 ﻿@model SizingToolNew2.Models.Sizing
 
 @{
+    /**/
+
+    /**/
+
 
 
 
     ViewBag.Title = "Create";
 
+
+
     // var userID = User.Identity;
     Model.PrepardedBy = User.Identity.Name;
+    var LaborWorkWeek = Model.Prod1WorkWeek;
+
 }
 
 <div class="row">
@@ -45,40 +53,40 @@
 
                     <div class="box-body">
 
+
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-5" style="font-weight:bold">Acct./Customer:</div>
                             <div class="col-5">
-                                @Html.DropDownList("AcctCustId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("AcctCustId", null, htmlAttributes: new { @class = "form-control", })
                                 @Html.ValidationMessageFor(model => model.AcctCustId, "", new { @class = "text-danger" })
-                                <div class="col-1"></div>
+                                <a class="btn btn-default" style="font-size:10px; font-style:italic" href="@Url.Action("Create", "AcctCusts") " target="_blank">Add Customer &raquo;</a>
+                                <div class="col-1">
+                                </div>
                             </div>
                         </div>
-
+                        <div class="row">
+                            <div class="col-1" style="font-size:10px; font-style:italic">Note:</div>
+                            <div class="col-11" style="font-size:10px; font-style:italic">  - If your Account/Customer is not listed - Click "Add Customer". Then "Refresh" your Browser..!</div>
+                        </div>
+                        <hr />
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="col-5" style="font-weight:bold">Sizing Type:</div>
                             <div class="col-5">
                                 @Html.DropDownList("SizingTypeId", null, htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.SizingTypeId, "", new { @class = "text-danger" })
+
                                 <div class="col-1"></div>
                             </div>
                         </div>
-                        @*  <div class="row">
-                                <div class="col-1"></div>
-                                <div class="col-5" style="font-weight:bold">Security Product:</div>
-                                <div class="col-5">
-                                    @Html.DropDownList("ProdCategoryId", null, htmlAttributes: new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.ProdCategory, "", new { @class = "text-danger" })
-                                    <div class="col-1"></div>
-                                </div>
-                            </div> *@
                         <div class="row">
                             <div class="col-1"></div>
-                            <div class="col-5" style="font-weight:bold">Security Product:</div>
+                            <div class="col-5" style="font-weight:bold">Delivery Type:</div>
                             <div class="col-5">
-                                @Html.DropDownList("AvProductId", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.AvProductId, "", new { @class = "text-danger" })
+                                @Html.DropDownList("LaborDeliveryTypeId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.LaborDeliveryTypeId, "", new { @class = "text-danger" })
+
                                 <div class="col-1"></div>
                             </div>
                         </div>
@@ -92,23 +100,41 @@
                                 <div class="col-1"></div>
                             </div>
                         </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-5" style="font-weight:bold">Product Category:</div>
+                            <div class="col-5">
+                                @Html.DropDownList("ProdCategoryId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProdCategory, "", new { @class = "text-danger" })
+                                <div class="col-1"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-5" style="font-weight:bold">Security Product:</div>
+                            <div class="col-5">
+                                @Html.DropDownList("AvProductId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.AvProductId, "", new { @class = "text-danger" })
+                                <div class="col-1"></div>
+                            </div>
+                        </div>
 
 
                         <div class="form-group">
-                            <div class="col-md-8">
-                                <p><a class="btn btn-default" href="@Url.Action("Create", "AcctCusts") " target="_blank">Add Customer &raquo;</a></p>
-                                @*  <input type="button" id="btnpopup" value="Create Customer" onclick="ShowModelPopUp();" /> *@
-                            </div>
+                            @*<div class="col-md-8">
+                <p><a class="btn btn-default" href="@Url.Action("Create", "AcctCusts") " target="_blank">Add Customer &raquo;</a></p>
+               <input type="button" id="btnpopup" value="Create Customer" onclick="ShowModelPopUp();" />
+            </div>*@
                         </div>
                     </div>
                     <!-- /.box-body -->
 
                     <div class="box-footer">
 
-                        <div class="row">
-                            <div class="col-1">Note:</div>
-                            <div class="col-11" style="font-size:16px; font-style:italic">  - If your Account/Customer is not listed - Click "Add Customer". Then "Refresh" your Browser..!</div>
-                        </div>
+
 
 
                     </div>
@@ -146,11 +172,25 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-1" style="font-size:10px; font-style:italic">Note:</div>
+                            <div class="col-11" style="font-size:10px; font-style:italic">  - Input # Workstations/Servers If Client Install is Required</div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-6" style="font-weight:bold">Node Type:</div>
+                            <div class="col-6">Count/Select</div>
+                        </div>
+                        <div class="row">
                             <div class="col-6">IP / EndPoints:</div>
                             <div class="col-4">
                                 @Html.EditorFor(model => model.NumIpAddress, new { htmlAttributes = new { @class = "form-control", Style = "height:25px; background-color:#f2fcfc;" } })
                                 @Html.ValidationMessageFor(model => model.NumIpAddress, "", new { @class = "text-danger" })
                             </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-1" style="font-size:10px; font-style:italic">Note:</div>
+                            <div class="col-11" style="font-size:10px; font-style:italic">  - Use: Input # EndPoint/IP Addresses for URL Filtering, Email/Spam Filtering, Scan Engine, Vulnerability Scanning, Application Malware Scanning Etc</div>
                         </div>
 
 
@@ -163,14 +203,16 @@
                     <div class="box-footer">
                         <div class="form-group">
                             <div class="row" style="height:25px">
-                                <div class="col-6"><input type="submit" value="Create" class="btn btn-default" /></div>
-                                <div class="col-6"> @Html.ActionLink("Cancel", "Index")</div>
+                                <div class="col-3"></div>
+                                <div class="col-3"><input type="submit" value="Create" class="btn btn-default"/></div>
+                                <div class="col-3"> @Html.ActionLink("Cancel", "Index")</div>
+                                <div class="col-3"></div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-1">Note:</div>
-                            <div class="col-11" style="font-size:16px; font-style:italic">  - By clicking "Create" you will be taken back to your Dashboard where you can access this Sizing to Add/Edit Components along with the Ability to add Additional Products and Labor Delivery Centers.</div>
+                            <div class="col-11" style="font-size:13px; font-style:italic">  - By clicking "Create" you will be taken back to your Dashboard where you can access this Sizing to Add/Edit Components along with the Ability to add Additional Products and Labor Delivery Centers.</div>
                         </div>
 
 
@@ -266,14 +308,14 @@
             <br />
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title" hidden>
-                        <a data-toggle="collapse" data-parent="#accordion" href="#filterPanel">Collapsible Group 1</a>
-                        <span class="pull-right panel-collapse-clickable" data-toggle="collapse" data-parent="#accordion" href="#filterPanel">
-                            <i class="glyphicon glyphicon-chevron-down"></i>
-                        </span>
+                    <h4 class="panel-title">
+                        @*<a data-toggle="collapse" data-parent="#accordion" href="#filterPanel">Collapsible Group 1</a>
+                            <span class="pull-right panel-collapse-clickable" data-toggle="collapse" data-parent="#accordion" href="#filterPanel">
+                                <i class="glyphicon glyphicon-chevron-down"></i>
+                            </span>*@
                     </h4>
                 </div>
-                <div id="filterPanel" class="panel-collapse panel-collapse collapse">
+                <div hidden id="filterPanel" class="panel">
                     <div class="panel-body">
                         <div class="panel" id="SizingContnent">
 
@@ -287,7 +329,7 @@
                                     @Html.ValidationMessageFor(model => model.ConfigId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
+                            @Html.DropDownList("TnTId", null, htmlAttributes: new { @class = "form-control", @style = "Background-color: #f2fcfc; font-size:14px; height:30px" })
                             @*   <div class="form-group">
                                     @Html.LabelFor(model => model.AcctCustId, "AcctCustId", htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
@@ -320,13 +362,13 @@
                                     </div>
                                 </div>*@
 
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.TnTId, "TnTId", htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.DropDownList("TnTId", null, htmlAttributes: new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.TnTId, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
+                            @*<div class="form-group">
+                                    @Html.LabelFor(model => model.TnTId, "TnTId", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.DropDownList("TnTId", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.TnTId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>*@
 
                             <div class="form-group">
                                 @Html.LabelFor(model => model.StatusStateId, "StatusStateId", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -368,29 +410,7 @@
                                     </div>
                                 </div> *@
 
-                            @*  <div class="form-group">
-                                    @Html.LabelFor(model => model.SalesConnectNum, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.SalesConnectNum, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.SalesConnectNum, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
 
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.RFSNum, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.RFSNum, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.RFSNum, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.PrepardedBy, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.PrepardedBy, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.PrepardedBy, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>  *@
 
                             <div class="form-group">
                                 @Html.LabelFor(model => model.RiskRating, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -6727,7 +6747,22 @@
             </div>
         </div>
     </div>
-    @Model.Prod1WorkWeek;
+    @*@Model.Prod1WorkWeek;*@
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.ConfigId, "ConfigId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ConfigId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ConfigId, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.TnTId, "TnTId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TnTId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TnTId, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
 
     <div id="ProductsPane">
 
@@ -7403,29 +7438,142 @@
             </div>
         </div>
 
+
+          <div class="row">
+            Prod Name @Html.EditorFor(model => model.DescProduct_1, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.DescProduct_1, "", new { @class = "text-danger" })
+
+        </div>
         <div class="row">
-            @Html.EditorFor(model => model.Prod1WorkWeek, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            Prod / Base Hrs:@Html.EditorFor(model => model.Prod1ComplexityBase, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Prod1ComplexityBase, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="row">
+            Prod / Factor  :@Html.EditorFor(model => model.Prod1ComplexityFac, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Prod1ComplexityFac, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="row">
+            Hours per Week:  @Html.EditorFor(model => model.Prod1WorkWeek, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
             @Html.ValidationMessageFor(model => model.Prod1WorkWeek, "", new { @class = "text-danger" })
 
         </div>
         <div class="row">
-            @Html.EditorFor(model => model.LaborDelivery.WorkWeek, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
-            @Html.ValidationMessageFor(model => model.LaborDelivery.WorkWeek, "", new { @class = "text-danger" })
+            Hours / Year:  @Html.EditorFor(model => model.Default_Yr_LaborDelivery_1, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Default_Yr_LaborDelivery_1, "", new { @class = "text-danger" })
 
+        </div>
+                <div class="row">
+            Delivery Description - @Html.EditorFor(model => model.DescLaborDelivery_1, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.DescLaborDelivery_1, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            Delivery Ctr/Cost Factor - @Html.EditorFor(model => model.DeliveryCtrCostFactor_1, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.DeliveryCtrCostFactor_1, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            Ctr/Cost Factor Band3 -  @Html.EditorFor(model => model.Prod1_Band3_Percentage, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Prod1_Band3_Percentage, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            Ctr/Cost Factor Band4-  @Html.EditorFor(model => model.Prod1_Band4_Percentage, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Prod1_Band4_Percentage, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            Ctr/Cost Factor Band5 -  @Html.EditorFor(model => model.Prod1_Band5_Percentage, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Prod1_Band5_Percentage, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            Ctr/Cost Factor Band6 - @Html.EditorFor(model => model.Prod1_Band6_Percentage, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Prod1_Band6_Percentage, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            Ctr/Cost Factor Band7 - @Html.EditorFor(model => model.Prod1_Band7_Percentage, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Prod1_Band7_Percentage, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            Ctr/Cost Factor Band8 @Html.EditorFor(model => model.Prod1_Band8_Percentage, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Prod1_Band8_Percentage, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            Ctr/Cost Factor Band9 @Html.EditorFor(model => model.Prod1_Band9_Percentage, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.Prod1_Band9_Percentage, "", new { @class = "text-danger" })
+        </div>
+
+
+        @*Transition Info*@
+
+
+
+        <div class="row">
+            @Html.LabelFor(model => model.TransitionWeeks, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.TransitionWeeks, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.TransitionWeeks, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="row">
+            @Html.LabelFor(model => model.TotalTransitionHoursItem_BZ, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.TotalTransitionHoursItem_BZ, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.TotalTransitionHoursItem_BZ, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.TotalTransformationHoursItem_BZ, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.TotalTransformationHoursItem_BZ, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.TotalTransformationHoursItem_BZ, "", new { @class = "text-danger" })
+        </div>
+
+        @*Transformation Info*@
+
+        <div class="row">
+            @Html.LabelFor(model => model.TransformationWeeks, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.TransformationWeeks, new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @style = "height:25px" })
+            @Html.ValidationMessageFor(model => model.TransformationWeeks, "", new { @class = "text-danger" })
+        </div>
+        <select required="">
+            <option>Select Country</option>
+            <option>Canada</option>
+            <option>United States</option>
+        </select>
+        <span class="required">*</span>
+
+
+        <div class="col-1" hidden>
+            @Html.EditorFor(model => model.DescProduct_1, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+            @Html.ValidationMessageFor(model => model.DescProduct_1, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-1" hidden>
+            @Html.EditorFor(model => model.DescLaborDelivery_1, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "height:25px" } })
+            @Html.ValidationMessageFor(model => model.DescLaborDelivery_1, "", new { @class = "text-danger" })
         </div>
 
     </div>
 
-<div>
-    @Html.ActionLink("Back to Dashboard", "Index")
-</div>
+
+
+    <div>
+        @Html.ActionLink("Back to Dashboard", "Index")
+    </div>
 }
 
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/css")
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui.js"></script>
+
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
 
     <script>
+
+
         // Code to Block Post on Enter Key Press
         $(document).keypress(function (e) {
             if (e.keyCode === 13) {
@@ -7435,19 +7583,6 @@
         });
     </script>
 
-    @* <script src="~/Scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
-
-        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-        <script src="~/Scripts/jquery-3.3.1.js"></script>
-        <link href="~/Content/bootstrap.css" rel="stylesheet" />
-        <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-        <link href="~/Content/bootstrap.css" rel="stylesheet" />
-        <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
-        <link href="~/Content/DataTables/css/dataTables.jqueryui.css" rel="stylesheet" />
-
-        <script src="~/Scripts/DataTables/dataTables.jqueryui.js"></script>
-        <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
-        <script src="~/Scripts/DataTables/dataTables.jqueryui.min.js"></script>*@
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.css">
@@ -7581,14 +7716,15 @@
                     dataType: "json",
                     success: function (data) {
                         //alert(data.LastName);
-                        $("#txtLaborId1").val(data.LaborDeliveryId);
-                        $("#txtRegionNumber_1").val(data.RegionNumber);
-                        $("#txtRegions_1").val(data.Regions);
-                        $("#txtDeliveryOption_1").val(data.DeliveryOption);
-                        $("#txtCurrencyType_1").val(data.CurrencyType);
+                        //$("#txtLaborId1").val(data.LaborDeliveryId);
+                        //$("#txtRegionNumber_1").val(data.RegionNumber);
+                        //$("#txtRegions_1").val(data.Regions);
+                        //$("#txtDeliveryOption_1").val(data.DeliveryOption);
+                        //$("#txtCurrencyType_1").val(data.CurrencyType);
                         $("#DescLaborDelivery_1").val(data.Regions);
-                        $("#Prod1WorkWeek").val(data.WorkWeek);
                         $("#Default_Yr_LaborDelivery_1").val(data.DefaultFTE_Year);
+                        $("#Prod1WorkWeek").val(data.WorkWeek);
+                        $("#DeliveryCtrCostFactor_1").val(data.DeliveryCtrCostFactor);
 
                         $("#Prod1_Band3_Percentage").val(data.Band3Percentage);
                         $("#Prod1_Band4_Percentage").val(data.Band4Percentage);
@@ -7610,46 +7746,159 @@
     </script>
 
 
-}
+    @* Cascading DropDown for Product Category*@
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function () {
+        if ($("#ProdCategoryId").val() == '0') {
+            var productDefaultValue = "<option value='0'>--Select a Category first--</option>";
+            $("#AvProductId").html(productDefaultValue).show();
+        }
 
+        $("#ProdCategoryId").change(function () {
+            var selectedItemValue = $(this).val();
 
-
-@*<script type="text/javascript">
-            $(function () {
-                $("#ddl_AvProduct").change(function () {
-                  //  alert($(this).val() + " " + $(this).find("option:selected").html());
-                    var id = $(this).val();
-                    $.ajax({
-                        type: "Post",
-                        url: '@Url.Action("GetAvProductByID", "MyTest")',
-                        data: '{id: "' + id + '"}',
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        success: function (data) {
-                            //alert(data.LastName);
-                            $("#txtAvProductID").val(data.ProductID);
-                            $("#txtProductName").val(data.ProductName);
-                            $("#txtProductDesc").val(data.ProductDesc);
-                            $("#txtTotalComplexity").val(data.TotalComplexity);
-                        },
-
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            alert('Failed to retrieve counties.');
-                        }
+            var ddlProducts = $("#AvProductId");
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: '@Url.Action("GetProductsByCategoryId2", "SizingUserDashboard")',
+                data: { "id": selectedItemValue },
+                success: function (data) {
+                    ddlProducts.html('');
+                    $.each(data, function (id, option) {
+                        ddlProducts.append($('<option></option>').val(option.id).html(option.name));
                     });
+                },
 
-                });
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Found error to load product!!.');
+                }
             });
-    </script>*@
+        });
+    });
+    </script>
+
+    @* Cascading DropDown for Delivery Type *@
+    <script type="text/javascript">
+    $(function () {
+        if ($("#LaborDeliveryTypeId").val() == '0') {
+            var typeDefaultValue = "<option value='0'>--Select DeliveryType First--</option>";
+            $("#LaborDeliveryId").html(typeDefaultValue).show();
+        }
+
+        $("#LaborDeliveryTypeId").change(function () {
+            var selectedItemValue = $(this).val();
+
+            var ddlLaborDeliverys = $("#LaborDeliveryId");
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: '@Url.Action("GetLaborDeliveryBySizingTypeId", "SizingUserDashboard")',
+                data: { "id": selectedItemValue },
+                success: function (data) {
+                    ddlLaborDeliverys.html('');
+                    $.each(data, function (id, option) {
+                        ddlLaborDeliverys.append($('<option></option>').val(option.id).html(option.name));
+                    });
+                },
+
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Found error to load product!!.');
+                }
+            });
+        });
+    });
+    </script>
+
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    @*<script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#SizingType").change(function () {
+                $("#CascadeAvProduct").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("getAvproductCascade")',
+                    dataType: 'json',
+                    data: { id: $("#SizingType").val() },
+                    success: function (avproduct) {
+
+                        $.each(avproduct, function (i, avproduct) {
+                            $("#AvProduct").append('<option value="'
+                                                       + avproduct.Value + '">'
+                                                 + avproduct.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed.' + ex);
+                    }
+               });
+                return false;
+            })
+        });
+        </script>*@
 
 
 
 
 
 
-@* Begin Section for Paneled Form*@
 
-<script type="text/javascript">
+    @* Fetch TnTWorkSheet Data*@
+    <script type="text/javascript">
+        $(function () {
+            $("#TnTId").change(function () {
+              //  alert($(this).val() + " " + $(this).find("option:selected").html());
+                var id = $(this).val();
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("GetTNTByID1", "SizingUserDashboard")',
+                    data: '{id: "' + id + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        //alert(data.LastName);
+                        $("#txtTNTId").val(data.TnTId);
+
+
+                        $("#TotalTransitionHoursItem_BZ").val(data.TotalTransitionHoursItem);
+                        $("#TotalTransformationHoursItem_BZ").val(data.TotalTransformationHoursItem);
+                        $("#TnTWorksheet.SpecialItem3_TransitionHours").val(data.SpecialItem3_TransitionHours);
+                        $("#SpecialItem4_TransitionHours").val(data.SpecialItem4_TransitionHours);
+                        $("#SpecialItem5_TransitionHours").val(data.SpecialItem5_TransitionHours);
+                        $("#TotalTransitionHoursItem").val(data.TotalTransitionHoursItem);
+
+                        $("#SpecialItem1_TranformationHours").val(data.SpecialItem1_TranformationHours);
+                        $("#SpecialItem2_TranformationHours").val(data.SpecialItem2_TranformationHours);
+                        $("#SpecialItem3_TranformationHours").val(data.SpecialItem3_TranformationHours);
+                        $("#SpecialItem4_TranformationHours").val(data.SpecialItem4_TranformationHours);
+                        $("#SpecialItem5_TranformationHours").val(data.SpecialItem5_TranformationHours);
+                        $("#TotalTransformatonHoursItem").val(data.TotalTranformationHoursItem);
+
+
+                    },
+
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve Labor and Delivery.');
+                    }
+                });
+
+            });
+        });
+    </script>
+
+
+
+
+    @* Begin Section for Paneled Form*@
+
+    <script type="text/javascript">
         $(function () {
             $("#ddl_AvProduct1").change(function () {
               //  alert($(this).val() + " " + $(this).find("option:selected").html());
@@ -7675,6 +7924,18 @@
 
             });
         });
-</script>
+    </script>
+
+
+
+
+
+
+}
+
+
+
+
+
 
 
